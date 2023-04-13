@@ -1,0 +1,11 @@
+@mixin background200vw($color1, $color2) {
+  background: $color2;
+  background: linear-gradient(
+    90deg,
+    $color1 50%,
+    $color2 50%
+  );
+  background-position: right;
+  background-size: 200% 100%;
+  color: $color1;
+}

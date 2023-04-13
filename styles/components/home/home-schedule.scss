@@ -1,0 +1,115 @@
+.home-schedule {
+  background: $black;
+  padding: 0 12px;
+
+  @include responsive(s-xl) {
+    padding: 0 24px;
+  }
+
+  &-all {
+    margin: auto;
+    max-width: 550px;
+    position: relative;
+
+    @include responsive(t-xs) {
+      max-width: 1000px;
+    }
+  }
+
+  &-title {
+    color: $white;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  &-decoration {
+    &-img,
+    &-icon {
+      cursor: pointer;
+      position: absolute;
+    }
+
+    &-img {
+      height: 48px;
+      right: 0;
+      top: 0;
+      transform: rotate(-10deg);
+      transition: 0.25s transform ease-in-out,
+        0.25s;
+      width: 48px;
+
+      &:hover {
+        transform: rotate(0.5turn);
+      }
+    }
+
+    &-icon {
+      fill: $secondary-color;
+      height: 32px;
+      opacity: 0.8;
+      right: 4px;
+      top: -8px;
+      transform: rotate(10deg);
+      transition: 0.25s transform ease-in-out,
+        0.25s right ease-in-out;
+      width: 32px;
+
+      &:hover {
+        right: 8px;
+        transform: rotate(0);
+      }
+    }
+  }
+
+  &-main {
+    @include responsive(t-xs) {
+      align-items: center;
+      display: flex;
+
+      .map {
+        width: 50%;
+      }
+    }
+  }
+
+  &-subtitle {
+    color: $white;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  &-article {
+    @include responsive(t-xs) {
+      padding-left: 24px;
+      width: calc(50% - 24px);
+    }
+  }
+
+  &-item {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-day,
+    &-hours {
+      color: $white;
+      text-align: center;
+      width: 50%;
+    }
+
+    &-current {
+      .home-schedule-item {
+        &-day,
+        &-hours {
+          color: $secondary-color;
+          font-family: $secondary-font-semi-bold;
+        }
+      }
+    }
+  }
+}

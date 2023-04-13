@@ -1,0 +1,175 @@
+.home {
+  height: 500px;
+  margin-top: 56px;
+
+  @include responsive(t-xs) {
+    height: 600px;
+  }
+
+  @include responsive(d) {
+    height: 700px;
+  }
+
+  &-main {
+    align-items: center;
+    background: url("/img/mac-open-home.jpg")
+      no-repeat center center;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 0 12px;
+    position: relative;
+    width: calc(100% - 24px);
+    z-index: 0;
+
+    @include responsive(s-xl) {
+      padding: 0 24px;
+      width: calc(100% - 48px);
+    }
+
+    @include responsive(t-xs) {
+      background-attachment: fixed;
+    }
+
+    &:after {
+      background: $black;
+      content: "";
+      height: 100%;
+      left: 0;
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &-title,
+  &-typing-container,
+  &-link {
+    position: inherit;
+    z-index: 1;
+  }
+
+  &-title {
+    align-items: center;
+    color: $white;
+    display: flex;
+    font-size: 48px;
+    margin-bottom: 64px;
+
+    @include responsive(s-xl) {
+      font-size: 64px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 96px;
+      margin-bottom: 48px;
+    }
+
+    &-logo {
+      height: 56px;
+      margin-right: 8px;
+      width: 56px;
+
+      @include responsive(s-xl) {
+        height: 72px;
+        width: 72px;
+      }
+
+      @include responsive(t-xs) {
+        height: 96px;
+        width: 96px;
+      }
+    }
+  }
+
+  &-typing {
+    color: $white;
+    font-size: 24px;
+
+    @include responsive(t-xs) {
+      font-size: 32px;
+    }
+
+    &-container {
+      margin-bottom: 48px;
+      text-align: center;
+
+      @include responsive(t-xs) {
+        margin-bottom: 64px;
+      }
+    }
+
+    &.typist-cursor {
+      color: $white;
+    }
+  }
+
+  &-link {
+    align-items: center;
+    @include background200vw(
+      $white,
+      $primary-color
+    );
+    border: 4px solid $white;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    font-family: $secondary-font-semi-bold;
+    font-size: 24px;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.25s background-position
+        ease-in-out,
+      0.25s color ease-in-out;
+
+    @include responsive(t-xs) {
+      font-size: 28px;
+    }
+
+    &-icon {
+      display: none;
+
+      @include responsive(s-xl) {
+        display: block;
+        fill: $white;
+        height: 32px;
+        overflow: hidden;
+        transition: 0.25s width ease-in-out,
+          0.25s fill ease-in-out,
+          0.25s margin ease-in-out;
+        width: 0;
+      }
+
+      @include responsive(t-xs) {
+        height: 48px;
+      }
+    }
+
+    &:hover {
+      background-position: left;
+      color: $primary-color;
+
+      .home-link-icon {
+        display: none;
+
+        @include responsive(s-xl) {
+          display: block;
+          fill: $primary-color;
+          margin-left: 16px;
+          width: 32px;
+        }
+
+        @include responsive(t-xs) {
+          margin-left: 24px;
+          width: 48px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.form-support {
+  &-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+
+    @include responsive(s-xl) {
+      font-size: 32px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 36px;
+    }
+  }
+
+  &-btn {
+    align-items: center;
+    @include background200vw(
+      $white,
+      $primary-color
+    );
+    border: 2px solid $primary-color;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    height: 54px;
+    justify-content: center;
+    transition: 0.25s background-position
+        ease-in-out,
+      0.25s color ease-in-out;
+    width: 100%;
+
+    &:hover {
+      background-position: left;
+      color: $primary-color;
+
+      .form-support-btn-icon-loader {
+        fill: $primary-color;
+      }
+    }
+
+    &-icon-loader {
+      animation: $loading-no-translate-animation;
+      fill: $white;
+      height: 32px;
+      transition: 0.25s fill ease-in-out;
+      width: 32px;
+    }
+  }
+}

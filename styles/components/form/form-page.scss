@@ -1,0 +1,83 @@
+.form-page {
+  display: flex;
+  margin: 96px 0 32px;
+  padding: 0 12px;
+
+  @include responsive(s-xl) {
+    padding: 0 24px;
+  }
+
+  @include responsive(t-xs) {
+    margin: 56px 0 0;
+    padding: 0;
+  }
+
+  &-article {
+    width: 100%;
+
+    @include responsive(t-xs) {
+      width: 65%;
+    }
+
+    @include responsive(t-xl) {
+      width: 60%;
+    }
+
+    @include responsive(d-xs) {
+      width: 50%;
+    }
+
+    &-container {
+      margin: auto;
+      max-width: 600px;
+
+      @include responsive(t-xs) {
+        padding: 64px 24px;
+      }
+
+      @include responsive(t-xl) {
+        padding: 64px;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+
+    @include responsive(s-xl) {
+      font-size: 32px;
+    }
+
+    @include responsive(t-xs) {
+      font-size: 36px;
+    }
+  }
+
+  &-aside {
+    display: none;
+    position: relative;
+
+    @include responsive(t-xs) {
+      display: block;
+      width: 35%;
+    }
+
+    @include responsive(t-xl) {
+      width: 40%;
+    }
+
+    @include responsive(d-xs) {
+      width: 50%;
+    }
+
+    &-img {
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}

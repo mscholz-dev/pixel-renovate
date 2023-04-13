@@ -1,0 +1,160 @@
+.block-cta {
+  background: $primary-color;
+  display: flex;
+  flex-direction: column;
+  margin: 64px 0;
+  position: relative;
+
+  @include responsive(t-xs) {
+    flex-direction: row;
+  }
+
+  &-reverse {
+    flex-direction: column-reverse;
+
+    .block-cta {
+      &-icon {
+        bottom: 370px;
+        top: auto;
+
+        @include responsive(t-xs) {
+          bottom: auto;
+          top: -32px;
+        }
+      }
+    }
+
+    @include responsive(t-xs) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &-color {
+    &-primary {
+      background: $primary-color;
+
+      .block-cta {
+        &-icon {
+          fill: $secondary-color;
+        }
+
+        &-link {
+          background: $primary-color;
+          background: linear-gradient(
+            90deg,
+            $white 50%,
+            $primary-color 50%
+          );
+          background-position: right;
+          background-size: 200% 100%;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    &-secondary {
+      background: $secondary-color;
+
+      .block-cta {
+        &-icon {
+          fill: $primary-color;
+        }
+
+        &-link {
+          @include background200vw(
+            $white,
+            $secondary-color
+          );
+
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+  &-img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+
+    @include responsive(t-xs) {
+      height: 500px;
+      width: 60%;
+    }
+
+    @include responsive(d) {
+      height: 600px;
+    }
+  }
+
+  &-icon {
+    cursor: pointer;
+    display: flex;
+    height: 64px;
+    position: absolute;
+    right: 64px;
+    top: 370px;
+    transform: rotate(10deg);
+    transition: 0.25s transform ease-in-out;
+    width: 64px;
+
+    &:hover {
+      transform: rotate(0.5turn);
+    }
+
+    @include responsive(t-xs) {
+      right: 12px;
+      top: -32px;
+    }
+  }
+
+  &-wrapper {
+    padding: 64px 12px 96px;
+
+    @include responsive(s-xl) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    @include responsive(t-xs) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 24px;
+      padding-right: 24px;
+      width: calc(40% - 48px);
+    }
+  }
+
+  h2 {
+    color: $white;
+    font-size: 32px;
+    margin-bottom: 48px;
+
+    & b {
+      text-decoration: underline;
+    }
+  }
+
+  &-link {
+    border: 2px solid $white;
+    border-radius: 4px;
+    color: $white;
+    font-size: 20px;
+    padding: 16px 48px;
+    text-decoration: none;
+    transition: 0.25s background-position
+        ease-in-out,
+      0.25s color ease-in-out;
+    width: fit-content;
+
+    &:hover {
+      background-position: left;
+    }
+  }
+}

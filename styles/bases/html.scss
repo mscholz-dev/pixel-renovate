@@ -1,0 +1,55 @@
+ul,
+ol,
+p,
+span,
+a,
+button,
+label,
+input,
+table,
+select {
+  color: $black;
+  font-family: $secondary-font-regular;
+  line-height: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+thead {
+  color: $black;
+  font-family: $primary-font-bold;
+  line-height: normal;
+}
+
+body {
+  background: $white;
+  overflow-x: hidden;
+  position: relative;
+  width: 100vw;
+}
+
+button {
+  background: $transparent;
+  border: 0;
+  box-shadow: none !important;
+  padding: 0;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+}
+
+*::selection {
+  background-color: $primary-color;
+  color: $white;
+}
+
+*:focus-visible {
+  outline: 2px solid $primary-color;
+  border-radius: 2px;
+}

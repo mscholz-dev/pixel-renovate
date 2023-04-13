@@ -1,0 +1,133 @@
+.home-faq {
+  padding: 0 12px;
+  position: relative;
+
+  @include responsive(s-xl) {
+    padding: 0 24px;
+  }
+
+  &-clipboard-question {
+    cursor: pointer;
+    display: flex;
+    fill: $primary-color;
+    height: 64px;
+    position: absolute;
+    right: 12px;
+    top: -32px;
+    transform: rotate(10deg);
+    transition: 0.25s transform ease-in-out;
+    width: 64px;
+
+    &:hover {
+      transform: rotate(0.5turn);
+    }
+  }
+
+  &-main {
+    margin: auto;
+    max-width: 1000px;
+  }
+
+  &-title {
+    margin-bottom: 24px;
+
+    @include responsive(t-xs) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &-item {
+    cursor: pointer;
+    margin-bottom: 24px;
+    padding: 12px 0;
+    position: relative;
+
+    @include responsive(t-xs) {
+      margin-bottom: 32px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:after {
+      background: $black;
+      bottom: -6px;
+      content: "";
+      height: 1px;
+      position: absolute;
+      transition: 0.25s background ease-in-out;
+      width: 100%;
+    }
+
+    &:hover:not(.home-faq-item-current) {
+      &:after {
+        background: $secondary-color;
+      }
+
+      .home-faq-item {
+        &-icon {
+          fill: $secondary-color;
+          transform: rotate(30deg);
+        }
+
+        &-title {
+          color: $secondary-color;
+        }
+      }
+    }
+
+    &-title {
+      font-size: 24px;
+      margin-right: 48px;
+      transition: 0.25s color ease-in-out;
+    }
+
+    &-icon {
+      fill: $black;
+      height: 24px;
+      position: absolute;
+      right: 0;
+      top: 16px;
+      transition: 0.25s fill ease-in-out,
+        0.25s transform ease-in-out;
+      width: 24px;
+    }
+
+    &-container {
+      height: 0;
+      overflow: hidden;
+      transition: 0.25s height ease-in-out;
+      will-change: height;
+    }
+
+    &-text {
+      font-size: 16px;
+      padding-top: 12px;
+    }
+
+    &-title,
+    &-icon,
+    &-text,
+    &-container,
+    &:after {
+      pointer-events: none;
+    }
+
+    &-current {
+      &:after {
+        background: $primary-color;
+      }
+
+      .home-faq-item {
+        &-icon {
+          fill: $primary-color;
+        }
+
+        &-title {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

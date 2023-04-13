@@ -1,0 +1,163 @@
+.home-benefits {
+  margin: auto;
+  max-width: 324px;
+  position: relative;
+
+  @include responsive(s-xl) {
+    max-width: 550px;
+  }
+
+  @include responsive(t-xs) {
+    max-width: 610px;
+  }
+
+  @include responsive(t) {
+    max-width: 930px;
+  }
+
+  &-key {
+    cursor: pointer;
+    display: flex;
+    fill: $gold-color;
+    height: 64px;
+    position: absolute;
+    right: -12px;
+    top: 12px;
+    transition: 0.25s transform ease-in-out;
+    width: 64px;
+
+    @include responsive(t-xs) {
+      top: 48px;
+    }
+
+    &:hover {
+      transform: rotate(0.5turn);
+    }
+  }
+
+  &-title {
+    margin-bottom: 32px;
+
+    @include responsive(t-xs) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    @include responsive(s-xl) {
+      align-items: start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &-item {
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: $home-benefits-shadow;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 190px;
+    margin-bottom: 24px;
+    padding: 24px 12px;
+    overflow: hidden;
+    width: 300px;
+    will-change: transform;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include responsive(s-xl) {
+      height: 210px;
+      width: 240px;
+
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include responsive(t-xs) {
+      margin-bottom: 32px;
+      padding: 32px 24px;
+
+      &:nth-last-child(3) {
+        margin-bottom: 0;
+      }
+    }
+
+    &-assets {
+      height: 72px;
+      margin-bottom: 24px;
+      position: relative;
+      width: 72px;
+    }
+
+    &-icon,
+    &-blob {
+      display: flex;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    &-icon {
+      fill: $white;
+      height: 32px;
+      transition: 0.25s height ease-in-out,
+        0.25s width ease-in-out;
+      width: 32px;
+    }
+
+    &-blob {
+      height: 72px;
+      transition: 0.25s transform ease-in-out;
+      width: 72px;
+      z-index: 0;
+
+      path {
+        fill: $secondary-color;
+      }
+    }
+
+    &-title {
+      font-size: 20px;
+      margin-bottom: 12px;
+      transition: 0.25s color ease-in-out;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &-text {
+      font-size: 14px;
+      transition: 0.25s color ease-in-out;
+      z-index: 1;
+    }
+
+    &:hover {
+      .home-benefits-item {
+        &-icon {
+          height: 48px;
+          width: 48px;
+        }
+
+        &-blob {
+          transform: translate3d(-50%, -50%, 0)
+            scale(10);
+        }
+
+        &-title,
+        &-text {
+          color: $white;
+        }
+      }
+    }
+  }
+}

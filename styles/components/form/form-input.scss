@@ -1,0 +1,103 @@
+.form-input {
+  align-items: center;
+  display: flex;
+  margin: 24px 0 32px;
+  padding: 12px 6px;
+  position: relative;
+
+  &:before,
+  &:after {
+    bottom: -2px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  &:before {
+    background: $secondary-color;
+    transition: 0.25s background ease-in-out;
+  }
+
+  &:after {
+    background: $primary-color;
+    transition: 0.25s width ease-in-out;
+    width: 0;
+  }
+
+  &-icon {
+    display: flex;
+    fill: $secondary-color;
+    height: 24px;
+    margin-right: 12px;
+    transition: 0.25s fill ease-in-out;
+    width: 24px;
+  }
+
+  &-title {
+    left: 42px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    span {
+      display: inline-block;
+      font-family: $secondary-font-medium;
+      transition: 0.25s transform
+          $bounce-cubic-bezier,
+        0.25s color ease-in-out;
+      white-space: pre;
+    }
+  }
+
+  &-control {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  &-focus {
+    &:after {
+      width: 100%;
+    }
+
+    .form-input {
+      &-icon {
+        fill: $primary-color;
+      }
+
+      &-title {
+        span {
+          transform: translateY(-24px);
+        }
+      }
+    }
+  }
+
+  &-filled {
+    .form-input {
+      &-title {
+        span {
+          transform: translateY(-24px);
+        }
+      }
+    }
+  }
+
+  &-error {
+    &:before {
+      background: $primary-color;
+    }
+
+    .form-input {
+      &-title span {
+        color: $primary-color;
+      }
+
+      &-icon {
+        fill: $primary-color;
+      }
+    }
+  }
+}

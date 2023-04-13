@@ -1,0 +1,13 @@
+.wrapper {
+  &-padding {
+    &-y {
+      padding-bottom: 32px;
+      padding-top: 32px;
+
+      @include responsive(t-xs) {
+        padding-bottom: 64px;
+        padding-top: 64px;
+      }
+    }
+  }
+}

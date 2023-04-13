@@ -1,0 +1,181 @@
+.home-review {
+  background: $black;
+  padding: 32px 0 550px;
+  position: relative;
+  width: 100vw;
+
+  @include responsive(t-xs) {
+    padding-top: 64px;
+  }
+
+  @include responsive(t) {
+    padding: 64px 0;
+  }
+
+  &-star {
+    cursor: pointer;
+    display: flex;
+    fill: $yellow-color;
+    height: 64px;
+    position: absolute;
+    right: 12px;
+    top: -32px;
+    transform: rotate(10deg);
+    transition: 0.25s transform ease-in-out;
+    width: 64px;
+
+    &:hover {
+      transform: rotate(0.5turn);
+    }
+
+    @include responsive(t) {
+      left: 64px;
+      transform: rotate(-10deg);
+    }
+  }
+
+  &-main {
+    margin: auto;
+    max-width: 500px;
+    padding: 0 12px;
+    position: relative;
+
+    @include responsive(t) {
+      max-width: 1000px;
+      padding: 0 24px;
+    }
+  }
+
+  &-title {
+    color: $white;
+    margin-bottom: 32px;
+    max-width: 400px;
+  }
+
+  &-text {
+    color: $white;
+    max-width: 500px;
+  }
+
+  &-item {
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 24px;
+    position: absolute;
+    transform: rotate(-10deg);
+    transition: 0.25s transform ease-in-out;
+    width: 400px;
+
+    &:nth-child(1) {
+      background: $green-color;
+      bottom: -250px;
+      left: 0%;
+      z-index: 3;
+
+      @include responsive(t) {
+        bottom: auto;
+        left: auto;
+        right: 50px;
+        top: -140px;
+      }
+
+      @include responsive(d-xs) {
+        right: 80px;
+      }
+
+      @include responsive(d) {
+        right: 60px;
+      }
+    }
+
+    &:nth-child(2) {
+      background: $orange-color;
+      bottom: -400px;
+      left: 35%;
+      z-index: 2;
+
+      @include responsive(t) {
+        bottom: auto;
+        left: auto;
+        right: -200px;
+        top: -20px;
+      }
+
+      @include responsive(d-xs) {
+        right: -220px;
+      }
+
+      @include responsive(d) {
+        right: -310px;
+      }
+    }
+
+    &:nth-child(3) {
+      background: $blue-color;
+      bottom: -600px;
+      left: 20%;
+      z-index: 1;
+
+      @include responsive(t) {
+        bottom: auto;
+        left: auto;
+        right: -60px;
+        top: 160px;
+      }
+
+      @include responsive(d-xs) {
+        right: 0px;
+      }
+
+      @include responsive(d) {
+        right: -30px;
+      }
+    }
+
+    &:hover {
+      transform: rotate(-15deg);
+
+      .home-review-item {
+        &-quote {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-quote {
+      bottom: 24px;
+      fill: $white;
+      height: 96px;
+      opacity: 0.5;
+      position: absolute;
+      right: 24px;
+      transition: 0.25s opacity ease-in-out;
+      width: 96px;
+    }
+
+    &-text {
+      color: $white;
+      line-height: normal;
+      margin-bottom: 12px;
+    }
+
+    &-details {
+      align-items: center;
+      display: flex;
+    }
+
+    &-img {
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+
+    &-name {
+      color: $white;
+      margin-bottom: 8px;
+    }
+
+    &-subject {
+      color: $white;
+    }
+  }
+}

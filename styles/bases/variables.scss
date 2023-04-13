@@ -1,0 +1,140 @@
+// breakpoints
+$breakpoints: (
+  s-xs: 375px,
+  s: 480px,
+  s-xl: 576px,
+  t-xs: 768px,
+  t-s: 800px,
+  t: 992px,
+  t-xl: 1024px,
+  d-xs: 1200px,
+  d: 1440px,
+  d-xl: 1920px,
+);
+
+// color
+$transparent: transparent;
+
+$white: #fff;
+$black: #313552;
+
+$primary-color: #b8405e;
+
+$secondary-color: #2eb086;
+
+$green-color: #64d171;
+$orange-color: #f67457;
+$blue-color: #00a4fd;
+$yellow-color: #ffea20;
+$gold-color: #fac213;
+
+// gradient
+$primary-secondary-gradient: linear-gradient(
+  90deg,
+  $black,
+  $secondary-color
+);
+
+// shadow
+$header-shadow: rgba($black, 0.16) 0px 3px 6px,
+  rgba($black, 0.23) 0px 3px 6px;
+$home-benefits-shadow: rgba($black, 0.24) 0px 3px
+  8px;
+
+// cubic-bezier
+$header-cubic-bezier: cubic-bezier(
+  0.4,
+  0,
+  0.2,
+  1
+);
+$bounce-cubic-bezier: cubic-bezier(
+  0.68,
+  -0.55,
+  0.265,
+  1.55
+);
+
+// animations
+$loading-animation: loading 1s infinite linear;
+@keyframes loading {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+$loading-no-translate-animation: loadingNoTranslate
+  1s infinite linear;
+@keyframes loadingNoTranslate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+// fonts
+// primary
+$primary-font-regular: "primaryRegular";
+$primary-font-regular-path: "/fonts/cantarell/regular.ttf";
+
+$primary-font-bold: "primaryBold";
+$primary-font-bold-path: "/fonts/cantarell/bold.ttf";
+
+$secondary-font-regular: "secondaryRegular";
+$secondary-font-regular-path: "/fonts/fira-code/regular.ttf";
+
+$secondary-font-medium: "secondaryMedium";
+$secondary-font-medium-path: "/fonts/fira-code/medium.ttf";
+
+$secondary-font-semi-bold: "secondarySemiBold";
+$secondary-font-semi-bold-path: "/fonts/fira-code/semi-bold.ttf";
+
+$secondary-font-bold: "secondaryBold";
+$secondary-font-bold-path: "/fonts/fira-code/bold.ttf";
+
+// secondary
+
+// primary
+@font-face {
+  font-family: $primary-font-regular;
+  src: url($primary-font-regular-path)
+    format("truetype");
+}
+
+@font-face {
+  font-family: $primary-font-bold;
+  src: url($primary-font-bold-path)
+    format("truetype");
+}
+
+// secondary
+@font-face {
+  font-family: $secondary-font-regular;
+  src: url($secondary-font-regular-path)
+    format("truetype");
+}
+
+@font-face {
+  font-family: $secondary-font-medium;
+  src: url($secondary-font-medium-path)
+    format("truetype");
+}
+
+@font-face {
+  font-family: $secondary-font-semi-bold;
+  src: url($secondary-font-semi-bold-path)
+    format("truetype");
+}
+
+@font-face {
+  font-family: $secondary-font-bold;
+  src: url($secondary-font-bold-path)
+    format("truetype");
+}

@@ -1,0 +1,9 @@
+.map {
+  height: 300px;
+  margin-bottom: 24px;
+  z-index: 0;
+
+  @include responsive(t-xs) {
+    margin-bottom: 0;
+  }
+}

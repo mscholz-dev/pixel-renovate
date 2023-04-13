@@ -1,0 +1,106 @@
+.footer {
+  background: $black;
+  background: $primary-secondary-gradient;
+  padding: 24px 12px;
+
+  @include responsive(s-xl) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  &-main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1000px;
+
+    @include responsive(t-xs) {
+      flex-direction: row;
+    }
+  }
+
+  &-social-link {
+    align-items: center;
+    display: flex;
+    margin-bottom: 24px;
+
+    @include responsive(t-xs) {
+      margin-bottom: 0;
+    }
+
+    &-item {
+      display: flex;
+      fill: $white;
+      height: 32px;
+      margin-right: 12px;
+      transition: 0.25s fill ease-in-out,
+        0.25s transform ease-in-out;
+      width: 32px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        fill: $primary-color;
+        transform: scale(1.25);
+      }
+    }
+  }
+
+  &-brand {
+    align-items: center;
+    display: flex;
+    margin-bottom: 24px;
+    text-decoration: none;
+
+    @include responsive(t-xs) {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      .footer-brand {
+        &-logo {
+          transform: scale(1.2);
+        }
+
+        &-title {
+          color: $primary-color;
+        }
+      }
+    }
+
+    &-logo {
+      height: 32px;
+      margin-right: 8px;
+      transition: 0.25s transform ease-in-out;
+      width: 32px;
+    }
+
+    &-title {
+      color: $white;
+      font-size: 20px;
+      transition: 0.25s color ease-in-out;
+    }
+  }
+
+  &-copyright {
+    align-items: center;
+    display: flex;
+
+    &-icon {
+      display: flex;
+      fill: $white;
+      height: 14px;
+      margin-right: 8px;
+      width: 14px;
+    }
+
+    &-text {
+      color: $white;
+      font-size: 14px;
+    }
+  }
+}
