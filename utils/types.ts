@@ -152,3 +152,13 @@ export type TTypeServiceProps = {
   type: string;
   service: string;
 };
+
+export type TServiceData = {
+  id: number;
+  img: string;
+  title: string;
+  price: string;
+  time: string;
+  url: string;
+  content: string;
+}[];

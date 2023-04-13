@@ -34,8 +34,7 @@ module.exports = {
     PAGE_ID: process.env.PAGE_ID,
     DATABASE_SERVICE_ID:
       process.env.DATABASE_SERVICE_ID,
-    DATABASE_SUPPORT_ID:
-      process.env.DATABASE_SUPPORT_ID,
+    WEBHOOK_SUPPORT: process.env.WEBHOOK_SUPPORT,
   },
   // disable trash header
   poweredByHeader: false,
