@@ -14,9 +14,8 @@ const CardService: FC<ICardService> = ({
   time,
   price,
   url,
-  category,
+  service,
   servicePath,
-  serviceType,
 }) => {
   return (
     <div className="card-service">
@@ -53,8 +52,8 @@ const CardService: FC<ICardService> = ({
               pathname:
                 "/demande-de-prise-en-charge",
               query: {
-                type: serviceType,
-                service: title,
+                service,
+                prestation: title,
               },
             }}
             className="card-service-btn-primary"
@@ -64,7 +63,7 @@ const CardService: FC<ICardService> = ({
           </Link>
 
           <Link
-            href={`/${category}/${url}`}
+            href={`/${service}/${url}`}
             className="card-service-btn-secondary"
           >
             <IconInfo className="card-service-btn-icon" />

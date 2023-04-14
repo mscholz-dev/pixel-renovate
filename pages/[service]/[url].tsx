@@ -30,7 +30,7 @@ import {
 
 const ServicesUrl: FC<IServicesUrl> = ({
   servicePath,
-  serviceType,
+  service,
   img,
   title,
   time,
@@ -66,7 +66,7 @@ const ServicesUrl: FC<IServicesUrl> = ({
       <section ref={sectionRef}>
         <SpecificService
           servicePath={servicePath}
-          serviceType={serviceType}
+          service={service}
           img={img}
           title={title}
           time={time}
@@ -170,7 +170,7 @@ export const getStaticProps = async ({
       return {
         props: {
           servicePath: computersData.servicePath,
-          serviceType: computersData.serviceType,
+          service: computersData.service,
           img: data.img,
           title: data.title,
           time: data.time,
@@ -183,7 +183,7 @@ export const getStaticProps = async ({
       // get data
       data =
         consolesData.data.find(
-          ({ url }) => url === url,
+          (item) => item.url === url,
         ) || null;
 
       // not found
@@ -196,7 +196,7 @@ export const getStaticProps = async ({
       return {
         props: {
           servicePath: consolesData.servicePath,
-          serviceType: consolesData.serviceType,
+          service: consolesData.service,
           img: data.img,
           title: data.title,
           time: data.time,
@@ -209,7 +209,7 @@ export const getStaticProps = async ({
       // get data
       data =
         mobilesData.data.find(
-          ({ url }) => url === url,
+          (item) => item.url === url,
         ) || null;
 
       // not found
@@ -222,7 +222,7 @@ export const getStaticProps = async ({
       return {
         props: {
           servicePath: mobilesData.servicePath,
-          serviceType: mobilesData.serviceType,
+          service: mobilesData.service,
           img: data.img,
           title: data.title,
           time: data.time,
@@ -235,7 +235,7 @@ export const getStaticProps = async ({
       // get data
       data =
         webData.data.find(
-          ({ url }) => url === url,
+          (item) => item.url === url,
         ) || null;
 
       // not found
@@ -248,7 +248,7 @@ export const getStaticProps = async ({
       return {
         props: {
           servicePath: webData.servicePath,
-          serviceType: webData.serviceType,
+          service: webData.service,
           img: data.img,
           title: data.title,
           time: data.time,
@@ -261,7 +261,7 @@ export const getStaticProps = async ({
       // get data
       data =
         keyboardsData.data.find(
-          ({ url }) => url === url,
+          (item) => item.url === url,
         ) || null;
 
       // not found
@@ -274,7 +274,7 @@ export const getStaticProps = async ({
       return {
         props: {
           servicePath: keyboardsData.servicePath,
-          serviceType: keyboardsData.serviceType,
+          service: keyboardsData.service,
           img: data.img,
           title: data.title,
           time: data.time,

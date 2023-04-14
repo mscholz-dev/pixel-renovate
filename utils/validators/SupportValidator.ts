@@ -22,7 +22,6 @@ export default class SupportValidator extends Validator {
       phone,
       postalCode,
       city,
-      serviceType,
       brand,
       model,
       title,
@@ -46,19 +45,16 @@ export default class SupportValidator extends Validator {
 
     switch (service) {
       case computersData.service:
-        specificSchema.serviceType = serviceType;
         specificSchema.brand = brand;
         specificSchema.model = model;
         break;
 
       case consolesData.service:
-        specificSchema.serviceType = serviceType;
         specificSchema.brand = brand;
         specificSchema.model = model;
         break;
 
       case mobilesData.service:
-        specificSchema.serviceType = serviceType;
         specificSchema.brand = brand;
         specificSchema.model = model;
         break;
@@ -67,7 +63,6 @@ export default class SupportValidator extends Validator {
         break;
 
       case keyboardsData.service:
-        specificSchema.serviceType = serviceType;
         specificSchema.brand = brand;
         specificSchema.model = model;
         break;
@@ -129,14 +124,6 @@ export default class SupportValidator extends Validator {
           return "Le champ Ville est requis";
         if (value.length > 60)
           return "Le champ Ville ne doit pas dépasser 60 caractères";
-        return "";
-
-      // serviceType
-      case "serviceType":
-        if (!value)
-          return "Le champ Type d'appareil est requis";
-        if (value.length > 60)
-          return "Le champ Type d'appareil ne doit pas dépasser 60 caractères";
         return "";
 
       // brand

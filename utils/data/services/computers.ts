@@ -4,7 +4,6 @@ import { TServiceObject } from "../../types";
 const computersData: TServiceObject = {
   service: "ordinateurs",
   servicePath: "computers",
-  serviceType: "Ordinateur",
   data: [
     {
       id: 0,

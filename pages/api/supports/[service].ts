@@ -82,7 +82,6 @@ ${
   service === mobilesData.service ||
   service === keyboardsData.service
     ? `
-**Type d'appareil :** ${req.body.serviceType}
 **Marque :** ${req.body.brand}
 **Modèle :** ${req.body.model}
   `

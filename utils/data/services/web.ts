@@ -4,7 +4,6 @@ import { TServiceObject } from "../../types";
 const webData: TServiceObject = {
   service: "web",
   servicePath: "web",
-  serviceType: "Site web",
   data: [
     {
       id: 0,

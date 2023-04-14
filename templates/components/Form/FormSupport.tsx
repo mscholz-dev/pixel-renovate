@@ -196,25 +196,6 @@ const FormSupport: FC<IFormSupport> = ({
           <>
             <FormInput
               icon={<IconMagnifyingGlass />}
-              id="serviceType"
-              handleChange={(e: ChangeEvent) =>
-                Form.handleChange(
-                  e,
-                  "serviceType",
-                  setForm,
-                  form,
-                )
-              }
-              label="Type d'appareil"
-              type="text"
-              value={form.serviceType}
-              min={0}
-              max={60}
-              ariaDescribedby=""
-            />
-
-            <FormInput
-              icon={<IconMagnifyingGlass />}
               id="brand"
               handleChange={(e: ChangeEvent) =>
                 Form.handleChange(

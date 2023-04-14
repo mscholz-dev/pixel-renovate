@@ -10,13 +10,7 @@ import { ICardSectionService } from "../../../utils/interfaces";
 
 const CardSectionService: FC<
   ICardSectionService
-> = ({
-  title,
-  items,
-  category,
-  servicePath,
-  serviceType,
-}) => {
+> = ({ title, items, service, servicePath }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // set footer at the bottom of the screen if content is tiny
@@ -63,9 +57,8 @@ const CardSectionService: FC<
               time={time}
               price={price}
               url={url}
-              category={category}
+              service={service}
               servicePath={servicePath}
-              serviceType={serviceType}
             />
           ),
         )}

@@ -4,7 +4,6 @@ import { TServiceObject } from "../../types";
 const consolesData: TServiceObject = {
   service: "consoles",
   servicePath: "consoles",
-  serviceType: "Console",
   data: [
     {
       id: 0,

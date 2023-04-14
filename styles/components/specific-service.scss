@@ -87,6 +87,34 @@
         margin-bottom: 0;
       }
     }
+
+    ul {
+      margin-bottom: 12px;
+
+      @include responsive(s-xl) {
+        margin-bottom: 24px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      li {
+        margin-left: 16px;
+        position: relative;
+
+        &:before {
+          background: $black;
+          border-radius: 50%;
+          content: "";
+          height: 6px;
+          left: -16px;
+          position: absolute;
+          top: 7px;
+          width: 6px;
+        }
+      }
+    }
   }
 
   &-btn {

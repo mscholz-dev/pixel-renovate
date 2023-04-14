@@ -44,7 +44,6 @@ const DemandeDePriseEnCharge: FC<
       phone: "",
       postalCode: "",
       city: "",
-      serviceType: "",
       brand: "",
       model: "",
       title: "",
@@ -54,7 +53,6 @@ const DemandeDePriseEnCharge: FC<
 
   const [form, setForm] = useState<TSupportForm>({
     ...defaultForm,
-    serviceType: service,
     title,
   });
 

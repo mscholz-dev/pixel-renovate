@@ -24,7 +24,6 @@ import { TGetStaticPathServices } from "@/utils/types";
 const Services: FC<IServices> = ({
   service,
   servicePath,
-  serviceType,
   data,
 }) => {
   return (
@@ -40,9 +39,8 @@ const Services: FC<IServices> = ({
           </h2>
         }
         items={data}
-        category={service}
+        service={service}
         servicePath={servicePath}
-        serviceType={serviceType}
       />
     </Page>
   );

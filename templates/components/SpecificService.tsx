@@ -9,7 +9,7 @@ import HTMLReactParser from "html-react-parser";
 
 const SpecificService: FC<ISpecificService> = ({
   servicePath,
-  serviceType,
+  service,
   img,
   title,
   time,
@@ -51,8 +51,8 @@ const SpecificService: FC<ISpecificService> = ({
             pathname:
               "/demande-de-prise-en-charge",
             query: {
-              type: serviceType,
-              service: title,
+              service,
+              prestation: title,
             },
           }}
           className="specific-service-btn"

@@ -29,9 +29,8 @@ export interface IWrapper {
 export interface ICardSectionService {
   title: JSX.Element;
   items: TServiceData[];
-  category: string;
+  service: string;
   servicePath: string;
-  serviceType: string;
 }
 
 export interface ICardService {
@@ -40,9 +39,8 @@ export interface ICardService {
   time: string;
   price: string;
   url: string;
-  category: string;
+  service: string;
   servicePath: string;
-  serviceType: string;
 }
 
 export interface IBlockCta {
@@ -90,13 +88,12 @@ export interface IFormPage {
 export interface IServices {
   service: string;
   servicePath: string;
-  serviceType: string;
   data: TServiceData[];
 }
 
 export interface IServicesUrl {
   servicePath: string;
-  serviceType: string;
+  service: string;
   img: string;
   title: string;
   time: string;
@@ -106,7 +103,7 @@ export interface IServicesUrl {
 
 export interface ISpecificService {
   servicePath: string;
-  serviceType: string;
+  service: string;
   img: string;
   title: string;
   time: string;

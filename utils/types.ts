@@ -2,7 +2,7 @@ import { ChangeEvent } from "react";
 
 export type THeaderLinks = {
   id: number;
-  url: string;
+  url: string | object;
   title: string;
   icon: JSX.Element;
 }[];
@@ -108,7 +108,6 @@ export type TSupportForm = {
   phone: string;
   postalCode: string;
   city: string;
-  serviceType: string;
   brand: string;
   model: string;
   title: string;
@@ -129,7 +128,6 @@ export type TServiceData = {
 export type TServiceObject = {
   service: string;
   servicePath: string;
-  serviceType: string;
   data: TServiceData[];
 };
 

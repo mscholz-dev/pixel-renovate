@@ -21,37 +21,40 @@ const Header: FC = () => {
   const links: THeaderLinks = [
     {
       id: 0,
-      url: "ordinateurs",
+      url: "/ordinateurs",
       title: "Ordinateurs",
       icon: <IconComputer />,
     },
     {
       id: 1,
-      url: "consoles",
+      url: "/consoles",
       title: "Consoles",
       icon: <IconConsole />,
     },
     {
       id: 2,
-      url: "mobiles",
+      url: "/mobiles",
       title: "Mobiles",
       icon: <IconMobile />,
     },
     {
       id: 3,
-      url: "web",
+      url: "/web",
       title: "Sites web",
       icon: <IconWeb />,
     },
     {
       id: 4,
-      url: "claviers",
+      url: "/claviers",
       title: "Claviers",
       icon: <IconKeyboard />,
     },
     {
       id: 5,
-      url: "demande-de-prise-en-charge",
+      url: {
+        pathname: "demande-de-prise-en-charge",
+        query: { service: "" },
+      },
       title: "Demande de prise en charge",
       icon: <IconContact />,
     },
@@ -76,7 +79,7 @@ const Header: FC = () => {
             ({ id, url, title, icon }) => (
               <Link
                 key={id}
-                href={`/${url}`}
+                href={url}
                 className="header-category-item"
               >
                 <span className="header-category-item-container">
