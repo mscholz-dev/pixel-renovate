@@ -54,6 +54,8 @@ const DemandeDePriseEnCharge: FC<
 
   const [form, setForm] = useState<TSupportForm>({
     ...defaultForm,
+    serviceType: service,
+    title,
   });
 
   const handleSubmit = async (
@@ -61,49 +63,56 @@ const DemandeDePriseEnCharge: FC<
   ): Promise<void> => {
     e.preventDefault();
 
-    // // prevent spamming
-    // if (loading) return;
+    // prevent spamming
+    if (loading) return;
 
-    // setLoading(true);
+    setLoading(true);
 
-    // const errors =
-    //   SupportValidator.inspectSupportData(form);
+    const errors =
+      SupportValidator.inspectSupportData(
+        form,
+        service,
+      );
 
-    // if (errors.length) {
-    //   for (const { key, message } of errors) {
-    //     SupportValidator.errorStyle(key);
-    //     toast.error(message);
-    //   }
+    if (errors.length) {
+      for (const { key, message } of errors) {
+        SupportValidator.errorStyle(key);
+        toast.error(message);
+      }
 
-    //   setLoading(false);
-    //   return;
-    // }
+      setLoading(false);
+      return;
+    }
 
-    // try {
-    //   await axios.post("/api/supports", form);
+    try {
+      await axios.post(
+        `/api/supports/${service}`,
+        form,
+      );
 
-    //   toast.success(
-    //     "Votre demande de prise en charge a été pris en compte",
-    //   );
+      toast.success(
+        "Votre demande de prise en charge a été pris en compte",
+      );
 
-    //   // reset form
-    //   setForm(defaultForm);
+      // reset form
+      setForm(defaultForm);
 
-    //   setLoading(false);
+      setLoading(false);
 
-    //   // scroll to top
-    //   window.scrollTo({
-    //     top: 0,
-    //     left: 0,
-    //     behavior: "smooth",
-    //   });
+      // scroll to top
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
 
-    //   return;
-    // } catch (err: unknown) {
-    //   toast.error("Une erreur est survenu");
-    //   setLoading(false);
-    //   return;
-    // }
+      return;
+    } catch (err: unknown) {
+      console.error(err);
+      toast.error("Une erreur est survenu");
+      setLoading(false);
+      return;
+    }
   };
 
   return (

@@ -1,6 +1,13 @@
 import Validator from "./Validator";
 import RegexClass from "../Regex";
 
+// services data
+import computersData from "@/utils/data/services/computers";
+import consolesData from "@/utils/data/services/consoles";
+import mobilesData from "@/utils/data/services/mobiles";
+import webData from "@/utils/data/services/web";
+import keyboardsData from "@/utils/data/services/keyboards";
+
 // classes
 const Regex = new RegexClass();
 
@@ -8,9 +15,69 @@ const Regex = new RegexClass();
 import { TSupportForm } from "../types";
 
 export default class SupportValidator extends Validator {
-  inspectSupportData(schema: TSupportForm) {
+  inspectSupportData(
+    {
+      fullName,
+      email,
+      phone,
+      postalCode,
+      city,
+      serviceType,
+      brand,
+      model,
+      title,
+      description,
+      consent,
+    }: TSupportForm,
+    service: string,
+  ) {
+    const specificSchema: {
+      [key: string]: string | boolean;
+    } = {
+      fullName,
+      email,
+      phone,
+      postalCode,
+      city,
+      title,
+      description,
+      consent,
+    };
+
+    switch (service) {
+      case computersData.service:
+        specificSchema.serviceType = serviceType;
+        specificSchema.brand = brand;
+        specificSchema.model = model;
+        break;
+
+      case consolesData.service:
+        specificSchema.serviceType = serviceType;
+        specificSchema.brand = brand;
+        specificSchema.model = model;
+        break;
+
+      case mobilesData.service:
+        specificSchema.serviceType = serviceType;
+        specificSchema.brand = brand;
+        specificSchema.model = model;
+        break;
+
+      case webData.service:
+        break;
+
+      case keyboardsData.service:
+        specificSchema.serviceType = serviceType;
+        specificSchema.brand = brand;
+        specificSchema.model = model;
+        break;
+
+      default:
+        break;
+    }
+
     const errors = this.inspectData(
-      schema,
+      specificSchema,
       this.errorMessage,
     );
 
@@ -64,8 +131,8 @@ export default class SupportValidator extends Validator {
           return "Le champ Ville ne doit pas dépasser 60 caractères";
         return "";
 
-      // deviceType
-      case "deviceType":
+      // serviceType
+      case "serviceType":
         if (!value)
           return "Le champ Type d'appareil est requis";
         if (value.length > 60)
@@ -88,16 +155,16 @@ export default class SupportValidator extends Validator {
           return "Le champ Modèle ne doit pas dépasser 60 caractères";
         return "";
 
-      // service
-      case "service":
+      // title
+      case "title":
         if (!value)
           return "Le champ Prestation est requis";
         if (value.length > 255)
           return "Le champ Prestation ne doit pas dépasser 255 caractères";
         return "";
 
-      // breakdown
-      case "breakdown":
+      // description
+      case "description":
         if (!value)
           return "Le champ Description de la panne est requis";
         if (value.length > 5_000)

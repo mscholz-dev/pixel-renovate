@@ -1,9 +1,14 @@
 .form-input {
   align-items: center;
+  cursor: text;
   display: flex;
   margin: 24px 0 32px;
   padding: 12px 6px;
   position: relative;
+
+  input {
+    cursor: text;
+  }
 
   &:before,
   &:after {
