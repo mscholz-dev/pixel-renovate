@@ -6,6 +6,8 @@ import { IFormPage } from "@/utils/interfaces";
 import Image from "next/image";
 
 const FormPage: FC<IFormPage> = ({
+  imgSrc,
+  imgAlt,
   children,
 }) => {
   return (
@@ -27,8 +29,8 @@ const FormPage: FC<IFormPage> = ({
 
         <aside className="form-page-aside">
           <Image
-            src="/img/services/keyboards/keyboard-white.webp"
-            alt="Clavier blanc et souris blanche Apple"
+            src={`/img/services/${imgSrc}.webp`}
+            alt={imgAlt}
             height={500}
             width={500}
             className="form-page-aside-img"

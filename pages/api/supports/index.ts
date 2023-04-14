@@ -2,9 +2,8 @@ import {
   NextApiRequest,
   NextApiResponse,
 } from "next";
-import { Client } from "@notionhq/client";
-import SupportValidatorClass from "@/utils/validators/SupportValidator";
 import axios from "axios";
+import SupportValidatorClass from "@/utils/validators/SupportValidator";
 
 // classes
 const SupportValidator =
@@ -35,7 +34,7 @@ const supports = async (
           content: `
 **Nom et prénom :** ${req.body.fullName}
 **Email :** ${req.body.email}
-**Téléphone :** ${req.body.phone}
+**Mobiles :** ${req.body.phone}
 
 **Code postal :** ${req.body.postalCode}
 **Ville :** ${req.body.city}

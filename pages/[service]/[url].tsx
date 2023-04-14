@@ -1,4 +1,8 @@
-import React, { FC } from "react";
+import React, {
+  FC,
+  useRef,
+  useEffect,
+} from "react";
 import Page from "@/templates/layouts/Page";
 import DataMeta from "@/utils/data/meta.json";
 import {
@@ -13,6 +17,7 @@ import computersData from "@/utils/data/services/computers";
 import consolesData from "@/utils/data/services/consoles";
 import mobilesData from "@/utils/data/services/mobiles";
 import webData from "@/utils/data/services/web";
+import keyboardsData from "@/utils/data/services/keyboards";
 
 // interfaces
 import { IServicesUrl } from "@/utils/interfaces";
@@ -32,13 +37,33 @@ const ServicesUrl: FC<IServicesUrl> = ({
   price,
   content,
 }) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const handleFullHeight = () => {
+    if (!sectionRef.current) return;
+
+    const footer =
+      document.getElementById("footer");
+
+    if (!footer) return;
+
+    sectionRef.current.style.minHeight = `calc(100vh - ${footer.offsetHeight}px - 56px)`;
+  };
+
+  useEffect(() => {
+    handleFullHeight();
+    window.addEventListener(
+      "resize",
+      handleFullHeight,
+    );
+  }, []);
+
   return (
     <Page
       title={title}
       description={DataMeta.description}
-      padding
     >
-      <section>
+      <section ref={sectionRef}>
         <SpecificService
           servicePath={servicePath}
           serviceType={serviceType}
@@ -61,7 +86,7 @@ export const getStaticPaths: GetStaticPaths<{
   // computers urls
   const computersUrls = computersData.data.map(
     ({ url }) => ({
-      services: computersData.service,
+      service: computersData.service,
       url,
     }),
   );
@@ -69,7 +94,7 @@ export const getStaticPaths: GetStaticPaths<{
   // consoles urls
   const consolesUrls = consolesData.data.map(
     ({ url }) => ({
-      services: consolesData.service,
+      service: consolesData.service,
       url,
     }),
   );
@@ -77,16 +102,24 @@ export const getStaticPaths: GetStaticPaths<{
   // mobiles urls
   const mobilesUrls = mobilesData.data.map(
     ({ url }) => ({
-      services: mobilesData.service,
+      service: mobilesData.service,
       url,
     }),
   );
 
   // web urls
   const webUrls = webData.data.map(({ url }) => ({
-    services: webData.service,
+    service: webData.service,
     url,
   }));
+
+  // keyboards urls
+  const keyboardsUrls = keyboardsData.data.map(
+    ({ url }) => ({
+      service: keyboardsData.service,
+      url,
+    }),
+  );
 
   // services urls
   const servicesUrls = [
@@ -94,13 +127,14 @@ export const getStaticPaths: GetStaticPaths<{
     ...consolesUrls,
     ...mobilesUrls,
     ...webUrls,
+    ...keyboardsUrls,
   ];
 
   // create static specific paths
   const paths: TGetStaticPathSpecificService =
-    servicesUrls.map(({ services, url }) => ({
+    servicesUrls.map(({ service, url }) => ({
       params: {
-        services,
+        service,
         url,
       },
     }));
@@ -112,13 +146,13 @@ export const getStaticPaths: GetStaticPaths<{
 };
 
 export const getStaticProps = async ({
-  params: { services, url },
+  params: { service, url },
 }: GetStaticPropsContext<any>): Promise<
   GetStaticPropsResult<any>
 > => {
   let data: null | TServiceData = null;
 
-  switch (services) {
+  switch (service) {
     case computersData.service:
       // get data
       data =
@@ -215,6 +249,32 @@ export const getStaticProps = async ({
         props: {
           servicePath: webData.servicePath,
           serviceType: webData.serviceType,
+          img: data.img,
+          title: data.title,
+          time: data.time,
+          price: data.price,
+          content: data.content,
+        },
+      };
+
+    case keyboardsData.service:
+      // get data
+      data =
+        keyboardsData.data.find(
+          ({ url }) => url === url,
+        ) || null;
+
+      // not found
+      if (data === null)
+        return {
+          notFound: true,
+        };
+
+      // return data
+      return {
+        props: {
+          servicePath: keyboardsData.servicePath,
+          serviceType: keyboardsData.serviceType,
           img: data.img,
           title: data.title,
           time: data.time,

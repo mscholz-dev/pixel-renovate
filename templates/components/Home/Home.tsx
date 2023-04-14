@@ -18,7 +18,7 @@ const Home: FC = () => {
       <div className="home-main">
         <h2 className="home-title">
           <IconLogo className="home-title-logo" />
-          Pixel Skill
+          Pixel Renovate
         </h2>
 
         <div className="home-typing-container">

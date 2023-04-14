@@ -4,6 +4,9 @@ import {
   SetStateAction,
 } from "react";
 
+// types
+import { TFormInput } from "./types";
+
 export default class Form {
   handleChange(
     e: ChangeEvent,

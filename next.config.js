@@ -19,7 +19,7 @@ const securityHeaders = [
 module.exports = {
   // disabled strict mode for render useEffect only once
   // reactStrictMode: true,
-  // import svg in .js file
+  // import svg
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -30,11 +30,15 @@ module.exports = {
   },
   // init .env variables
   env: {
-    NOTION_TOKEN: process.env.NOTION_TOKEN,
-    PAGE_ID: process.env.PAGE_ID,
-    DATABASE_SERVICE_ID:
-      process.env.DATABASE_SERVICE_ID,
-    WEBHOOK_SUPPORT: process.env.WEBHOOK_SUPPORT,
+    WEBHOOK_GENERAL: process.env.WEBHOOK_GENERAL,
+    WEBHOOK_COMPUTERS:
+      process.env.WEBHOOK_COMPUTERS,
+    WEBHOOK_CONSOLES:
+      process.env.WEBHOOK_CONSOLES,
+    WEBHOOK_MOBILES: process.env.WEBHOOK_MOBILES,
+    WEBHOOK_WEB: process.env.WEBHOOK_WEB,
+    WEBHOOK_KEYBOARDS:
+      process.env.WEBHOOK_KEYBOARDS,
   },
   // disable trash header
   poweredByHeader: false,

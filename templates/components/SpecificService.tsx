@@ -5,6 +5,7 @@ import Link from "next/link";
 
 // interfaces
 import { ISpecificService } from "@/utils/interfaces";
+import HTMLReactParser from "html-react-parser";
 
 const SpecificService: FC<ISpecificService> = ({
   servicePath,
@@ -42,7 +43,7 @@ const SpecificService: FC<ISpecificService> = ({
         </div>
 
         <div className="specific-service-content">
-          {content}
+          {HTMLReactParser(content)}
         </div>
 
         <Link

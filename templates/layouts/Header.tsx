@@ -5,6 +5,9 @@ import IconBurgerMenu from "../../public/icons/burger-menu.svg";
 import IconComputer from "../../public/icons/computer.svg";
 import IconConsole from "../../public/icons/console.svg";
 import IconMobile from "../../public/icons/mobile.svg";
+import IconWeb from "@/public/icons/web.svg";
+import IconKeyboard from "@/public/icons/keyboard.svg";
+import IconContact from "@/public/icons/contact.svg";
 
 // types
 import { THeaderLinks } from "../../utils/types";
@@ -34,6 +37,24 @@ const Header: FC = () => {
       title: "Mobiles",
       icon: <IconMobile />,
     },
+    {
+      id: 3,
+      url: "web",
+      title: "Sites web",
+      icon: <IconWeb />,
+    },
+    {
+      id: 4,
+      url: "claviers",
+      title: "Claviers",
+      icon: <IconKeyboard />,
+    },
+    {
+      id: 5,
+      url: "demande-de-prise-en-charge",
+      title: "Demande de prise en charge",
+      icon: <IconContact />,
+    },
   ];
 
   return (
@@ -46,7 +67,7 @@ const Header: FC = () => {
         <Link href="/" className="header-brand">
           <IconLogo className="header-brand-logo" />
           <h1 className="header-brand-title">
-            Pixel Skill
+            Pixel Renovate
           </h1>
         </Link>
 
@@ -58,11 +79,13 @@ const Header: FC = () => {
                 href={`/${url}`}
                 className="header-category-item"
               >
-                <span className="header-category-item-icon">
-                  {icon}
-                </span>
-                <span className="header-category-item-title">
-                  {title}
+                <span className="header-category-item-container">
+                  <span className="header-category-item-icon">
+                    {icon}
+                  </span>
+                  <span className="header-category-item-title">
+                    {title}
+                  </span>
                 </span>
               </Link>
             ),

@@ -1,291 +1,291 @@
 import React, {
   FC,
-  SyntheticEvent,
-  useState,
   ChangeEvent,
+  useState,
+  useEffect,
 } from "react";
 import FormInput from "@/templates/components/Form/FormInput";
 import FormCheckbox from "@/templates/components/Form/FormCheckbox";
 import FormTextarea from "@/templates/components/Form/FormTextarea";
-import Wrapper from "@/templates/layouts/Wrapper";
+import FormClass from "@/utils/Form";
+import IconLoader from "@/public/icons/loader.svg";
+import FormPage from "./FormPage";
 import IconUser from "@/public/icons/user.svg";
 import IconContact from "@/public/icons/contact.svg";
 import IconPhone from "@/public/icons/phone.svg";
 import IconEnvelopes from "@/public/icons/envelopes.svg";
 import IconCity from "@/public/icons/city.svg";
-import IconMagnifyingGlass from "@/public/icons/magnifying-glass.svg";
-import FormClass from "@/utils/Form";
-import SupportValidatorClass from "@/utils/validators/SupportValidator";
-import { toast } from "react-toastify";
-import IconLoader from "@/public/icons/loader.svg";
-import axios from "axios";
 import IconBellConcierge from "@/public/icons/bell-concierge.svg";
-import FormPage from "./FormPage";
+import IconMagnifyingGlass from "@/public/icons/magnifying-glass.svg";
+
+// services data
+import computersData from "@/utils/data/services/computers";
+import consolesData from "@/utils/data/services/consoles";
+import mobilesData from "@/utils/data/services/mobiles";
+import webData from "@/utils/data/services/web";
+import keyboardsData from "@/utils/data/services/keyboards";
 
 // classes
 const Form = new FormClass();
-const SupportValidator =
-  new SupportValidatorClass();
 
-// types
-import {
-  TFormInput,
-  TSupportForm,
-  TTypeServiceProps,
-} from "@/utils/types";
+// interfaces
+import { IFormSupport } from "@/utils/interfaces";
 
-const FormSupport: FC<TTypeServiceProps> = ({
-  type,
+const FormSupport: FC<IFormSupport> = ({
+  loading,
+  form,
+  setForm,
+  handleSubmit,
   service,
 }) => {
-  const [loading, setLoading] =
-    useState<boolean>(false);
-
-  const defaultForm = {
-    fullName: "",
-    email: "",
-    phone: "",
-    postalCode: "",
-    city: "",
-    deviceType: "",
-    brand: "",
-    model: "",
-    service: "",
-    breakdown: "",
-    consent: false,
-  };
-
-  const [form, setForm] = useState<TSupportForm>({
-    ...defaultForm,
-    deviceType: type,
-    service,
+  const [img, setImg] = useState({
+    src: `${computersData.servicePath}/mac-gradient-semi-open`,
+    alt: "Mac entre ouvert avec un reflet coloré",
   });
 
-  const formInputs: TFormInput[] = [
-    {
-      icon: <IconUser />,
-      id: "fullName",
-      handleChange: (e: ChangeEvent) =>
-        Form.handleChange(
-          e,
-          "fullName",
-          setForm,
-          form,
-        ),
-      label: "Nom et prénom",
-      type: "text",
-      value: form.fullName,
-      min: 0,
-      max: 60,
-      ariaDescribedby: "",
-    },
-    {
-      icon: <IconContact />,
-      id: "email",
-      handleChange: (e: ChangeEvent) =>
-        Form.handleChange(
-          e,
-          "email",
-          setForm,
-          form,
-        ),
-      label: "Email",
-      type: "email",
-      value: form.email,
-      min: 0,
-      max: 255,
-      ariaDescribedby: "",
-    },
-    {
-      icon: <IconPhone />,
-      id: "phone",
-      handleChange: (e: ChangeEvent) =>
-        Form.handleChange(
-          e,
-          "phone",
-          setForm,
-          form,
-        ),
-      label: "Numéro de téléphone",
-      type: "number",
-      value: form.phone,
-      min: 0,
-      max: 10,
-      ariaDescribedby: "",
-    },
-    {
-      icon: <IconEnvelopes />,
-      id: "postalCode",
-      handleChange: (e: ChangeEvent) =>
-        Form.handleChange(
-          e,
-          "postalCode",
-          setForm,
-          form,
-        ),
-      label: "Code postal",
-      type: "number",
-      value: form.postalCode,
-      min: 0,
-      max: 5,
-      ariaDescribedby: "",
-    },
-    {
-      icon: <IconCity />,
-      id: "city",
-      handleChange: (e: ChangeEvent) =>
-        Form.handleChange(
-          e,
-          "city",
-          setForm,
-          form,
-        ),
-      label: "Ville",
-      type: "text",
-      value: form.city,
-      min: 0,
-      max: 60,
-      ariaDescribedby: "",
-    },
-    {
-      icon: <IconMagnifyingGlass />,
-      id: "deviceType",
-      handleChange: (e: ChangeEvent) =>
-        Form.handleChange(
-          e,
-          "deviceType",
-          setForm,
-          form,
-        ),
-      label: "Type d'appareil",
-      type: "text",
-      value: form.deviceType,
-      min: 0,
-      max: 60,
-      ariaDescribedby: "",
-    },
-    {
-      icon: <IconMagnifyingGlass />,
-      id: "brand",
-      handleChange: (e: ChangeEvent) =>
-        Form.handleChange(
-          e,
-          "brand",
-          setForm,
-          form,
-        ),
-      label: "Marque",
-      type: "text",
-      value: form.brand,
-      min: 0,
-      max: 60,
-      ariaDescribedby: "",
-    },
-    {
-      icon: <IconMagnifyingGlass />,
-      id: "model",
-      handleChange: (e: ChangeEvent) =>
-        Form.handleChange(
-          e,
-          "model",
-          setForm,
-          form,
-        ),
-      label: "Modèle",
-      type: "text",
-      value: form.model,
-      min: 0,
-      max: 60,
-      ariaDescribedby: "",
-    },
-    {
-      icon: <IconBellConcierge />,
-      id: "service",
-      handleChange: (e: ChangeEvent) =>
-        Form.handleChange(
-          e,
-          "service",
-          setForm,
-          form,
-        ),
-      label: "Prestation",
-      type: "text",
-      value: form.service,
-      min: 0,
-      max: 255,
-      ariaDescribedby: "",
-    },
-  ];
+  const handleAsideImg = (): void => {
+    switch (service) {
+      case computersData.service:
+        setImg({
+          src: `${computersData.servicePath}/motherboard`,
+          alt: "Carte mère vue de dessus",
+        });
+        return;
 
-  const handleSubmit = async (
-    e: SyntheticEvent,
-  ) => {
-    e.preventDefault();
+      case consolesData.service:
+        setImg({
+          src: `${consolesData.servicePath}/ps5-gradient`,
+          alt: "PS5 blanche avec sa manette blanche",
+        });
+        return;
 
-    // prevent spamming
-    if (loading) return;
+      case mobilesData.service:
+        setImg({
+          src: `${mobilesData.servicePath}/iphone-black`,
+          alt: "IPhone noir vue de dessus",
+        });
+        return;
 
-    setLoading(true);
+      case webData.service:
+        setImg({
+          src: `${webData.servicePath}/mac-with-book`,
+          alt: "Mac ayant un site e-commerce sur son écran",
+        });
+        return;
 
-    const errors =
-      SupportValidator.inspectSupportData(form);
+      case keyboardsData.service:
+        setImg({
+          src: `${keyboardsData.servicePath}/keyboard-white`,
+          alt: "Clavier blanc avec sa sourie blanche Apple",
+        });
+        return;
 
-    if (errors.length) {
-      for (const { key, message } of errors) {
-        SupportValidator.errorStyle(key);
-        toast.error(message);
-      }
-
-      setLoading(false);
-      return;
-    }
-
-    try {
-      await axios.post("/api/supports", form);
-
-      toast.success(
-        "Votre demande de prise en charge a été pris en compte",
-      );
-
-      // reset form
-      setForm(defaultForm);
-
-      setLoading(false);
-
-      // scroll to top
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
-
-      return;
-    } catch (err: unknown) {
-      toast.error("Une erreur est survenu");
-      setLoading(false);
-      return;
+      default:
+        return;
     }
   };
 
-  return (
-    <FormPage>
-      <form onSubmit={handleSubmit}>
-        {formInputs.map((props, index) => (
-          <FormInput key={index} {...props} />
-        ))}
+  useEffect(() => {
+    handleAsideImg();
 
-        <FormTextarea
-          id="breakdown"
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <FormPage imgSrc={img.src} imgAlt={img.alt}>
+      <form onSubmit={handleSubmit}>
+        <FormInput
+          icon={<IconUser />}
+          id="fullName"
           handleChange={(e: ChangeEvent) =>
             Form.handleChange(
               e,
-              "breakdown",
+              "fullName",
               setForm,
               form,
             )
           }
-          label="Description de la panne"
-          value={form.breakdown}
+          label="Nom et prénom"
+          type="text"
+          value={form.fullName}
+          min={0}
+          max={60}
+          ariaDescribedby=""
+        />
+
+        <FormInput
+          icon={<IconContact />}
+          id="email"
+          handleChange={(e: ChangeEvent) =>
+            Form.handleChange(
+              e,
+              "email",
+              setForm,
+              form,
+            )
+          }
+          label="Email"
+          type="email"
+          value={form.email}
+          min={0}
+          max={255}
+          ariaDescribedby=""
+        />
+
+        <FormInput
+          icon={<IconPhone />}
+          id="phone"
+          handleChange={(e: ChangeEvent) =>
+            Form.handleChange(
+              e,
+              "phone",
+              setForm,
+              form,
+            )
+          }
+          label="Numéro de téléphone"
+          type="number"
+          value={form.phone}
+          min={0}
+          max={10}
+          ariaDescribedby=""
+        />
+
+        <FormInput
+          icon={<IconEnvelopes />}
+          id="postalCode"
+          handleChange={(e: ChangeEvent) =>
+            Form.handleChange(
+              e,
+              "postalCode",
+              setForm,
+              form,
+            )
+          }
+          label="Code postal"
+          type="number"
+          value={form.postalCode}
+          min={0}
+          max={5}
+          ariaDescribedby=""
+        />
+
+        <FormInput
+          icon={<IconCity />}
+          id="city"
+          handleChange={(e: ChangeEvent) =>
+            Form.handleChange(
+              e,
+              "city",
+              setForm,
+              form,
+            )
+          }
+          label="Ville"
+          type="text"
+          value={form.city}
+          min={0}
+          max={60}
+          ariaDescribedby=""
+        />
+
+        {service === computersData.service ||
+        service === consolesData.service ||
+        service === mobilesData.service ||
+        service === keyboardsData.service ? (
+          <>
+            <FormInput
+              icon={<IconMagnifyingGlass />}
+              id="serviceType"
+              handleChange={(e: ChangeEvent) =>
+                Form.handleChange(
+                  e,
+                  "serviceType",
+                  setForm,
+                  form,
+                )
+              }
+              label="Type d'appareil"
+              type="text"
+              value={form.serviceType}
+              min={0}
+              max={60}
+              ariaDescribedby=""
+            />
+
+            <FormInput
+              icon={<IconMagnifyingGlass />}
+              id="brand"
+              handleChange={(e: ChangeEvent) =>
+                Form.handleChange(
+                  e,
+                  "brand",
+                  setForm,
+                  form,
+                )
+              }
+              label="Marque"
+              type="text"
+              value={form.brand}
+              min={0}
+              max={60}
+              ariaDescribedby=""
+            />
+
+            <FormInput
+              icon={<IconMagnifyingGlass />}
+              id="model"
+              handleChange={(e: ChangeEvent) =>
+                Form.handleChange(
+                  e,
+                  "model",
+                  setForm,
+                  form,
+                )
+              }
+              label="Modèle"
+              type="text"
+              value={form.model}
+              min={0}
+              max={60}
+              ariaDescribedby=""
+            />
+          </>
+        ) : (
+          <></>
+        )}
+
+        <FormInput
+          icon={<IconBellConcierge />}
+          id="title"
+          handleChange={(e: ChangeEvent) =>
+            Form.handleChange(
+              e,
+              "title",
+              setForm,
+              form,
+            )
+          }
+          label="Prestation"
+          type="text"
+          value={form.title}
+          min={0}
+          max={255}
+          ariaDescribedby=""
+        />
+
+        <FormTextarea
+          id="description"
+          handleChange={(e: ChangeEvent) =>
+            Form.handleChange(
+              e,
+              "description",
+              setForm,
+              form,
+            )
+          }
+          label="Description de la demande"
+          value={form.description}
           min={0}
           max={5_000}
           ariaDescribedby=""

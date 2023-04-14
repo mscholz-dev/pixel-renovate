@@ -13,10 +13,11 @@ import Link from "next/link";
 const Footer: FC = () => {
   const socialLinks: TFooterSocialLinks = [
     {
+      // TODO:
       id: 0,
       icon: <IconInstagram />,
       url: "https://google.com",
-      title: "Instagram de Pixel Skill",
+      title: "Instagram de Pixel Renovate",
     },
     {
       id: 1,
@@ -60,14 +61,15 @@ const Footer: FC = () => {
         <Link href="/" className="footer-brand">
           <IconLogo className="footer-brand-logo" />
           <h2 className="footer-brand-title">
-            Pixel Skill
+            Pixel Renovate
           </h2>
         </Link>
 
         <div className="footer-copyright">
           <IconCopyright className="footer-copyright-icon" />
           <p className="footer-copyright-text">
-            2023 Pixel Skill. Tous droits réservés
+            2023 Pixel Renovate. Tous droits
+            réservés
           </p>
         </div>
       </div>

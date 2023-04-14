@@ -11,6 +11,8 @@ import BlockCta from "@/templates/components/BlockCta";
 import IconComputer from "@/public/icons/computer.svg";
 import IconConsole from "@/public/icons/console.svg";
 import IconMobile from "@/public/icons/mobile.svg";
+import IconWeb from "@/public/icons/web.svg";
+import IconKeyboard from "@/public/icons/keyboard.svg";
 
 const Index: FC = () => {
   return (
@@ -60,14 +62,43 @@ const Index: FC = () => {
           title={
             <h2>
               Nos prestations pour les{" "}
-              <b>téléphones</b>
+              <b>mobiles</b>
             </h2>
           }
           color="primary"
           icon={<IconMobile />}
         />
         <HomeSchedule />
+        <BlockCta
+          imgSrc="services/web/mac-charts-green"
+          imgAlt="Mac avec un site web de statistique"
+          linkUrl="/web"
+          linkTitle="Découvrir"
+          title={
+            <h2>
+              Nos prestations pour les{" "}
+              <b>sites web</b>
+            </h2>
+          }
+          reverse
+          color="secondary"
+          icon={<IconWeb />}
+        />
         <HomeFaq />
+        <BlockCta
+          imgSrc="services/keyboards/keyboard-with-icons"
+          imgAlt="Clavier personnalisé blanc et jaune avec des pictogrammes"
+          linkUrl="/claviers"
+          linkTitle="Découvrir"
+          title={
+            <h2>
+              Nos prestations pour les{" "}
+              <b>claviers</b>
+            </h2>
+          }
+          color="primary"
+          icon={<IconKeyboard />}
+        />
       </>
     </Page>
   );

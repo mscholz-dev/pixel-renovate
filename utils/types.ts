@@ -108,17 +108,12 @@ export type TSupportForm = {
   phone: string;
   postalCode: string;
   city: string;
-  deviceType: string;
+  serviceType: string;
   brand: string;
   model: string;
-  service: string;
-  breakdown: string;
+  title: string;
+  description: string;
   consent: boolean;
-};
-
-export type TTypeServiceProps = {
-  type: string;
-  service: string;
 };
 
 export type TServiceData = {
@@ -139,12 +134,12 @@ export type TServiceObject = {
 };
 
 export type TGetStaticPathServices = {
-  params: { services: string };
+  params: { service: string };
 }[];
 
 export type TGetStaticPathSpecificService = {
   params: {
-    services: string;
+    service: string;
     url: string;
   };
 }[];

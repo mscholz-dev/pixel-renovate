@@ -1,10 +1,15 @@
-import { ChangeEvent } from "react";
-import { NextPageContext } from "next";
+import {
+  ChangeEvent,
+  Dispatch,
+  SetStateAction,
+  SyntheticEvent,
+} from "react";
 
 // types
 import {
   TFormInput,
   TServiceData,
+  TSupportForm,
 } from "./types";
 
 export interface IPage {
@@ -77,6 +82,8 @@ export interface IFormCheckbox {
 }
 
 export interface IFormPage {
+  imgSrc: string;
+  imgAlt: string;
   children: JSX.Element;
 }
 
@@ -105,4 +112,17 @@ export interface ISpecificService {
   time: string;
   price: string;
   content: string;
+}
+
+export interface IFormSupport {
+  loading: boolean;
+  form: TSupportForm;
+  setForm: Dispatch<SetStateAction<TSupportForm>>;
+  handleSubmit: (e: SyntheticEvent) => void;
+  service: string;
+}
+
+export interface IDemandeDePriseEnCharge {
+  service: string;
+  title: string;
 }

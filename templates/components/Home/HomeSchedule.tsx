@@ -57,12 +57,12 @@ const HomeSchedule: FC = () => {
     <Wrapper className="wrapper-padding-y home-schedule">
       <div className="home-schedule-all">
         <h2 className="title-secondary home-schedule-title">
-          Pixel Skill
+          Pixel Renovate
         </h2>
 
         <Image
           src="/img/logo.png"
-          alt="Logo de Pixel Skill"
+          alt="Logo de Pixel Renovate"
           width={32}
           height={32}
           className="home-schedule-decoration-img"

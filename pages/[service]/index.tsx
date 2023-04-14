@@ -13,6 +13,7 @@ import computersData from "@/utils/data/services/computers";
 import consolesData from "@/utils/data/services/consoles";
 import mobilesData from "@/utils/data/services/mobiles";
 import webData from "@/utils/data/services/web";
+import keyboardsData from "@/utils/data/services/keyboards";
 
 // interfaces
 import { IServices } from "@/utils/interfaces";
@@ -50,7 +51,7 @@ const Services: FC<IServices> = ({
 export default Services;
 
 export const getStaticPaths: GetStaticPaths<{
-  services: string;
+  service: string;
 }> = async () => {
   // services paths
   const services: string[] = [
@@ -58,13 +59,14 @@ export const getStaticPaths: GetStaticPaths<{
     consolesData.service,
     mobilesData.service,
     webData.service,
+    keyboardsData.service,
   ];
 
   // create static paths
   const paths: TGetStaticPathServices =
     services.map((service) => ({
       params: {
-        services: service,
+        service,
       },
     }));
 
@@ -75,12 +77,12 @@ export const getStaticPaths: GetStaticPaths<{
 };
 
 export const getStaticProps = async ({
-  params: { services },
+  params: { service },
 }: GetStaticPropsContext<any>): Promise<
   GetStaticPropsResult<IServices>
 > => {
   // services paths data
-  switch (services) {
+  switch (service) {
     case computersData.service:
       return {
         props: {
@@ -106,6 +108,13 @@ export const getStaticProps = async ({
       return {
         props: {
           ...webData,
+        },
+      };
+
+    case keyboardsData.service:
+      return {
+        props: {
+          ...keyboardsData,
         },
       };
 

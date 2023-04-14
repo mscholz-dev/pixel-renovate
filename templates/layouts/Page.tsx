@@ -23,7 +23,7 @@ const Page: FC<IPage> = ({
           name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no"
         />
-        <title>{`PIXEL SKILL • ${title}`}</title>
+        <title>{`PIXEL RENOVATE • ${title}`}</title>
         <meta
           name="description"
           content={description}
