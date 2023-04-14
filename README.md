@@ -1,7 +1,6 @@
 page transition animation
-
-Mettre les nouveaux chemins d'images
-
-Faire fonctionner les pages avec le fichiers json
-
-Tout mettres les services dans une page [url]
+mettre des select input dans les forms
+mettre en forme le compte insta
+stockage en dbb
+envoie d'email
+contenu ordi/console/mobile/web/claiers/faq/benefices/avis

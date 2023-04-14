@@ -52,13 +52,15 @@ const Header: FC = () => {
     {
       id: 5,
       url: {
-        pathname: "demande-de-prise-en-charge",
+        pathname: "/demande-de-prise-en-charge",
         query: { service: "" },
       },
       title: "Demande de prise en charge",
       icon: <IconContact />,
     },
   ];
+
+  const handleClick = () => setOpen(false);
 
   return (
     <header
@@ -81,6 +83,7 @@ const Header: FC = () => {
                 key={id}
                 href={url}
                 className="header-category-item"
+                onClick={handleClick}
               >
                 <span className="header-category-item-container">
                   <span className="header-category-item-icon">

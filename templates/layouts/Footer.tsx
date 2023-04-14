@@ -13,10 +13,9 @@ import Link from "next/link";
 const Footer: FC = () => {
   const socialLinks: TFooterSocialLinks = [
     {
-      // TODO:
       id: 0,
       icon: <IconInstagram />,
-      url: "https://google.com",
+      url: "https://www.instagram.com/pixelrenovatepro/",
       title: "Instagram de Pixel Renovate",
     },
     {
