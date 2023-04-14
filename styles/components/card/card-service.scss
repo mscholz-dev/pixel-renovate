@@ -85,9 +85,12 @@
     &-container {
       border-radius: 4px;
       display: flex;
-      height: 100%;
+      height: 250px;
+      max-height: 250px;
+      min-height: 250px;
       overflow: hidden;
       position: relative;
+      width: auto;
     }
 
     &-loader {

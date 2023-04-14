@@ -83,38 +83,6 @@ export type TFooterSocialLinks = {
   title: string;
 }[];
 
-export type TGetServicesReturn = {
-  data: object[];
-  err: string | null;
-};
-
-export type TCardService = {
-  id: string;
-  imgSrc: string;
-  title: string;
-  time: string;
-  price: string;
-  url: string;
-};
-
-export type TSpecificService = {
-  imgSrc: string;
-  title: string;
-  time: string;
-  price: string;
-  content: TContentService;
-};
-
-export type TGetSpecificServiceReturn = {
-  data: TSpecificService | null;
-  err: string | null;
-};
-
-export type TContentService = {
-  type: "h3" | "ul" | "ol" | "p";
-  value: string;
-}[];
-
 export type TFormInput = {
   icon: JSX.Element;
   id: string;
@@ -161,4 +129,22 @@ export type TServiceData = {
   time: string;
   url: string;
   content: string;
+};
+
+export type TServiceObject = {
+  service: string;
+  servicePath: string;
+  serviceType: string;
+  data: TServiceData[];
+};
+
+export type TGetStaticPathServices = {
+  params: { services: string };
+}[];
+
+export type TGetStaticPathSpecificService = {
+  params: {
+    services: string;
+    url: string;
+  };
 }[];

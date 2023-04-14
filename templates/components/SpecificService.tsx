@@ -6,37 +6,19 @@ import Link from "next/link";
 // interfaces
 import { ISpecificService } from "@/utils/interfaces";
 
-// types
-import { TContentService } from "@/utils/types";
-
 const SpecificService: FC<ISpecificService> = ({
-  imgSrc,
+  servicePath,
+  serviceType,
+  img,
   title,
   time,
   price,
   content,
-  type,
 }) => {
-  const returnHTML = (
-    { type, value }: TContentService[0],
-    index: number,
-  ) => {
-    switch (type) {
-      case "h3":
-        return <h3 key={index}>{value}</h3>;
-
-      case "p":
-        return <p key={index}>{value}</p>;
-
-      default:
-        return;
-    }
-  };
-
   return (
     <article className="specific-service">
       <Image
-        src={imgSrc}
+        src={`/img/services/${servicePath}/${img}.webp`}
         alt={title}
         className="specific-service-img"
         height={200}
@@ -60,21 +42,17 @@ const SpecificService: FC<ISpecificService> = ({
         </div>
 
         <div className="specific-service-content">
-          {content &&
-            content.map(
-              ({ type, value }, index) =>
-                returnHTML(
-                  { type, value },
-                  index,
-                ),
-            )}
+          {content}
         </div>
 
         <Link
           href={{
             pathname:
               "/demande-de-prise-en-charge",
-            query: { type: type, service: title },
+            query: {
+              type: serviceType,
+              service: title,
+            },
           }}
           className="specific-service-btn"
         >

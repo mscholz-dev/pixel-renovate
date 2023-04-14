@@ -28,7 +28,7 @@ const BlockCta: FC<IBlockCta> = ({
     >
       <>
         <Image
-          src={`/img/${imgSrc}`}
+          src={`/img/${imgSrc}.webp`}
           alt={imgAlt}
           className="block-cta-img"
           height={500}

@@ -22,8 +22,8 @@ const Index: FC = () => {
         <Home />
         <HomeBenefits />
         <BlockCta
-          imgSrc="mac-open.webp"
-          imgAlt="Image d'un ordinateur Mac ouvert à l'envers"
+          imgSrc="services/computers/desktop-pc-open"
+          imgAlt="Intérieur d'un ordinateur fixe propre"
           linkUrl="/ordinateurs"
           linkTitle="Découvrir"
           title={
@@ -37,8 +37,8 @@ const Index: FC = () => {
         />
         <HomeTroubleshooting />
         <BlockCta
-          imgSrc="nintendo-switch-red.webp"
-          imgAlt="Image d'une nintendo switch rouge"
+          imgSrc="services/consoles/nintendo-switch-red"
+          imgAlt="Nintendo switch rouge"
           linkUrl="/consoles"
           linkTitle="Découvrir"
           title={
@@ -53,9 +53,9 @@ const Index: FC = () => {
         />
         <HomeReview />
         <BlockCta
-          imgSrc="phone-break.jpg"
-          imgAlt="Image d'un téléphone cassé"
-          linkUrl="/telephones"
+          imgSrc="services/mobiles/iphone-break"
+          imgAlt="Coque d'Iphone cassée"
+          linkUrl="/mobiles"
           linkTitle="Découvrir"
           title={
             <h2>

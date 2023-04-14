@@ -3,14 +3,9 @@ import { NextPageContext } from "next";
 
 // types
 import {
-  TCardService,
-  TSpecificService,
   TFormInput,
+  TServiceData,
 } from "./types";
-
-export interface IGetServicesPage {
-  data: object[];
-}
 
 export interface IPage {
   children: JSX.Element;
@@ -28,19 +23,21 @@ export interface IWrapper {
 
 export interface ICardSectionService {
   title: JSX.Element;
-  items: TCardService[];
+  items: TServiceData[];
   category: string;
-  type: string;
+  servicePath: string;
+  serviceType: string;
 }
 
 export interface ICardService {
-  imgSrc: string;
+  img: string;
   title: string;
   time: string;
   price: string;
   url: string;
   category: string;
-  type: string;
+  servicePath: string;
+  serviceType: string;
 }
 
 export interface IBlockCta {
@@ -52,21 +49,6 @@ export interface IBlockCta {
   reverse?: boolean;
   color: "primary" | "secondary";
   icon: JSX.Element;
-}
-
-export interface IServiceUrlPage
-  extends TSpecificService {}
-
-export interface ISSRServiceUrlPage
-  extends NextPageContext {
-  params: {
-    url: string;
-  };
-}
-
-export interface ISpecificService
-  extends TSpecificService {
-  type: string;
 }
 
 export interface IFormInput extends TFormInput {}
@@ -96,4 +78,31 @@ export interface IFormCheckbox {
 
 export interface IFormPage {
   children: JSX.Element;
+}
+
+export interface IServices {
+  service: string;
+  servicePath: string;
+  serviceType: string;
+  data: TServiceData[];
+}
+
+export interface IServicesUrl {
+  servicePath: string;
+  serviceType: string;
+  img: string;
+  title: string;
+  time: string;
+  price: string;
+  content: string;
+}
+
+export interface ISpecificService {
+  servicePath: string;
+  serviceType: string;
+  img: string;
+  title: string;
+  time: string;
+  price: string;
+  content: string;
 }

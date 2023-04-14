@@ -9,19 +9,20 @@ import IconContact from "@/public/icons/contact.svg";
 import { ICardService } from "../../../utils/interfaces";
 
 const CardService: FC<ICardService> = ({
-  imgSrc,
+  img,
   title,
   time,
   price,
   url,
   category,
-  type,
+  servicePath,
+  serviceType,
 }) => {
   return (
     <div className="card-service">
       <div className="card-service-img-container">
         <Image
-          src={`${imgSrc}`}
+          src={`/img/services/${servicePath}/${img}.webp`}
           alt={title}
           className="card-service-img"
           height={300}
@@ -52,7 +53,7 @@ const CardService: FC<ICardService> = ({
               pathname:
                 "/demande-de-prise-en-charge",
               query: {
-                type: type,
+                type: serviceType,
                 service: title,
               },
             }}

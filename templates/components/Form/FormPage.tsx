@@ -27,8 +27,8 @@ const FormPage: FC<IFormPage> = ({
 
         <aside className="form-page-aside">
           <Image
-            src="/img/keyboard.jpg"
-            alt=""
+            src="/img/services/keyboards/keyboard-white.webp"
+            alt="Clavier blanc et souris blanche Apple"
             height={500}
             width={500}
             className="form-page-aside-img"

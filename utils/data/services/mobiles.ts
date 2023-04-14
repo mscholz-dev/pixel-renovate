@@ -1,6 +1,11 @@
 // types
-import { TServiceData } from "../../types";
+import { TServiceObject } from "../../types";
 
-const mobilesData: TServiceData = [];
+const mobilesData: TServiceObject = {
+  service: "mobiles",
+  servicePath: "mobiles",
+  serviceType: "Mobile",
+  data: [],
+};
 
 export default mobilesData;
