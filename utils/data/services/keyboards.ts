@@ -7,7 +7,7 @@ const keyboardsData: TServiceObject = {
   data: [
     {
       id: 0,
-      img: "",
+      img: "keyboard-with-red-key",
       title: "Diagnostique complet du clavier",
       price: "",
       time: "",
@@ -21,7 +21,7 @@ const keyboardsData: TServiceObject = {
     },
     {
       id: 1,
-      img: "",
+      img: "keyboard-with-icons",
       title: "Réparation de toutes marques",
       price: "",
       time: "",
@@ -36,7 +36,7 @@ const keyboardsData: TServiceObject = {
     },
     {
       id: 2,
-      img: "",
+      img: "keyboard-without-keycaps",
       title: "Remplacement de touches",
       price: "",
       time: "",
@@ -51,7 +51,7 @@ const keyboardsData: TServiceObject = {
     },
     {
       id: 3,
-      img: "",
+      img: "keyboard-open",
       title: "Réparation de circuits",
       price: "",
       time: "",
@@ -66,7 +66,7 @@ const keyboardsData: TServiceObject = {
     },
     {
       id: 4,
-      img: "",
+      img: "keyboard-mac-gradient",
       title: "Nettoyage professionnel",
       price: "",
       time: "",
