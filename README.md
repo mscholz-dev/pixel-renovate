@@ -8,5 +8,3 @@ changer tous les tarifs et temps
 ajouter pour claviers et mobile
 
 page mentions legales CCU CCV
-
-trigger deploy

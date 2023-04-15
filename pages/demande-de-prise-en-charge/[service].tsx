@@ -10,7 +10,6 @@ import FormSupport from "@/templates/components/Form/FormSupport";
 import { toast } from "react-toastify";
 import axios from "axios";
 import SupportValidatorClass from "@/utils/validators/SupportValidator";
-import FormClass from "@/utils/Form";
 import { GetServerSidePropsContext } from "next";
 
 // services data
@@ -23,7 +22,6 @@ import keyboardsData from "@/utils/data/services/keyboards";
 // classes
 const SupportValidator =
   new SupportValidatorClass();
-const Form = new FormClass();
 
 // interfaces
 import { IDemandeDePriseEnCharge } from "@/utils/interfaces";

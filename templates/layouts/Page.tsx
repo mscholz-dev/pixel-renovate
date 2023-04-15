@@ -28,10 +28,10 @@ const Page: FC<IPage> = ({
           name="description"
           content={description}
         />
-        {/* <meta
+        <meta
           name="robots"
           content="index, follow"
-        /> */}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
