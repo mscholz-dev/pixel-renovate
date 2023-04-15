@@ -55,25 +55,10 @@ export type THomeTroubleshootings = {
   text: string;
 }[];
 
-export type THomeReviews = {
-  id: number;
-  imgSrc: string;
-  imgAlt: string;
-  name: string;
-  subject: string;
-  text: string;
-}[];
-
 export type THomeSchedules = {
   id: number;
   day: string;
   hours: string;
-}[];
-
-export type THomeFaqQuestions = {
-  id: number;
-  title: string;
-  text: string;
 }[];
 
 export type TFooterSocialLinks = {
@@ -140,4 +125,19 @@ export type TGetStaticPathSpecificService = {
     service: string;
     url: string;
   };
+}[];
+
+export type TFaqData = {
+  id: number;
+  title: string;
+  content: string;
+}[];
+
+export type TReviewsData = {
+  id: number;
+  imgSrc: string;
+  imgAlt: string;
+  name: string;
+  subject: string;
+  text: string;
 }[];

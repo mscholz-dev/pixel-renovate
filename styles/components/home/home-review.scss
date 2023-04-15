@@ -1,6 +1,6 @@
 .home-review {
   background: $black;
-  padding: 32px 0 550px;
+  padding: 32px 0 600px;
   position: relative;
   width: 100vw;
 
@@ -9,7 +9,7 @@
   }
 
   @include responsive(t) {
-    padding: 64px 0;
+    padding: 96px 0;
   }
 
   &-star {
@@ -54,7 +54,12 @@
 
   &-text {
     color: $white;
+    margin-bottom: 24px;
     max-width: 500px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &-item {
@@ -63,77 +68,59 @@
     padding: 24px;
     position: absolute;
     transform: rotate(-10deg);
-    transition: 0.25s transform ease-in-out;
-    width: 400px;
+    transition: 0.25s transform ease-in-out,
+      0.25s z-index ease-in-out;
+    width: 600px;
+
+    @include responsive(t) {
+      width: 500px;
+    }
 
     &:nth-child(1) {
       background: $green-color;
-      bottom: -250px;
+      bottom: -280px;
       left: 0%;
       z-index: 3;
 
       @include responsive(t) {
         bottom: auto;
         left: auto;
-        right: 50px;
+        right: -60px;
         top: -140px;
-      }
-
-      @include responsive(d-xs) {
-        right: 80px;
-      }
-
-      @include responsive(d) {
-        right: 60px;
       }
     }
 
     &:nth-child(2) {
       background: $orange-color;
-      bottom: -400px;
+      bottom: -450px;
       left: 35%;
       z-index: 2;
 
       @include responsive(t) {
         bottom: auto;
         left: auto;
-        right: -200px;
-        top: -20px;
-      }
-
-      @include responsive(d-xs) {
         right: -220px;
-      }
-
-      @include responsive(d) {
-        right: -310px;
+        top: 80px;
       }
     }
 
     &:nth-child(3) {
       background: $blue-color;
-      bottom: -600px;
+      bottom: -650px;
       left: 20%;
       z-index: 1;
 
       @include responsive(t) {
         bottom: auto;
         left: auto;
-        right: -60px;
-        top: 160px;
-      }
-
-      @include responsive(d-xs) {
-        right: 0px;
-      }
-
-      @include responsive(d) {
-        right: -30px;
+        right: -140px;
+        top: 280px;
       }
     }
 
     &:hover {
       transform: rotate(-15deg);
+      z-index: 4;
 
       .home-review-item {
         &-quote {

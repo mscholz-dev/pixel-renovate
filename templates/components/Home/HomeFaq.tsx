@@ -8,9 +8,10 @@ import React, {
 import Wrapper from "@/templates/layouts/Wrapper";
 import IconQuestion from "@/public/icons/question.svg";
 import IconClipboardQuestion from "@/public/icons/clipboard-question.svg";
+import HTMLReactParser from "html-react-parser";
 
-//types
-import { THomeFaqQuestions } from "@/utils/types";
+// data
+import faqData from "@/utils/data/faq";
 
 const HomeFaq: FC = () => {
   const articleRef = useRef<HTMLDivElement>(null);
@@ -18,34 +19,6 @@ const HomeFaq: FC = () => {
   const [currentId, setCurrentId] = useState<
     number | null
   >(null);
-
-  const questions: THomeFaqQuestions = [
-    {
-      id: 0,
-      title: "Lorem ipsum dolor sit amet",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in ultrices turpis, vitae ullamcorper odio. Vestibulum eget faucibus dui, non imperdiet libero. Integer gravida lacus nec ipsum fermentum, quis tristique sapien pretium. Quisque venenatis leo quis efficitur sagittis. Integer rutrum.",
-    },
-    {
-      id: 1,
-      title: "Lorem ipsum dolor sit amet",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in ultrices turpis, vitae ullamcorper odio. Vestibulum eget faucibus dui, non imperdiet libero. Integer gravida lacus nec ipsum fermentum, quis tristique sapien pretium. Quisque venenatis leo quis efficitur sagittis. Integer rutrum.",
-    },
-    {
-      id: 2,
-      title: "Lorem ipsum dolor sit amet",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in ultrices turpis, vitae ullamcorper odio. Vestibulum eget faucibus dui, non imperdiet libero. Integer gravida lacus nec ipsum fermentum, quis tristique sapien pretium. Quisque venenatis leo quis efficitur sagittis. Integer rutrum.",
-    },
-    {
-      id: 3,
-      title: "Lorem ipsum dolor sit amet",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in ultrices turpis, vitae ullamcorper odio. Vestibulum eget faucibus dui, non imperdiet libero. Integer gravida lacus nec ipsum fermentum, quis tristique sapien pretium. Quisque venenatis leo quis efficitur sagittis. Integer rutrum.",
-    },
-    {
-      id: 4,
-      title: "Lorem ipsum dolor sit amet",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in ultrices turpis, vitae ullamcorper odio. Vestibulum eget faucibus dui, non imperdiet libero. Integer gravida lacus nec ipsum fermentum, quis tristique sapien pretium. Quisque venenatis leo quis efficitur sagittis. Integer rutrum.",
-    },
-  ];
 
   const handleQuestionClick = (
     e: MouseEvent<HTMLDivElement>,
@@ -138,8 +111,8 @@ const HomeFaq: FC = () => {
           </h2>
 
           <article ref={articleRef}>
-            {questions.map(
-              ({ id, title, text }) => (
+            {faqData.map(
+              ({ id, title, content }) => (
                 <div
                   key={id}
                   meta-id={id}
@@ -160,9 +133,9 @@ const HomeFaq: FC = () => {
                   </div>
 
                   <div className="home-faq-item-container">
-                    <p className="home-faq-item-text">
-                      {text}
-                    </p>
+                    <div>
+                      {HTMLReactParser(content)}
+                    </div>
                   </div>
                 </div>
               ),

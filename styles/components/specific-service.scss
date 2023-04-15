@@ -76,7 +76,9 @@
       }
     }
 
-    p {
+    p,
+    ul,
+    ol {
       margin-bottom: 12px;
 
       @include responsive(s-xl) {
@@ -88,13 +90,8 @@
       }
     }
 
-    ul {
-      margin-bottom: 12px;
-
-      @include responsive(s-xl) {
-        margin-bottom: 24px;
-      }
-
+    ul,
+    ol {
       &:last-child {
         margin-bottom: 0;
       }
@@ -102,16 +99,35 @@
       li {
         margin-left: 16px;
         position: relative;
+      }
+    }
+
+    ul li:before {
+      background: $primary-color;
+      border-radius: 50%;
+      content: "";
+      height: 6px;
+      left: -16px;
+      position: absolute;
+      top: 7px;
+      width: 6px;
+    }
+
+    ol {
+      counter-reset: item;
+
+      li {
+        counter-increment: item;
+        margin-left: 24px;
 
         &:before {
-          background: $black;
-          border-radius: 50%;
-          content: "";
-          height: 6px;
-          left: -16px;
+          color: $primary-color;
+          content: counter(item) ".";
+          font-family: $secondary-font-medium;
+          font-size: 16px;
+          left: -24px;
           position: absolute;
-          top: 7px;
-          width: 6px;
+          top: 0;
         }
       }
     }

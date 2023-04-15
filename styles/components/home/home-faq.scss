@@ -101,9 +101,13 @@
       will-change: height;
     }
 
-    &-text {
+    p {
       font-size: 16px;
       padding-top: 12px;
+
+      @include responsive(s-xl) {
+        padding-top: 24px;
+      }
     }
 
     &-title,

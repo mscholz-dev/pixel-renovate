@@ -4,37 +4,10 @@ import IconQuote from "@/public/icons/quote.svg";
 import Image from "next/image";
 import IconStar from "@/public/icons/star.svg";
 
-// types
-import { THomeReviews } from "@/utils/types";
+// data
+import reviewsData from "@/utils/data/reviews";
 
 const HomeReview: FC = () => {
-  const reviews: THomeReviews = [
-    {
-      id: 0,
-      imgSrc: "arthur-dupuy.png",
-      imgAlt: "Photo de profil de Arthur Dupuy",
-      name: "Arthur Dupuy",
-      subject: "Incroyable!",
-      text: "Rien à dire, qualité parfaite et professionnalisme irréprochable. Je ne peux que vous souhaiter de passer par eux pour tout type de réparation.",
-    },
-    {
-      id: 1,
-      imgSrc: "camille-fleury.png",
-      imgAlt: "Photo de profil de Camille Fleury",
-      name: "Camille Fleury",
-      subject: "Rapide et efficace",
-      text: "Mon téléphone avait des difficultés à charger, le problème a été résolu en même pas 30 secondes, personnel très agréable. Je conseille fortement.",
-    },
-    {
-      id: 2,
-      imgSrc: "hugo-mercier.png",
-      imgAlt: "Photo de profil de Hugo Mercier",
-      name: "Hugo Mercier",
-      subject: "Prix attractif",
-      text: "Je suis venu faire réparer un écran, je pensais en avoir pour un bras et finalement j'ai été agréablement surpris du prix. De plus le travail effectué est top, je recommande fortement.",
-    },
-  ];
-
   return (
     <Wrapper className="home-review">
       <>
@@ -47,20 +20,36 @@ const HomeReview: FC = () => {
             </h2>
 
             <p className="home-review-text">
-              Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Morbi
-              in ultrices turpis, vitae
-              ullamcorper odio. Vestibulum eget
-              faucibus dui, non imperdiet libero.
-              Integer gravida lacus nec ipsum
-              fermentum, quis tristique sapien
-              pretium. Quisque venenatis leo quis
-              efficitur sagittis. Integer rutrum.
+              Chez Pixel Renovate, nous sommes
+              fiers de fournir des services de
+              réparation de matériel informatique
+              de haute qualité à nos clients. Nous
+              travaillons dur pour répondre à
+              leurs besoins et pour les satisfaire
+              à chaque fois qu&apos;ils font appel
+              à nous. Nous sommes heureux de
+              partager quelques témoignages de nos
+              clients satisfaits.
+            </p>
+            <p className="home-review-text">
+              Ces témoignages montrent que nous
+              sommes déterminés à fournir des
+              services de réparation de matériel
+              informatique de qualité à tous nos
+              clients. Nous sommes reconnaissants
+              pour leur confiance et nous
+              continuerons à travailler dur pour
+              répondre à leurs besoins et à leurs
+              attentes. Si vous avez besoin de
+              réparer votre matériel informatique,
+              n&apos;hésitez pas à nous contacter
+              et à faire partie de notre
+              communauté de clients satisfaits.
             </p>
           </article>
 
           <div>
-            {reviews.map(
+            {reviewsData.map(
               ({
                 id,
                 imgSrc,
@@ -81,7 +70,7 @@ const HomeReview: FC = () => {
 
                   <div className="home-review-item-details">
                     <Image
-                      src={`/img/profile/${imgSrc}`}
+                      src={`/img/profile/${imgSrc}.webp`}
                       alt={imgAlt}
                       className="home-review-item-img"
                       height={56}
