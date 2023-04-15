@@ -34,7 +34,11 @@ const Home: FC = () => {
         </div>
 
         <Link
-          href="/demande-de-prise-en-charge"
+          href={{
+            pathname:
+              "/demande-de-prise-en-charge",
+            query: { service: "" },
+          }}
           className="home-link"
         >
           Demander une prise en charge
