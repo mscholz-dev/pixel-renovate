@@ -14,6 +14,7 @@
     "html-react-parser": "^3.0.15",
     "leaflet": "^1.9.3",
     "next": "13.2.4",
+    "nodemailer": "^6.9.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-text-typist": "^1.1.7",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@types/leaflet": "^1.9.3",
     "@types/node": "^18.15.11",
+    "@types/nodemailer": "^6.4.7",
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
     "eslint": "^8.37.0",
