@@ -7,6 +7,7 @@ const Map = dynamic(
 );
 import IconPin from "@/public/icons/pin.svg";
 import Image from "next/image";
+import IconWarning from "@/public/icons/warning.svg";
 
 // types
 import { THomeSchedules } from "@/utils/types";
@@ -102,6 +103,46 @@ const HomeSchedule: FC = () => {
             </div>
           </article>
         </div>
+
+        <article className="home-schedule-emergency">
+          <h3>
+            <IconWarning className="home-schedule-emergency-icon" />
+            Dépannage d&apos;urgence disponible
+            24/7
+          </h3>
+
+          <p>
+            Si vous êtes confronté à une urgence
+            informatique, ne paniquez pas ! Pixel
+            Renovate est là pour vous aider. Nous
+            proposons un service de dépannage
+            d&apos;urgence pour résoudre
+            rapidement tous les problèmes que vous
+            pourriez rencontrer avec votre
+            matériel informatique.
+          </p>
+          <p>
+            Que ce soit une panne soudaine, une
+            infection virale ou une perte de
+            données, notre équipe de techniciens
+            qualifiés est là pour intervenir
+            rapidement et efficacement. Nous
+            comprenons l&apos;importance de votre
+            ordinateur pour votre travail ou votre
+            vie personnelle, c&apos;est pourquoi
+            nous sommes déterminés à réparer votre
+            matériel aussi rapidement que
+            possible, tout en vous offrant un
+            service de qualité.
+          </p>
+          <p>
+            Contactez-nous dès maintenant pour
+            bénéficier de notre service de
+            dépannage d&apos;urgence et retrouvez
+            rapidement votre ordinateur en parfait
+            état de fonctionnement.
+          </p>
+        </article>
       </div>
     </Wrapper>
   );

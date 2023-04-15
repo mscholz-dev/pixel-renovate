@@ -40,21 +40,6 @@ export type TNotionService = {
   };
 };
 
-export type THomeBenefits = {
-  id: number;
-  icon: JSX.Element;
-  blob: JSX.Element;
-  title: string;
-  text: string;
-}[];
-
-export type THomeTroubleshootings = {
-  id: number;
-  icon: JSX.Element;
-  title: string;
-  text: string;
-}[];
-
 export type THomeSchedules = {
   id: number;
   day: string;
@@ -139,5 +124,20 @@ export type TReviewsData = {
   imgAlt: string;
   name: string;
   subject: string;
+  text: string;
+}[];
+
+export type TBenefitsData = {
+  id: number;
+  icon: JSX.Element;
+  blob: JSX.Element;
+  title: string;
+  text: string;
+}[];
+
+export type TTroubleshootingsData = {
+  id: number;
+  icon: JSX.Element;
+  title: string;
   text: string;
 }[];

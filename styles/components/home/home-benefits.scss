@@ -63,7 +63,7 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    height: 190px;
+    height: 220px;
     margin-bottom: 24px;
     padding: 24px 12px;
     overflow: hidden;
@@ -75,7 +75,7 @@
     }
 
     @include responsive(s-xl) {
-      height: 210px;
+      height: 260px;
       width: 240px;
 
       &:nth-last-child(2) {

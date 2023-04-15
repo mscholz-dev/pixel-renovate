@@ -112,4 +112,35 @@
       }
     }
   }
+
+  &-emergency {
+    padding-top: 64px;
+
+    &-icon {
+      fill: $primary-color;
+      height: 36px;
+      margin: 2px 12px 0 0;
+      width: 36px;
+    }
+
+    h3 {
+      color: $primary-color;
+      display: flex;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    p {
+      color: $white;
+      margin-bottom: 12px;
+
+      @include responsive(s-xl) {
+        margin-bottom: 24px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
