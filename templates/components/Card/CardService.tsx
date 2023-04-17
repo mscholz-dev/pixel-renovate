@@ -50,7 +50,7 @@ const CardService: FC<ICardService> = ({
           <Link
             href={{
               pathname:
-                "/demande-de-prise-en-charge",
+                "/demande-de-prise-en-charge/[service]",
               query: {
                 service,
                 prestation: title,
