@@ -1,8 +1,7 @@
 # DEV
 
 mettre des select input dans les forms
-page transition animation
-transition apparition animation
+créer une page dédié au serveur discord
 
 # COMNUNICATION
 
@@ -11,4 +10,4 @@ créer des réseaux facebook, twitter, linkedin
 
 # JURIDIQUE
 
-page mentions legales CCU CCV
+page mentions legales CCV

@@ -131,8 +131,12 @@
 
     &-text {
       color: $white;
-      font-size: 14px;
+      font-size: 12px;
       margin-bottom: 12px;
+
+      @include responsive(t-xs) {
+        font-size: 14px;
+      }
     }
 
     &-details {
