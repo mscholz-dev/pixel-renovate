@@ -6,10 +6,7 @@ import SecurityClass from "../Security";
 const Security = new SecurityClass();
 
 // types
-import {
-  TCreateTransport,
-  TSupportForm,
-} from "../types";
+import { TSupportForm } from "../types";
 
 export default class Email {
   send(
@@ -33,7 +30,10 @@ export default class Email {
               ) || "",
           },
           service: "gmail",
-        } as TCreateTransport);
+          tls: {
+            rejectUnauthorized: false,
+          },
+        });
 
       const info = await transporter.sendMail({
         from: process.env.MAILER_USER as string,

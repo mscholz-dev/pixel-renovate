@@ -141,14 +141,3 @@ export type TTroubleshootingsData = {
   title: string;
   text: string;
 }[];
-
-export type TCreateTransport = {
-  host: string;
-  port: number;
-  secure: boolean;
-  auth: {
-    user: string;
-    pass: string;
-  };
-  service: string;
-};
