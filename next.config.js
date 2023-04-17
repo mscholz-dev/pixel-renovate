@@ -71,11 +71,11 @@ module.exports = {
       {
         source: "/demande-de-prise-en-charge",
         destination:
-          "/demande-de-prise-en-charge/[service]",
+          "/demande-de-prise-en-charge/general",
       },
       {
         source: "/api/supports",
-        destination: "/api/supports/[service]",
+        destination: "/api/supports/general",
       },
     ];
   },

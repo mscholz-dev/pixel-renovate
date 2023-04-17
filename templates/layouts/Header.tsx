@@ -52,8 +52,9 @@ const Header: FC = () => {
     {
       id: 5,
       url: {
-        pathname: "/demande-de-prise-en-charge",
-        query: { service: "" },
+        pathname:
+          "/demande-de-prise-en-charge/[service]",
+        query: { service: "general" },
       },
       title: "Demande de prise en charge",
       icon: <IconContact />,
