@@ -10,8 +10,8 @@ const computersData: TServiceObject = {
       img: "mac-gradient-semi-open",
       title:
         "Diagnostique complet de l’ordinateur",
-      price: "50 €",
-      time: "1 heure",
+      price: "49 €",
+      time: "2 heures",
       url: "diagnostique-complet-de-l-ordinateur",
       content: `
     <h3>Diagnostic matériel : pourquoi est-ce important ?</h3>
@@ -45,7 +45,7 @@ const computersData: TServiceObject = {
       img: "mac-malware",
       title:
         "Analyse et suppression des virus, publicités intempestives et tous programmes malveillants",
-      price: "60 €",
+      price: "59 €",
       time: "2 heures",
       url: "analyse-et-suppression-des-virus-publicites-intempestives-et-tous-programmes-malveillants",
       content: `
@@ -61,7 +61,7 @@ const computersData: TServiceObject = {
       img: "mac-windows-11",
       title:
         "Installation/réinstallation de Windows (7,8,10 et 11 si possibilité)",
-      price: "48 €",
+      price: "54 €",
       time: "2 heures",
       url: "installation-réinstallation-de-windows-7-8-10-et-11-si-possibilite",
       content: `
@@ -77,7 +77,7 @@ const computersData: TServiceObject = {
       img: "motherboard",
       title:
         "Installation matériel (disque dur, carte graphique, tout autres composants…)",
-      price: "60 €",
+      price: "49 €",
       time: "1 heure 30 minutes",
       url: "installation-matériel-disque-dur-carte-graphique-tout-autres-composants",
       content: `
@@ -92,7 +92,7 @@ const computersData: TServiceObject = {
       img: "desktop-pc-open",
       title:
         "Nettoyage interne PC fixe (dépoussiérage complet + ajout de pâte thermique)",
-      price: "60 €",
+      price: "39 €",
       time: "1 heure",
       url: "nettoyage-interne-pc-fixe-depoussierage-complet-ajout-de-pate-thermique",
       content: `
@@ -114,8 +114,8 @@ const computersData: TServiceObject = {
       img: "mac-open",
       title:
         "Nettoyage interne PC portable (dépoussiérage complet + ajout de pâte thermique)",
-      price: "70 €",
-      time: "1 heure 30 minutes",
+      price: "49 €",
+      time: "1 heure",
       url: "nettoyage-interne-pc-portable-depoussierage-complet-ajout-de-pate-thermique",
       content: `
       <p>Nous savons à quel point il est important pour vous de disposer d'un PC portable fiable et performant pour travailler ou pour vos loisirs. C'est pourquoi nous proposons un service de nettoyage interne pour votre ordinateur portable, afin de lui redonner toute sa puissance.</p>
@@ -128,8 +128,8 @@ const computersData: TServiceObject = {
       id: 6,
       img: "hard-disk-vertical",
       title: "Récupération des données",
-      price: "50 €",
-      time: "2 heures 30 minutes",
+      price: "79 €",
+      time: "Minimum 2 heures",
       url: "recuperation-des-donnees",
       content: `
       <p>Nous comprenons à quel point la perte de données peut être frustrante et stressante, qu'il s'agisse de documents de travail importants, de photos précieuses ou d'autres informations essentielles.</p>
@@ -144,8 +144,8 @@ const computersData: TServiceObject = {
       id: 7,
       img: "hard-disk-diagonal",
       title: "Clonage de disque dur",
-      price: "70 €",
-      time: "3 heures",
+      price: "49 €",
+      time: "Minimum 2 heures",
       url: "clonage-de-disque-dur",
       content: `
       <p>Nous savons à quel point il peut être frustrant de travailler avec un ordinateur lent et peu performant. C'est pourquoi nous proposons un service de clonage de disque dur pour améliorer l'efficacité et la rapidité de votre ordinateur.</p>
@@ -160,8 +160,8 @@ const computersData: TServiceObject = {
       id: 8,
       img: "hard-disk-open",
       title: "Destruction complète des données",
-      price: "20 €",
-      time: "30 minutes",
+      price: "29 €",
+      time: "1 heure",
       url: "destruction-complete-des-donnees",
       content: `
       <p>La destruction complète des données est essentielle pour protéger vos informations personnelles ou professionnelles contre toute tentative de récupération par des personnes mal intentionnées. Même après une suppression de fichiers classique, des données peuvent subsister et être récupérées avec des outils spécifiques.</p>

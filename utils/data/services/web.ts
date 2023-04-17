@@ -9,8 +9,8 @@ const webData: TServiceObject = {
       id: 0,
       img: "mac-charts-green",
       title: "Création de site web E-commerce",
-      price: "550 €",
-      time: "Minimum 2 semaines",
+      price: "1499 €",
+      time: "Minimum 4 semaines",
       url: "creation-de-site-web-e-commerce",
       content: `
       <p>La création d'un site web E-commerce est une étape clé pour toutes les entreprises souhaitant se lancer dans le commerce en ligne. Il est primordial de proposer une plateforme intuitive, ergonomique et personnalisée pour les clients afin de les fidéliser et d'optimiser les ventes.</p>
@@ -25,7 +25,7 @@ const webData: TServiceObject = {
       img: "mac-typing-code",
       title:
         "Modification/Maintenance de votre site web existant",
-      price: "350 €",
+      price: "499 €",
       time: "Minimum 1 semaine",
       url: "modification-maintenance-de-votre-site-web-existant",
       content: `
@@ -40,8 +40,8 @@ const webData: TServiceObject = {
       id: 2,
       img: "mac-with-book",
       title: "Création d’un site Vitrine",
-      price: "145 €",
-      time: "Minimum 3 jours",
+      price: "399 €",
+      time: "Minimum 1 semaine",
       url: "creation-d-un-site-vitrine",
       content: `
       <p>La création d'un site vitrine est une étape importante dans la communication de votre entreprise, que ce soit pour présenter vos produits ou services, vos réalisations ou simplement pour présenter votre entreprise. C'est un moyen efficace de toucher un public plus large et de vous différencier de vos concurrents.</p>
@@ -55,8 +55,8 @@ const webData: TServiceObject = {
       id: 3,
       img: "mac-with-bottle",
       title: "Création d’un site One Page",
-      price: "95 €",
-      time: "Minimum 2 jours",
+      price: "399 €",
+      time: "Minimum 1 semaine",
       url: "creation-d-un-site-one-page",
       content: `
       <p>Un site One Page est un site web conçu pour n'avoir qu'une seule page. Toutes les informations sont donc présentées sur une seule page, ce qui en fait une solution idéale pour les entreprises souhaitant avoir une présence en ligne, sans avoir à développer un site web complexe.</p>
@@ -70,8 +70,8 @@ const webData: TServiceObject = {
       id: 4,
       img: "mac-with-screen",
       title: "Création d’un Blog",
-      price: "95 €",
-      time: "Minimum 2 jours",
+      price: "299 €",
+      time: "Minimum 1 semaine",
       url: "creation-d-un-blog",
       content: `
       <p>La création d'un blog peut être une aventure passionnante et enrichissante pour les passionnés de tous les domaines, qu'il s'agisse de cuisine, de voyage, de mode, de sport ou de toute autre passion. Notre équipe de professionnels peut vous aider à créer un blog personnalisé, à la hauteur de vos attentes, qui vous permettra de partager votre passion avec le monde entier.</p>

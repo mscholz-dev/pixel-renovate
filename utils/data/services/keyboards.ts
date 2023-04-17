@@ -9,8 +9,8 @@ const keyboardsData: TServiceObject = {
       id: 0,
       img: "keyboard-with-red-key",
       title: "Diagnostique complet du clavier",
-      price: "",
-      time: "",
+      price: "24 €",
+      time: "1 heure",
       url: "diagnostique-complet-du-clavier",
       content: `
       <p>Pixel Renovate propose une prestation de diagnostic complet du clavier pour aider les clients à identifier les problèmes de leur clavier et déterminer s'il est réparable ou non. Cette prestation inclut une inspection minutieuse de toutes les parties du clavier pour détecter les éventuels problèmes.</p>
@@ -23,8 +23,8 @@ const keyboardsData: TServiceObject = {
       id: 1,
       img: "keyboard-with-icons",
       title: "Réparation de toutes marques",
-      price: "",
-      time: "",
+      price: "44 €",
+      time: "1 heure",
       url: "reparation-de-toutes-marques",
       content: `
       <p>Pixel Renovate offre une prestation pratique de réparation de toutes marques de claviers pour répondre aux besoins de ses clients en matière de réparation de clavier. Notre service de réparation est conçu pour offrir une solution rapide et efficace aux clients qui ont des problèmes avec leur clavier. Nous travaillons avec toutes les marques et tous les modèles de claviers pour fournir un service de qualité et fiable à tous nos clients.</p>
@@ -38,8 +38,8 @@ const keyboardsData: TServiceObject = {
       id: 2,
       img: "keyboard-without-keycaps",
       title: "Remplacement de touches",
-      price: "",
-      time: "",
+      price: "24 €",
+      time: "30 minutes",
       url: "remplacement-de-touches",
       content: `
       <p>Pixel Renovate propose également un service de remplacement de touches pour les claviers endommagés ou manquants. Les touches d'un clavier peuvent être endommagées en raison d'une utilisation fréquente, d'un accident, ou simplement de l'usure naturelle. Notre équipe de techniciens peut remplacer les touches défectueuses par des touches de remplacement, afin que le clavier puisse être utilisé à nouveau.</p>
@@ -53,8 +53,8 @@ const keyboardsData: TServiceObject = {
       id: 3,
       img: "keyboard-open",
       title: "Réparation de circuits",
-      price: "",
-      time: "",
+      price: "74 €",
+      time: "3 heures",
       url: "reparation-de-circuits",
       content: `
       <p>Chez Pixel Renovate, nous offrons également des services de réparation de circuits pour les claviers dont les circuits sont endommagés ou défectueux. Les circuits d'un clavier peuvent être endommagés en raison d'une surtension électrique, d'un accident ou d'une utilisation prolongée. Si les circuits du clavier sont endommagés, il peut affecter la fonctionnalité du clavier et rendre difficile son utilisation.</p>
@@ -68,8 +68,8 @@ const keyboardsData: TServiceObject = {
       id: 4,
       img: "keyboard-mac-gradient",
       title: "Nettoyage professionnel",
-      price: "",
-      time: "",
+      price: "24 €",
+      time: "30 minutes",
       url: "nettoyage-professionnel",
       content: `
       <p>Chez Pixel Renovate, nous proposons également des services de nettoyage professionnel pour les claviers sales ou endommagés. Nous savons qu'au fil du temps, les claviers peuvent accumuler de la saleté, des débris, des poils d'animaux et d'autres particules, ce qui peut affecter leur apparence et leur fonctionnement. Notre équipe de techniciens qualifiés peut nettoyer en profondeur votre clavier et restaurer son apparence et son fonctionnement d'origine.</p>

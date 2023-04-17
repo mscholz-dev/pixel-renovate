@@ -1,10 +1,14 @@
-page transition animation
-mettre des select input dans les forms
-mettre en forme le compte insta
-stockage en dbb
-envoie d'email
+# DEV
 
-changer tous les tarifs et temps
-ajouter pour claviers et mobile
+mettre des select input dans les forms
+page transition animation
+transition apparition animation
+
+# COMNUNICATION
+
+mettre en forme le compte insta
+créer des réseaux facebook, twitter, linkedin
+
+# JURIDIQUE
 
 page mentions legales CCU CCV

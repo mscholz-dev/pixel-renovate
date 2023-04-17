@@ -1,8 +1,15 @@
 import fs from "fs";
 import nodemailer from "nodemailer";
+import SecurityClass from "../Security";
+
+// classes
+const Security = new SecurityClass();
 
 // types
-import { TCreateTransport } from "../types";
+import {
+  TCreateTransport,
+  TSupportForm,
+} from "../types";
 
 export default class Email {
   send(
@@ -39,19 +46,59 @@ export default class Email {
     });
   }
 
-  async supportCreateTemplate({}): Promise<void> {
+  async supportCreateTemplate({
+    fullName,
+    email,
+    phone,
+    postalCode,
+    city,
+    brand,
+    model,
+    title,
+    description,
+  }: TSupportForm): Promise<void> {
     const fileClient = fs
       .readFileSync(
         `./utils/email/support/support.client.html`,
       )
       .toString();
 
-    const newFileClient = fileClient.replace(
-      "",
-      "",
-    );
+    // manage xss at output
+    const newFileClient = fileClient
+      .replace(
+        "$fullName",
+        Security.xss(fullName),
+      )
+      .replace("$email", Security.xss(email))
+      .replace("$phone", Security.xss(phone))
+      .replace(
+        "$postalCode",
+        Security.xss(postalCode),
+      )
+      .replace("$city", Security.xss(city))
+      .replace(
+        "$brand",
+        brand
+          ? `<p><b>Marque :</b> ${Security.xss(
+              brand,
+            )}</p>`
+          : "",
+      )
+      .replace(
+        "$model",
+        brand
+          ? `<p><b>Modèle :</b> ${Security.xss(
+              model,
+            )}</p>`
+          : "",
+      )
+      .replace("$title", Security.xss(title))
+      .replace(
+        "$description",
+        Security.xss(description),
+      );
 
-    await this.send("email", "", newFileClient);
+    await this.send(email, title, newFileClient);
 
     return;
   }

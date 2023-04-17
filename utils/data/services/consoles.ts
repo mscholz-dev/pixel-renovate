@@ -9,8 +9,8 @@ const consolesData: TServiceObject = {
       id: 0,
       img: "nintendo-switch-red",
       title: "Diagnostique complet de la console",
-      price: "40 €",
-      time: "1 heure",
+      price: "39 €",
+      time: "2 heures",
       url: "diagnostique-complet-de-la-console",
       content: `
       <p>Bienvenue chez notre service de réparation de consoles de jeux. Nous sommes conscients qu'il peut être frustrant de constater que votre console ne fonctionne pas correctement et qu'il est difficile de savoir quel est le problème. C'est pourquoi nous proposons un service de diagnostic complet pour votre console.</p>
@@ -26,7 +26,7 @@ const consolesData: TServiceObject = {
       img: "ps5-gradient",
       title:
         "Nettoyage de la console (dépoussiérage complet + pâte thermique)",
-      price: "55 €",
+      price: "54 €",
       time: "2 heures",
       url: "nettoyage-de-la-console-depoussierage-complet-pate-thermique",
       content: `
@@ -41,8 +41,8 @@ const consolesData: TServiceObject = {
       img: "xbox-s",
       title:
         "Changement/installation de composant(s)",
-      price: "80 €",
-      time: "1 heure",
+      price: "79 €",
+      time: "2 heures",
       url: "changement-installation-de-composants",
       content: `
       <p>Nous sommes conscients que les joueurs et les utilisateurs de consoles cherchent constamment à améliorer les performances de leur machine, que ce soit en ajoutant des composants ou en remplaçant des pièces défectueuses. C'est pourquoi nos techniciens sont formés pour être à la pointe des innovations et des tendances du marché, afin de vous proposer les meilleures options de personnalisation de votre console.</p>
@@ -55,7 +55,7 @@ const consolesData: TServiceObject = {
       id: 3,
       img: "nintendo-switch-controllers",
       title: "Réparation de tout type de manette",
-      price: "40 €",
+      price: "39 €",
       time: "1 heure 30 minutes",
       url: "reparation-de-tout-type-de-manette",
       content: `

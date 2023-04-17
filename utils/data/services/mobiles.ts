@@ -9,8 +9,8 @@ const mobilesData: TServiceObject = {
       id: 0,
       img: "iphone-break",
       title: "Réparation d'écrans fissurés",
-      price: "",
-      time: "",
+      price: "54 €",
+      time: "1 heure",
       url: "reparation-d-ecrans-fissures",
       content: `
       <p>Nous offrons des services de réparation de téléphone mobile de qualité supérieure, y compris le remplacement des écrans brisés pour tous les modèles de téléphones portables. Nous comprenons l'importance de votre téléphone pour vous, c'est pourquoi nous offrons des services de réparation rapides et fiables afin que vous puissiez avoir votre téléphone fonctionnel en un rien de temps.</p>
@@ -30,8 +30,8 @@ const mobilesData: TServiceObject = {
       id: 1,
       img: "iphone-battery-low",
       title: "Remplacement de batterie",
-      price: "",
-      time: "",
+      price: "39 €",
+      time: "1 heure",
       url: "remplacement-de-batterie",
       content: `
       <p>Chez Pixel Renovate notre site e-commerce de réparation de téléphones mobiles, nous proposons un service de remplacement de batterie pour tous les modèles de smartphones. Si vous rencontrez des problèmes avec la batterie de votre téléphone portable, tels qu'une batterie qui se décharge rapidement ou qui ne se recharge plus, notre équipe de techniciens qualifiés peut vous aider.</p>
@@ -50,8 +50,8 @@ const mobilesData: TServiceObject = {
       id: 2,
       img: "phone-motherboard",
       title: "Réparation de carte mère",
-      price: "",
-      time: "",
+      price: "99 €",
+      time: "1 jour",
       url: "reparation-de-carte-mere",
       content: `
       <p>La carte mère est l'un des composants les plus importants de votre téléphone portable. Elle assure le fonctionnement et la communication entre les différents composants du téléphone, tels que l'écran, la batterie et le processeur. Cependant, une carte mère endommagée peut entraîner des problèmes de démarrage, de performance et même de perte de données. C'est pourquoi notre équipe de professionnels offre un service de réparation de carte mère pour votre téléphone portable.</p>
@@ -68,8 +68,8 @@ const mobilesData: TServiceObject = {
       id: 3,
       img: "iphone-open",
       title: "Réparation de boutons",
-      price: "",
-      time: "",
+      price: "44 €",
+      time: "1 heure",
       url: "reparation-de-boutons",
       content: `
       <p>Si les boutons de votre téléphone portable sont défectueux ou cassés, cela peut rendre difficile voire impossible leur utilisation, ce qui peut entraîner une perte de fonctionnalité importante. Heureusement, notre équipe de professionnels en réparation de téléphone mobile peut vous aider en réparant ou en remplaçant les boutons endommagés. Nous nous occupons de différents types de boutons, notamment les boutons d'alimentation, les boutons de volume et les boutons d'accueil, afin que votre téléphone fonctionne correctement et que vous puissiez l'utiliser comme vous le souhaitez.</p>
@@ -88,8 +88,8 @@ const mobilesData: TServiceObject = {
       img: "iphone-update",
       title:
         "Nettoyage du système d'exploitation",
-      price: "",
-      time: "",
+      price: "29 €",
+      time: "1 heure",
       url: "nettoyage-du-systeme-d-exploitation",
       content: `
       <p>Le nettoyage du système d'exploitation est une prestation essentielle pour tous les propriétaires de téléphone portable. Au fil du temps, les fichiers inutiles et les applications obsolètes peuvent s'accumuler et ralentir les performances de votre téléphone. Grâce à notre service de nettoyage de système d'exploitation, vous pouvez récupérer la vitesse et l'efficacité de votre téléphone.</p>
@@ -109,8 +109,8 @@ const mobilesData: TServiceObject = {
       id: 5,
       img: "phone-camera",
       title: "Réparation de caméras",
-      price: "",
-      time: "",
+      price: "39 €",
+      time: "1 heure",
       url: "reparation-de-cameras",
       content: `
       <p>La caméra de votre téléphone portable est l'un des composants les plus importants pour la prise de photos et de vidéos. Malheureusement, il est également l'un des éléments les plus fragiles et sujets à des dysfonctionnements. Si vous rencontrez des problèmes avec la caméra de votre téléphone portable, notre service de réparation de caméras peut vous aider.</p>
@@ -130,8 +130,8 @@ const mobilesData: TServiceObject = {
       id: 6,
       img: "iphone-wallpaper-components",
       title: "Diagnostic de panne",
-      price: "",
-      time: "",
+      price: "19 €",
+      time: "1 heure",
       url: "diagnostic-de-panne",
       content: `
       <p>La prestation de diagnostic de panne est un service essentiel que nous proposons à nos clients. Si votre téléphone portable présente des problèmes de charge, de signal ou de connectivité, notre équipe de professionnels effectuera un diagnostic complet pour identifier la cause de la panne.</p>
@@ -150,8 +150,8 @@ const mobilesData: TServiceObject = {
       id: 7,
       img: "iphone-apps",
       title: "Installation de logiciels",
-      price: "",
-      time: "",
+      price: "24 €",
+      time: "30 minutes",
       url: "installation-de-logiciels",
       content: `
       <p>L'installation de logiciels est un service important pour les propriétaires de téléphone portable qui souhaitent améliorer les performances et la sécurité de leur appareil. Chez Pixel Renovate, nous offrons un service d'installation de logiciels professionnel pour répondre aux besoins de nos clients.</p>
@@ -171,8 +171,8 @@ const mobilesData: TServiceObject = {
       id: 8,
       img: "iphone-reset",
       title: "Déverrouillage de téléphone",
-      price: "",
-      time: "",
+      price: "49 €",
+      time: "2 heures",
       url: "deverrouillage-de-telephone",
       content: `
       <p>Le déverrouillage de téléphone est un service de plus en plus demandé par les utilisateurs de téléphones portables. Il permet de libérer votre téléphone de l'emprise d'un opérateur spécifique et de l'utiliser avec n'importe quel autre opérateur. Il peut également être utilisé pour débloquer des fonctionnalités avancées de votre téléphone, telles que le tethering ou le partage de connexion.</p>
@@ -192,8 +192,8 @@ const mobilesData: TServiceObject = {
       id: 9,
       img: "iphone-case",
       title: "Protection de téléphone",
-      price: "",
-      time: "",
+      price: "19 €",
+      time: "15 minutes",
       url: "protection-de-telephone",
       content: `
       <p>La protection de votre téléphone portable est essentielle pour prévenir les dommages physiques qui pourraient affecter son fonctionnement et son apparence. Chez notre service de réparation de téléphone portable, nous proposons une gamme de protections pour votre téléphone, notamment des protections d'écran, des coques de téléphone et des protecteurs de caméra.</p>
