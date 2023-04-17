@@ -29,9 +29,22 @@ const HomeBenefits: FC = () => {
         <IconKey />
       </motion.span>
 
-      <h2 className="title-secondary home-benefits-title">
+      <motion.h2
+        className="title-secondary home-benefits-title"
+        // motion
+        initial={{
+          opacity: 0,
+        }}
+        whileInView={{
+          opacity: 1,
+        }}
+        viewport={FramerMotion.viewportOne}
+        transition={FramerMotion.transitionEaseInOut(
+          1,
+        )}
+      >
         Avantages clés
-      </h2>
+      </motion.h2>
 
       <article className="home-benefits-wrapper">
         {benefitsData.map(

@@ -1,11 +1,14 @@
 import React, { FC } from "react";
-import Image from "next/image";
 import IconContact from "@/public/icons/contact.svg";
 import Link from "next/link";
+import HTMLReactParser from "html-react-parser";
+import { motion } from "framer-motion";
 
 // interfaces
 import { ISpecificService } from "@/utils/interfaces";
-import HTMLReactParser from "html-react-parser";
+
+// classes
+import FramerMotion from "@/utils/FramerMotion";
 
 const SpecificService: FC<ISpecificService> = ({
   servicePath,
@@ -18,15 +21,41 @@ const SpecificService: FC<ISpecificService> = ({
 }) => {
   return (
     <article className="specific-service">
-      <Image
+      <motion.img
         src={`/img/services/${servicePath}/${img}.webp`}
         alt={title}
         className="specific-service-img"
         height={200}
         width={1000}
+        // motion
+        initial={{
+          clipPath:
+            FramerMotion.clipPathPolygonLeftClose,
+        }}
+        animate={{
+          clipPath:
+            FramerMotion.clipPathPolygonOpen,
+        }}
+        viewport={FramerMotion.viewportOne}
+        transition={FramerMotion.transitionEaseInOut(
+          1,
+        )}
       />
 
-      <div className="wrapper-padding-y specific-service-wrapper">
+      <motion.div
+        className="wrapper-padding-y specific-service-wrapper"
+        // motion
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        viewport={FramerMotion.viewportOne}
+        transition={FramerMotion.transitionEaseInOut(
+          1,
+        )}
+      >
         <h2 className="specific-service-title">
           {title}
         </h2>
@@ -46,21 +75,37 @@ const SpecificService: FC<ISpecificService> = ({
           {HTMLReactParser(content)}
         </div>
 
-        <Link
-          href={{
-            pathname:
-              "/demande-de-prise-en-charge/[service]",
-            query: {
-              service,
-              prestation: title,
-            },
+        <motion.div
+          // motion
+          initial={{
+            x: 200,
+            opacity: 0,
           }}
-          className="specific-service-btn"
+          whileInView={{
+            x: 0,
+            opacity: 1,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
         >
-          <IconContact className="specific-service-btn-icon" />
-          Prendre rendez-vous
-        </Link>
-      </div>
+          <Link
+            href={{
+              pathname:
+                "/demande-de-prise-en-charge/[service]",
+              query: {
+                service,
+                prestation: title,
+              },
+            }}
+            className="specific-service-btn"
+          >
+            <IconContact className="specific-service-btn-icon" />
+            Prendre rendez-vous
+          </Link>
+        </motion.div>
+      </motion.div>
     </article>
   );
 };

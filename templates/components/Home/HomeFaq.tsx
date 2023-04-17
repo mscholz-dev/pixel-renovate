@@ -124,14 +124,27 @@ const HomeFaq: FC = () => {
       </motion.span>
 
       <div className="home-faq-main">
-        <h2 className="title-secondary home-faq-title">
+        <motion.h2
+          className="title-secondary home-faq-title"
+          // motion
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
+        >
           Questions fréquemment posées
-        </h2>
+        </motion.h2>
 
         <article ref={articleRef}>
           {faqData.map(
             ({ id, title, content }) => (
-              <div
+              <motion.div
                 key={id}
                 meta-id={id}
                 className={`home-faq-item${
@@ -141,6 +154,21 @@ const HomeFaq: FC = () => {
                 }`}
                 tabIndex={0}
                 onClick={handleQuestionClick}
+                // motion
+                initial={{
+                  opacity: 0,
+                  x: id % 2 === 0 ? -300 : 300,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={FramerMotion.transitionEaseInOut(
+                  1,
+                )}
               >
                 <h3 className="home-faq-item-title">
                   {title}
@@ -155,7 +183,7 @@ const HomeFaq: FC = () => {
                     {HTMLReactParser(content)}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ),
           )}
         </article>

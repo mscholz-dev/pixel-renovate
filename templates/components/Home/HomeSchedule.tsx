@@ -59,9 +59,22 @@ const HomeSchedule: FC = () => {
   return (
     <section className="wrapper-padding-y home-schedule">
       <div className="home-schedule-all">
-        <h2 className="title-secondary home-schedule-title">
+        <motion.h2
+          className="title-secondary home-schedule-title"
+          // motion
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
+        >
           Pixel Renovate
-        </h2>
+        </motion.h2>
 
         <motion.img
           src="/img/logo.png"
@@ -105,20 +118,46 @@ const HomeSchedule: FC = () => {
           <Map />
 
           <article className="home-schedule-article">
-            <h3 className="title-tertiary home-schedule-subtitle">
+            <motion.h3
+              className="title-tertiary home-schedule-subtitle"
+              // motion
+              initial={{
+                opacity: 0,
+              }}
+              whileInView={{
+                opacity: 1,
+              }}
+              viewport={FramerMotion.viewportOne}
+              transition={FramerMotion.transitionEaseInOut(
+                1,
+              )}
+            >
               Horaires de prise en charge
-            </h3>
+            </motion.h3>
 
             <div className="home-schedule-wrapper">
               {schedules.map(
                 ({ id, day, hours }) => (
-                  <div
+                  <motion.div
                     key={id}
                     className={`home-schedule-item${
                       currentDayNumber === id
                         ? " home-schedule-item-current"
                         : ""
                     }`}
+                    // motion
+                    initial={{
+                      opacity: 0,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                    }}
+                    viewport={
+                      FramerMotion.viewportOne
+                    }
+                    transition={FramerMotion.transitionEaseInOut(
+                      1,
+                    )}
                   >
                     <p className="home-schedule-item-day">
                       {day}
@@ -127,7 +166,7 @@ const HomeSchedule: FC = () => {
                     <p className="home-schedule-item-hours">
                       {hours}
                     </p>
-                  </div>
+                  </motion.div>
                 ),
               )}
             </div>
@@ -135,13 +174,37 @@ const HomeSchedule: FC = () => {
         </div>
 
         <article className="home-schedule-emergency">
-          <h3>
+          <motion.h3
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             <IconWarning className="home-schedule-emergency-icon" />
             Dépannage d&apos;urgence disponible
             24/7
-          </h3>
+          </motion.h3>
 
-          <p>
+          <motion.p
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             Si vous êtes confronté à une urgence
             informatique, ne paniquez pas ! Pixel
             Renovate est là pour vous aider. Nous
@@ -150,8 +213,20 @@ const HomeSchedule: FC = () => {
             rapidement tous les problèmes que vous
             pourriez rencontrer avec votre
             matériel informatique.
-          </p>
-          <p>
+          </motion.p>
+          <motion.p
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             Que ce soit une panne soudaine, une
             infection virale ou une perte de
             données, notre équipe de techniciens
@@ -164,14 +239,26 @@ const HomeSchedule: FC = () => {
             matériel aussi rapidement que
             possible, tout en vous offrant un
             service de qualité.
-          </p>
-          <p>
+          </motion.p>
+          <motion.p
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             Contactez-nous dès maintenant pour
             bénéficier de notre service de
             dépannage d&apos;urgence et retrouvez
             rapidement votre ordinateur en parfait
             état de fonctionnement.
-          </p>
+          </motion.p>
         </article>
       </div>
     </section>

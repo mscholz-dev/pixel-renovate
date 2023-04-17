@@ -17,6 +17,8 @@ import IconEnvelopes from "@/public/icons/envelopes.svg";
 import IconCity from "@/public/icons/city.svg";
 import IconBellConcierge from "@/public/icons/bell-concierge.svg";
 import IconMagnifyingGlass from "@/public/icons/magnifying-glass.svg";
+import { motion } from "framer-motion";
+import FormInputMotion from "./FormInputMotion";
 
 // services data
 import computersData from "@/utils/data/services/computers";
@@ -26,6 +28,7 @@ import webData from "@/utils/data/services/web";
 import keyboardsData from "@/utils/data/services/keyboards";
 
 // classes
+import FramerMotion from "@/utils/FramerMotion";
 const Form = new FormClass();
 
 // interfaces
@@ -38,6 +41,26 @@ const FormSupport: FC<IFormSupport> = ({
   handleSubmit,
   service,
 }) => {
+  const deviceService =
+    service === computersData.service ||
+    service === consolesData.service ||
+    service === mobilesData.service ||
+    service === keyboardsData.service;
+
+  const inputsDelay = {
+    fullName: 0,
+    email: 1,
+    phone: 2,
+    postalCode: 3,
+    city: 4,
+    brand: deviceService ? 5 : 0,
+    model: deviceService ? 6 : 0,
+    title: deviceService ? 7 : 5,
+    description: deviceService ? 8 : 6,
+    consent: deviceService ? 9 : 7,
+    btn: deviceService ? 10 : 8,
+  };
+
   const [img, setImg] = useState({
     src: `${computersData.servicePath}/mac-gradient-semi-open`,
     alt: "Mac entre ouvert avec un reflet coloré",
@@ -94,207 +117,244 @@ const FormSupport: FC<IFormSupport> = ({
   return (
     <FormPage imgSrc={img.src} imgAlt={img.alt}>
       <form onSubmit={handleSubmit}>
-        <FormInput
-          icon={<IconUser />}
-          id="fullName"
-          handleChange={(e: ChangeEvent) =>
-            Form.handleChange(
-              e,
-              "fullName",
-              setForm,
-              form,
-            )
-          }
-          label="Nom et prénom"
-          type="text"
-          value={form.fullName}
-          min={0}
-          max={60}
-          ariaDescribedby=""
-        />
+        <FormInputMotion
+          delay={inputsDelay.fullName}
+        >
+          <FormInput
+            icon={<IconUser />}
+            id="fullName"
+            handleChange={(e: ChangeEvent) =>
+              Form.handleChange(
+                e,
+                "fullName",
+                setForm,
+                form,
+              )
+            }
+            label="Nom et prénom"
+            type="text"
+            value={form.fullName}
+            min={0}
+            max={60}
+            ariaDescribedby=""
+          />
+        </FormInputMotion>
 
-        <FormInput
-          icon={<IconContact />}
-          id="email"
-          handleChange={(e: ChangeEvent) =>
-            Form.handleChange(
-              e,
-              "email",
-              setForm,
-              form,
-            )
-          }
-          label="Email"
-          type="email"
-          value={form.email}
-          min={0}
-          max={255}
-          ariaDescribedby=""
-        />
+        <FormInputMotion
+          delay={inputsDelay.email}
+        >
+          <FormInput
+            icon={<IconContact />}
+            id="email"
+            handleChange={(e: ChangeEvent) =>
+              Form.handleChange(
+                e,
+                "email",
+                setForm,
+                form,
+              )
+            }
+            label="Email"
+            type="email"
+            value={form.email}
+            min={0}
+            max={255}
+            ariaDescribedby=""
+          />
+        </FormInputMotion>
 
-        <FormInput
-          icon={<IconPhone />}
-          id="phone"
-          handleChange={(e: ChangeEvent) =>
-            Form.handleChange(
-              e,
-              "phone",
-              setForm,
-              form,
-            )
-          }
-          label="Numéro de téléphone"
-          type="number"
-          value={form.phone}
-          min={0}
-          max={10}
-          ariaDescribedby=""
-        />
+        <FormInputMotion
+          delay={inputsDelay.phone}
+        >
+          <FormInput
+            icon={<IconPhone />}
+            id="phone"
+            handleChange={(e: ChangeEvent) =>
+              Form.handleChange(
+                e,
+                "phone",
+                setForm,
+                form,
+              )
+            }
+            label="Numéro de téléphone"
+            type="number"
+            value={form.phone}
+            min={0}
+            max={10}
+            ariaDescribedby=""
+          />
+        </FormInputMotion>
 
-        <FormInput
-          icon={<IconEnvelopes />}
-          id="postalCode"
-          handleChange={(e: ChangeEvent) =>
-            Form.handleChange(
-              e,
-              "postalCode",
-              setForm,
-              form,
-            )
-          }
-          label="Code postal"
-          type="number"
-          value={form.postalCode}
-          min={0}
-          max={5}
-          ariaDescribedby=""
-        />
+        <FormInputMotion
+          delay={inputsDelay.postalCode}
+        >
+          <FormInput
+            icon={<IconEnvelopes />}
+            id="postalCode"
+            handleChange={(e: ChangeEvent) =>
+              Form.handleChange(
+                e,
+                "postalCode",
+                setForm,
+                form,
+              )
+            }
+            label="Code postal"
+            type="number"
+            value={form.postalCode}
+            min={0}
+            max={5}
+            ariaDescribedby=""
+          />
+        </FormInputMotion>
 
-        <FormInput
-          icon={<IconCity />}
-          id="city"
-          handleChange={(e: ChangeEvent) =>
-            Form.handleChange(
-              e,
-              "city",
-              setForm,
-              form,
-            )
-          }
-          label="Ville"
-          type="text"
-          value={form.city}
-          min={0}
-          max={60}
-          ariaDescribedby=""
-        />
+        <FormInputMotion delay={inputsDelay.city}>
+          <FormInput
+            icon={<IconCity />}
+            id="city"
+            handleChange={(e: ChangeEvent) =>
+              Form.handleChange(
+                e,
+                "city",
+                setForm,
+                form,
+              )
+            }
+            label="Ville"
+            type="text"
+            value={form.city}
+            min={0}
+            max={60}
+            ariaDescribedby=""
+          />
+        </FormInputMotion>
 
-        {service === computersData.service ||
-        service === consolesData.service ||
-        service === mobilesData.service ||
-        service === keyboardsData.service ? (
+        {deviceService ? (
           <>
-            <FormInput
-              icon={<IconMagnifyingGlass />}
-              id="brand"
-              handleChange={(e: ChangeEvent) =>
-                Form.handleChange(
-                  e,
-                  "brand",
-                  setForm,
-                  form,
-                )
-              }
-              label="Marque"
-              type="text"
-              value={form.brand}
-              min={0}
-              max={60}
-              ariaDescribedby=""
-            />
+            <FormInputMotion
+              delay={inputsDelay.brand}
+            >
+              <FormInput
+                icon={<IconMagnifyingGlass />}
+                id="brand"
+                handleChange={(e: ChangeEvent) =>
+                  Form.handleChange(
+                    e,
+                    "brand",
+                    setForm,
+                    form,
+                  )
+                }
+                label="Marque"
+                type="text"
+                value={form.brand}
+                min={0}
+                max={60}
+                ariaDescribedby=""
+              />
+            </FormInputMotion>
 
-            <FormInput
-              icon={<IconMagnifyingGlass />}
-              id="model"
-              handleChange={(e: ChangeEvent) =>
-                Form.handleChange(
-                  e,
-                  "model",
-                  setForm,
-                  form,
-                )
-              }
-              label="Modèle"
-              type="text"
-              value={form.model}
-              min={0}
-              max={60}
-              ariaDescribedby=""
-            />
+            <FormInputMotion
+              delay={inputsDelay.model}
+            >
+              <FormInput
+                icon={<IconMagnifyingGlass />}
+                id="model"
+                handleChange={(e: ChangeEvent) =>
+                  Form.handleChange(
+                    e,
+                    "model",
+                    setForm,
+                    form,
+                  )
+                }
+                label="Modèle"
+                type="text"
+                value={form.model}
+                min={0}
+                max={60}
+                ariaDescribedby=""
+              />
+            </FormInputMotion>
           </>
         ) : (
           <></>
         )}
 
-        <FormInput
-          icon={<IconBellConcierge />}
-          id="title"
-          handleChange={(e: ChangeEvent) =>
-            Form.handleChange(
-              e,
-              "title",
-              setForm,
-              form,
-            )
-          }
-          label="Prestation"
-          type="text"
-          value={form.title}
-          min={0}
-          max={255}
-          ariaDescribedby=""
-        />
+        <FormInputMotion
+          delay={inputsDelay.title}
+        >
+          <FormInput
+            icon={<IconBellConcierge />}
+            id="title"
+            handleChange={(e: ChangeEvent) =>
+              Form.handleChange(
+                e,
+                "title",
+                setForm,
+                form,
+              )
+            }
+            label="Prestation"
+            type="text"
+            value={form.title}
+            min={0}
+            max={255}
+            ariaDescribedby=""
+          />
+        </FormInputMotion>
 
-        <FormTextarea
-          id="description"
-          handleChange={(e: ChangeEvent) =>
-            Form.handleChange(
-              e,
-              "description",
-              setForm,
-              form,
-            )
-          }
-          label="Description de la demande"
-          value={form.description}
-          min={0}
-          max={5_000}
-          ariaDescribedby=""
-          rows={4}
-        />
+        <FormInputMotion
+          delay={inputsDelay.description}
+        >
+          <FormTextarea
+            id="description"
+            handleChange={(e: ChangeEvent) =>
+              Form.handleChange(
+                e,
+                "description",
+                setForm,
+                form,
+              )
+            }
+            label="Description de la demande"
+            value={form.description}
+            min={0}
+            max={5_000}
+            ariaDescribedby=""
+            rows={4}
+          />
+        </FormInputMotion>
 
-        <FormCheckbox
-          id="consent"
-          handleChange={(e: ChangeEvent) =>
-            Form.handleCheckboxChange(
-              e,
-              "consent",
-              setForm,
-              form,
-            )
-          }
-          label="J'accepte que mes données soient traitées dans le cadre de ma demande"
-          checked={form.consent}
-          ariaDescribedby=""
-        />
+        <FormInputMotion
+          delay={inputsDelay.consent}
+        >
+          <FormCheckbox
+            id="consent"
+            handleChange={(e: ChangeEvent) =>
+              Form.handleCheckboxChange(
+                e,
+                "consent",
+                setForm,
+                form,
+              )
+            }
+            label="J'accepte que mes données soient traitées dans le cadre de ma demande"
+            checked={form.consent}
+            ariaDescribedby=""
+          />
+        </FormInputMotion>
 
-        <button className="form-support-btn">
-          {!loading ? (
-            "Envoyer ma demande"
-          ) : (
-            <IconLoader className="form-support-btn-icon-loader" />
-          )}
-        </button>
+        <FormInputMotion delay={inputsDelay.btn}>
+          <button className="form-support-btn">
+            {!loading ? (
+              "Envoyer ma demande"
+            ) : (
+              <IconLoader className="form-support-btn-icon-loader" />
+            )}
+          </button>
+        </FormInputMotion>
       </form>
     </FormPage>
   );

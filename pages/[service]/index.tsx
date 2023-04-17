@@ -7,6 +7,7 @@ import {
   GetStaticPropsContext,
 } from "next";
 import CardSectionService from "@/templates/components/Card/CardSectionService";
+import { motion } from "framer-motion";
 
 // services data
 import computersData from "@/utils/data/services/computers";
@@ -21,6 +22,9 @@ import { IServices } from "@/utils/interfaces";
 // types
 import { TGetStaticPathServices } from "@/utils/types";
 
+// classes
+import FramerMotion from "@/utils/FramerMotion";
+
 const Services: FC<IServices> = ({
   service,
   servicePath,
@@ -34,9 +38,21 @@ const Services: FC<IServices> = ({
     >
       <CardSectionService
         title={
-          <h2>
+          <motion.h2
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             Prestations pour les <b>{service}</b>
-          </h2>
+          </motion.h2>
         }
         items={data}
         service={service}

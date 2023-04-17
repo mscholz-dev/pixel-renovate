@@ -74,14 +74,45 @@ const BlockCta: FC<IBlockCta> = ({
         </motion.span>
 
         <article className="block-cta-wrapper">
-          {title}
-
-          <Link
-            href={linkUrl}
-            className="block-cta-link"
+          <motion.div
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
           >
-            {linkTitle}
-          </Link>
+            {title}
+          </motion.div>
+
+          <motion.div
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={{
+              ...FramerMotion.transitionEaseInOut(
+                1,
+              ),
+              delay: 0.25,
+            }}
+          >
+            <Link
+              href={linkUrl}
+              className="block-cta-link"
+            >
+              {linkTitle}
+            </Link>
+          </motion.div>
         </article>
       </>
     </section>

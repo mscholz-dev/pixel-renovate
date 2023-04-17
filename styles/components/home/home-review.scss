@@ -59,9 +59,7 @@
     cursor: pointer;
     padding: 24px;
     position: absolute;
-    transform: rotate(-10deg);
-    transition: 0.25s transform ease-in-out,
-      0.25s z-index ease-in-out;
+    transition: 0.25s z-index ease-in-out;
     width: 600px;
 
     @include responsive(t) {
@@ -111,7 +109,6 @@
     }
 
     &:hover {
-      transform: rotate(-15deg);
       z-index: 4;
 
       .home-review-item {

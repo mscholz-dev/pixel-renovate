@@ -125,3 +125,8 @@ export interface IDemandeDePriseEnCharge {
   service: string;
   title: string;
 }
+
+export interface IFormInputMotion {
+  children: JSX.Element;
+  delay: number;
+}

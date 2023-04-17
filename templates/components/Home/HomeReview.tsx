@@ -33,11 +33,37 @@ const HomeReview: FC = () => {
 
       <div className="home-review-main">
         <article>
-          <h2 className="title-secondary home-review-title">
+          <motion.h2
+            className="title-secondary home-review-title"
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             Que disent nos client sur nous
-          </h2>
+          </motion.h2>
 
-          <p className="home-review-text">
+          <motion.p
+            className="home-review-text"
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             Chez Pixel Renovate, nous sommes fiers
             de fournir des services de réparation
             de matériel informatique de haute
@@ -48,8 +74,21 @@ const HomeReview: FC = () => {
             nous. Nous sommes heureux de partager
             quelques témoignages de nos clients
             satisfaits.
-          </p>
-          <p className="home-review-text">
+          </motion.p>
+          <motion.p
+            className="home-review-text"
+            // motion
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={FramerMotion.viewportOne}
+            transition={FramerMotion.transitionEaseInOut(
+              1,
+            )}
+          >
             Ces témoignages montrent que nous
             sommes déterminés à fournir des
             services de réparation de matériel
@@ -63,7 +102,7 @@ const HomeReview: FC = () => {
             n&apos;hésitez pas à nous contacter et
             à faire partie de notre communauté de
             clients satisfaits.
-          </p>
+          </motion.p>
         </article>
 
         <div>
@@ -76,9 +115,31 @@ const HomeReview: FC = () => {
               subject,
               text,
             }) => (
-              <article
+              <motion.article
                 key={id}
                 className="home-review-item"
+                // motion
+                initial={{
+                  x: 100,
+                  y: 200,
+                  rotate: 0,
+                  opacity: 0,
+                }}
+                whileInView={{
+                  x: 0,
+                  y: 0,
+                  rotate: -10,
+                  opacity: 1,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={{
+                  ...FramerMotion.transitionEaseInOut(
+                    0.5,
+                  ),
+                  delay: id / 6,
+                }}
               >
                 <IconQuote className="home-review-item-quote" />
 
@@ -105,7 +166,7 @@ const HomeReview: FC = () => {
                     </p>
                   </div>
                 </div>
-              </article>
+              </motion.article>
             ),
           )}
         </div>

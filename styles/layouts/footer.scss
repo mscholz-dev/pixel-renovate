@@ -35,8 +35,7 @@
       fill: $white;
       height: 32px;
       margin-right: 12px;
-      transition: 0.25s fill ease-in-out,
-        0.25s transform ease-in-out;
+      transition: 0.25s fill ease-in-out;
       width: 32px;
 
       &:last-child {
@@ -45,7 +44,6 @@
 
       &:hover {
         fill: $primary-color;
-        transform: scale(1.25);
       }
     }
   }

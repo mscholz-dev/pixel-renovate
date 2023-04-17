@@ -30,16 +30,42 @@ const HomeTroubleshooting: FC = () => {
       </motion.span>
 
       <div className="home-troubleshooting-main">
-        <h2 className="title-secondary home-troubleshooting-title">
+        <motion.h2
+          className="title-secondary home-troubleshooting-title"
+          // motion
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
+        >
           Dépannage en ligne sécurisé
-        </h2>
+        </motion.h2>
 
         <article className="home-troubleshooting-wrapper">
           {troubleshootingsData.map(
             ({ id, icon, title, text }) => (
-              <div
+              <motion.div
                 key={id}
                 className="home-troubleshooting-item"
+                // motion
+                initial={{
+                  opacity: 0,
+                }}
+                whileInView={{
+                  opacity: 1,
+                }}
+                viewport={
+                  FramerMotion.viewportOne
+                }
+                transition={FramerMotion.transitionEaseInOut(
+                  1,
+                )}
               >
                 <span className="home-troubleshooting-item-icon">
                   {icon}
@@ -52,7 +78,7 @@ const HomeTroubleshooting: FC = () => {
                 <p className="home-troubleshooting-item-text">
                   {text}
                 </p>
-              </div>
+              </motion.div>
             ),
           )}
         </article>

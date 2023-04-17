@@ -3,6 +3,10 @@ import Typist from "react-text-typist";
 import Link from "next/link";
 import IconLogo from "@/public/icons/logo.svg";
 import IconComment from "@/public/icons/comments.svg";
+import { motion } from "framer-motion";
+
+// classes
+import FramerMotion from "@/utils/FramerMotion";
 
 const Home: FC = () => {
   const sentences: string[] = [
@@ -13,7 +17,20 @@ const Home: FC = () => {
   ];
 
   return (
-    <section className="home">
+    <motion.section
+      className="home"
+      // motion
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      viewport={FramerMotion.viewportOne}
+      transition={FramerMotion.transitionEaseInOut(
+        1,
+      )}
+    >
       <div className="home-main">
         <h2 className="home-title">
           <IconLogo className="home-title-logo" />
@@ -40,7 +57,7 @@ const Home: FC = () => {
           <IconComment className="home-link-icon" />
         </Link>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
