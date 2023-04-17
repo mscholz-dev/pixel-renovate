@@ -61,8 +61,8 @@ const FormSupport: FC<IFormSupport> = ({
 
       case mobilesData.service:
         setImg({
-          src: `${mobilesData.servicePath}/iphone-black`,
-          alt: "IPhone noir vue de dessus",
+          src: `${mobilesData.servicePath}/iphone-case`,
+          alt: "Coques d'IPhone colorées",
         });
         return;
 
