@@ -120,15 +120,15 @@ const HomeReview: FC = () => {
                 className="home-review-item"
                 // motion
                 initial={{
-                  // x: 100,
-                  // y: 200,
-                  // rotate: 0,
+                  x: 100,
+                  y: 200,
+                  rotate: 0,
                   opacity: 0,
                 }}
                 whileInView={{
-                  // x: 0,
-                  // y: 0,
-                  // rotate: -10,
+                  x: 0,
+                  y: 0,
+                  rotate: -10,
                   opacity: 1,
                 }}
                 viewport={
