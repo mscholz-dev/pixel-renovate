@@ -162,7 +162,7 @@ ${description}
   } catch (err: unknown) {
     console.error(err);
     return res.status(400).json({
-      err: "something went wrong",
+      err: err,
     });
   }
 };
