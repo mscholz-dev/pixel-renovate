@@ -20,10 +20,8 @@ export default class Email {
     return new Promise(async (resolve, __) => {
       const transporter =
         nodemailer.createTransport({
-          host: process.env.MAILER_HOST as string,
-          port: Number(
-            process.env.MAILER_PORT,
-          ) as number,
+          host: "smtp.gmail.com",
+          port: 465,
           secure: true,
           auth: {
             user: process.env
@@ -86,7 +84,7 @@ export default class Email {
       )
       .replace(
         "$model",
-        brand
+        model
           ? `<p><b>Modèle :</b> ${Security.xss(
               model,
             )}</p>`

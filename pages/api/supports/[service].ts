@@ -144,18 +144,18 @@ ${description}
       });
 
       // send email to customer
-      // await Email.supportCreateTemplate({
-      //   fullName,
-      //   email,
-      //   phone,
-      //   postalCode,
-      //   city,
-      //   brand,
-      //   model,
-      //   title,
-      //   description,
-      //   consent,
-      // });
+      await Email.supportCreateTemplate({
+        fullName,
+        email,
+        phone,
+        postalCode,
+        city,
+        brand,
+        model,
+        title,
+        description,
+        consent,
+      });
 
       return res.status(200).end();
     }
