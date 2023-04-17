@@ -122,13 +122,13 @@ const HomeReview: FC = () => {
                 initial={{
                   x: 100,
                   y: 200,
-                  rotate: 0,
+                  // rotate: 0,
                   opacity: 0,
                 }}
                 whileInView={{
                   x: 0,
                   y: 0,
-                  rotate: -10,
+                  // rotate: -10,
                   opacity: 1,
                 }}
                 viewport={

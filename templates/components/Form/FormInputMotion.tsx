@@ -25,7 +25,7 @@ const FormInputMotion: FC<IFormInputMotion> = ({
       viewport={FramerMotion.viewportOne}
       transition={{
         ...FramerMotion.transitionEaseInOut(0.5),
-        delay: delay / 6,
+        delay: delay / 4,
       }}
     >
       {children}
