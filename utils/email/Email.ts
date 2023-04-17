@@ -39,8 +39,8 @@ export default class Email {
         from: process.env.MAILER_USER as string,
         to: emailDest,
         subject: `PIXEL RENOVATE • ${emailSubject}`,
-        text: "",
-        html: emailMessage,
+        text: "test",
+        html: "<p>test</p>",
       });
 
       resolve(info);
