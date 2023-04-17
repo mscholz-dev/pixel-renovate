@@ -40,8 +40,6 @@ module.exports = {
     WEBHOOK_WEB: process.env.WEBHOOK_WEB,
     WEBHOOK_KEYBOARDS:
       process.env.WEBHOOK_KEYBOARDS,
-    MAILER_USER: process.env.MAILER_USER,
-    MAILER_PASSWORD: process.env.MAILER_PASSWORD,
     MONGODB_URI: process.env.MONGODB_URI,
   },
   // disable trash header
