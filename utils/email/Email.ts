@@ -62,39 +62,39 @@ export default class Email {
       .toString();
 
     // manage xss at output
-    const newFileClient = fileClient
-      .replace(
-        "$fullName",
-        Security.xss(fullName),
-      )
-      .replace("$email", Security.xss(email))
-      .replace("$phone", Security.xss(phone))
-      .replace(
-        "$postalCode",
-        Security.xss(postalCode),
-      )
-      .replace("$city", Security.xss(city))
-      .replace(
-        "$brand",
-        brand
-          ? `<p><b>Marque :</b> ${Security.xss(
-              brand,
-            )}</p>`
-          : "",
-      )
-      .replace(
-        "$model",
-        model
-          ? `<p><b>Modèle :</b> ${Security.xss(
-              model,
-            )}</p>`
-          : "",
-      )
-      .replace("$title", Security.xss(title))
-      .replace(
-        "$description",
-        Security.xss(description),
-      );
+    const newFileClient = fileClient;
+    // .replace(
+    //   "$fullName",
+    //   Security.xss(fullName),
+    // )
+    // .replace("$email", Security.xss(email))
+    // .replace("$phone", Security.xss(phone))
+    // .replace(
+    //   "$postalCode",
+    //   Security.xss(postalCode),
+    // )
+    // .replace("$city", Security.xss(city))
+    // .replace(
+    //   "$brand",
+    //   brand
+    //     ? `<p><b>Marque :</b> ${Security.xss(
+    //         brand,
+    //       )}</p>`
+    //     : "",
+    // )
+    // .replace(
+    //   "$model",
+    //   model
+    //     ? `<p><b>Modèle :</b> ${Security.xss(
+    //         model,
+    //       )}</p>`
+    //     : "",
+    // )
+    // .replace("$title", Security.xss(title))
+    // .replace(
+    //   "$description",
+    //   Security.xss(description),
+    // );
 
     await this.send(email, title, newFileClient);
 
