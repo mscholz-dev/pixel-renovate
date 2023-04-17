@@ -2,7 +2,7 @@ import { ChangeEvent } from "react";
 
 export type THeaderLinks = {
   id: number;
-  url: string | object;
+  url: string;
   title: string;
   icon: JSX.Element;
 }[];

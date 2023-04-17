@@ -58,16 +58,24 @@
     align-items: center;
     color: $white;
     display: flex;
-    font-size: 48px;
+    font-size: 32px;
     margin-bottom: 64px;
 
+    @include responsive(s) {
+      font-size: 48px;
+    }
+
     @include responsive(s-xl) {
-      font-size: 64px;
+      font-size: 52px;
     }
 
     @include responsive(t-xs) {
-      font-size: 96px;
+      font-size: 72px;
       margin-bottom: 48px;
+    }
+
+    @include responsive(t) {
+      font-size: 96px;
     }
 
     &-logo {

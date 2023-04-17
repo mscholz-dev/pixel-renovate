@@ -3,19 +3,16 @@
   position: relative;
 
   &-wifi {
-    cursor: pointer;
     display: flex;
     fill: $secondary-color;
     height: 64px;
     position: absolute;
-    right: 12px;
+    left: 12px;
     top: -32px;
-    transform: rotate(-45deg);
-    transition: 0.25s transform ease-in-out;
     width: 64px;
 
-    &:hover {
-      transform: rotate(0.5turn);
+    @include responsive(t-xs) {
+      left: 64px;
     }
   }
 

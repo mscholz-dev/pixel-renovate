@@ -13,24 +13,16 @@
   }
 
   &-star {
-    cursor: pointer;
     display: flex;
     fill: $yellow-color;
     height: 64px;
     position: absolute;
     right: 12px;
     top: -32px;
-    transform: rotate(10deg);
-    transition: 0.25s transform ease-in-out;
     width: 64px;
-
-    &:hover {
-      transform: rotate(0.5turn);
-    }
 
     @include responsive(t) {
       left: 64px;
-      transform: rotate(-10deg);
     }
   }
 

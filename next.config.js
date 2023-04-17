@@ -62,17 +62,4 @@ module.exports = {
   images: {
     domains: ["s3.us-west-2.amazonaws.com"],
   },
-  async rewrites() {
-    return [
-      {
-        source: "/demande-de-prise-en-charge",
-        destination:
-          "/demande-de-prise-en-charge",
-      },
-      {
-        source: "/api/supports",
-        destination: "/api/supports",
-      },
-    ];
-  },
 };

@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import Wrapper from "@/templates/layouts/Wrapper";
 import Typist from "react-text-typist";
 import Link from "next/link";
 import IconLogo from "@/public/icons/logo.svg";
@@ -14,7 +13,7 @@ const Home: FC = () => {
   ];
 
   return (
-    <Wrapper className="home">
+    <section className="home">
       <div className="home-main">
         <h2 className="home-title">
           <IconLogo className="home-title-logo" />
@@ -34,18 +33,14 @@ const Home: FC = () => {
         </div>
 
         <Link
-          href={{
-            pathname:
-              "/demande-de-prise-en-charge/[service]",
-            query: { service: "" },
-          }}
+          href="/demande-de-prise-en-charge"
           className="home-link"
         >
           Demander une prise en charge
           <IconComment className="home-link-icon" />
         </Link>
       </div>
-    </Wrapper>
+    </section>
   );
 };
 

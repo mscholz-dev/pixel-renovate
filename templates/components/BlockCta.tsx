@@ -1,10 +1,12 @@
 import React, { FC } from "react";
-import Wrapper from "../layouts/Wrapper";
-import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 // interfaces
 import { IBlockCta } from "@/utils/interfaces";
+
+// classes
+import FramerMotion from "@/utils/FramerMotion";
 
 const BlockCta: FC<IBlockCta> = ({
   imgSrc,
@@ -15,29 +17,61 @@ const BlockCta: FC<IBlockCta> = ({
   reverse,
   color,
   icon,
+  noMb,
+  noMt,
 }) => {
   return (
-    <Wrapper
+    <section
       className={`block-cta${
         reverse ? " block-cta-reverse" : ""
       }${
         color === "primary"
           ? " block-cta-color-primary"
           : " block-cta-color-secondary"
+      }${noMb ? " block-cta-no-mb" : ""}${
+        noMt ? " block-cta-no-mt" : ""
       }`}
     >
       <>
-        <Image
+        <motion.img
           src={`/img/${imgSrc}.webp`}
           alt={imgAlt}
           className="block-cta-img"
           height={500}
           width={500}
+          // motion
+          initial={{
+            clipPath: !reverse
+              ? FramerMotion.clipPathPolygonLeftClose
+              : FramerMotion.clipPathPolygonRightClose,
+          }}
+          whileInView={{
+            clipPath:
+              FramerMotion.clipPathPolygonOpen,
+          }}
+          viewport={FramerMotion.viewportOne}
+          transition={FramerMotion.transitionEaseInOut(
+            1,
+          )}
         />
 
-        <span className="block-cta-icon">
+        <motion.span
+          className="block-cta-icon"
+          // motion
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={FramerMotion.transitionEaseInOut(
+            0.5,
+          )}
+        >
           {icon}
-        </span>
+        </motion.span>
 
         <article className="block-cta-wrapper">
           {title}
@@ -50,7 +84,7 @@ const BlockCta: FC<IBlockCta> = ({
           </Link>
         </article>
       </>
-    </Wrapper>
+    </section>
   );
 };
 

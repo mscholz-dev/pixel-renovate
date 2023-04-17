@@ -1,16 +1,18 @@
 import React, { FC } from "react";
-import Wrapper from "@/templates/layouts/Wrapper";
 import dynamic from "next/dynamic";
 const Map = dynamic(
   () => import("@/templates/components/Map"),
   { ssr: false },
 );
 import IconPin from "@/public/icons/pin.svg";
-import Image from "next/image";
 import IconWarning from "@/public/icons/warning.svg";
+import { motion } from "framer-motion";
 
 // types
 import { THomeSchedules } from "@/utils/types";
+
+// classes
+import FramerMotion from "@/utils/FramerMotion";
 
 const HomeSchedule: FC = () => {
   const currentDayNumber =
@@ -55,21 +57,49 @@ const HomeSchedule: FC = () => {
   ];
 
   return (
-    <Wrapper className="wrapper-padding-y home-schedule">
+    <section className="wrapper-padding-y home-schedule">
       <div className="home-schedule-all">
         <h2 className="title-secondary home-schedule-title">
           Pixel Renovate
         </h2>
 
-        <Image
+        <motion.img
           src="/img/logo.png"
           alt="Logo de Pixel Renovate"
           width={32}
           height={32}
           className="home-schedule-decoration-img"
+          // motion
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={FramerMotion.transitionEaseInOut(
+            0.5,
+          )}
         />
 
-        <IconPin className="home-schedule-decoration-icon" />
+        <motion.span
+          className="home-schedule-decoration-icon"
+          // motion
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={FramerMotion.transitionEaseInOut(
+            0.5,
+          )}
+        >
+          <IconPin />
+        </motion.span>
 
         <div className="home-schedule-main">
           <Map />
@@ -144,7 +174,7 @@ const HomeSchedule: FC = () => {
           </p>
         </article>
       </div>
-    </Wrapper>
+    </section>
   );
 };
 

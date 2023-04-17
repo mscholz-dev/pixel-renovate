@@ -82,9 +82,12 @@ const supports = async (
           serviceName = keyboardsData.service;
           break;
 
-        default:
+        case "general":
           webhook = process.env.WEBHOOK_GENERAL;
           break;
+
+        default:
+          return res.status(404).end();
       }
 
       // create discord request

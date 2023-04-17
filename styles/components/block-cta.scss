@@ -9,6 +9,16 @@
     flex-direction: row;
   }
 
+  &-no {
+    &-mb {
+      margin-bottom: 0;
+    }
+
+    &-mt {
+      margin-top: 0;
+    }
+  }
+
   &-reverse {
     flex-direction: column-reverse;
 
@@ -93,22 +103,15 @@
   }
 
   &-icon {
-    cursor: pointer;
     display: flex;
     height: 64px;
     position: absolute;
-    right: 64px;
+    right: 12px;
     top: 370px;
-    transform: rotate(10deg);
-    transition: 0.25s transform ease-in-out;
     width: 64px;
 
-    &:hover {
-      transform: rotate(0.5turn);
-    }
-
     @include responsive(t-xs) {
-      right: 12px;
+      right: 64px;
       top: -32px;
     }
   }

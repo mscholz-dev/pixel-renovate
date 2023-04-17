@@ -36,6 +36,8 @@ const Index: FC = () => {
           }
           color="primary"
           icon={<IconComputer />}
+          noMb
+          noMt
         />
         <HomeTroubleshooting />
         <BlockCta
@@ -52,6 +54,8 @@ const Index: FC = () => {
           reverse
           color="secondary"
           icon={<IconConsole />}
+          noMb
+          noMt
         />
         <HomeReview />
         <BlockCta
@@ -67,6 +71,8 @@ const Index: FC = () => {
           }
           color="primary"
           icon={<IconMobile />}
+          noMb
+          noMt
         />
         <HomeSchedule />
         <BlockCta
@@ -83,6 +89,8 @@ const Index: FC = () => {
           reverse
           color="secondary"
           icon={<IconWeb />}
+          noMb
+          noMt
         />
         <HomeFaq />
         <BlockCta
@@ -98,6 +106,8 @@ const Index: FC = () => {
           }
           color="primary"
           icon={<IconKeyboard />}
+          noMb
+          noMt
         />
       </>
     </Page>

@@ -16,22 +16,16 @@
   }
 
   &-key {
-    cursor: pointer;
     display: flex;
     fill: $gold-color;
     height: 64px;
     position: absolute;
     right: -12px;
     top: 12px;
-    transition: 0.25s transform ease-in-out;
     width: 64px;
 
     @include responsive(t-xs) {
       top: 48px;
-    }
-
-    &:hover {
-      transform: rotate(0.5turn);
     }
   }
 

@@ -5,13 +5,16 @@ import React, {
   useRef,
   useState,
 } from "react";
-import Wrapper from "@/templates/layouts/Wrapper";
 import IconQuestion from "@/public/icons/question.svg";
 import IconClipboardQuestion from "@/public/icons/clipboard-question.svg";
 import HTMLReactParser from "html-react-parser";
+import { motion } from "framer-motion";
 
 // data
 import faqData from "@/utils/data/faq";
+
+// classes
+import FramerMotion from "@/utils/FramerMotion";
 
 const HomeFaq: FC = () => {
   const articleRef = useRef<HTMLDivElement>(null);
@@ -101,49 +104,63 @@ const HomeFaq: FC = () => {
   }, []);
 
   return (
-    <Wrapper className="wrapper-padding-y home-faq">
-      <>
-        <IconClipboardQuestion className="home-faq-clipboard-question" />
+    <section className="wrapper-padding-y home-faq">
+      <motion.span
+        className="home-faq-clipboard-question"
+        // motion
+        initial={{
+          opacity: 0,
+          y: 25,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={FramerMotion.transitionEaseInOut(
+          0.5,
+        )}
+      >
+        <IconClipboardQuestion />
+      </motion.span>
 
-        <div className="home-faq-main">
-          <h2 className="title-secondary home-faq-title">
-            Questions fréquemment posées
-          </h2>
+      <div className="home-faq-main">
+        <h2 className="title-secondary home-faq-title">
+          Questions fréquemment posées
+        </h2>
 
-          <article ref={articleRef}>
-            {faqData.map(
-              ({ id, title, content }) => (
-                <div
-                  key={id}
-                  meta-id={id}
-                  className={`home-faq-item${
-                    currentId === id
-                      ? " home-faq-item-current"
-                      : ""
-                  }`}
-                  tabIndex={0}
-                  onClick={handleQuestionClick}
-                >
-                  <h3 className="home-faq-item-title">
-                    {title}
-                  </h3>
+        <article ref={articleRef}>
+          {faqData.map(
+            ({ id, title, content }) => (
+              <div
+                key={id}
+                meta-id={id}
+                className={`home-faq-item${
+                  currentId === id
+                    ? " home-faq-item-current"
+                    : ""
+                }`}
+                tabIndex={0}
+                onClick={handleQuestionClick}
+              >
+                <h3 className="home-faq-item-title">
+                  {title}
+                </h3>
 
-                  <div className="home-faq-item-icon">
-                    <IconQuestion />
-                  </div>
+                <div className="home-faq-item-icon">
+                  <IconQuestion />
+                </div>
 
-                  <div className="home-faq-item-container">
-                    <div>
-                      {HTMLReactParser(content)}
-                    </div>
+                <div className="home-faq-item-container">
+                  <div>
+                    {HTMLReactParser(content)}
                   </div>
                 </div>
-              ),
-            )}
-          </article>
-        </div>
-      </>
-    </Wrapper>
+              </div>
+            ),
+          )}
+        </article>
+      </div>
+    </section>
   );
 };
 

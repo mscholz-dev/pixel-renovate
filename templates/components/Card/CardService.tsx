@@ -4,9 +4,13 @@ import Link from "next/link";
 import IconLoader from "@/public/icons/loader.svg";
 import IconInfo from "@/public/icons/info.svg";
 import IconContact from "@/public/icons/contact.svg";
+import { motion } from "framer-motion";
 
 // interfaces
 import { ICardService } from "../../../utils/interfaces";
+
+// classes
+import FramerMotion from "@/utils/FramerMotion";
 
 const CardService: FC<ICardService> = ({
   img,
@@ -18,7 +22,16 @@ const CardService: FC<ICardService> = ({
   servicePath,
 }) => {
   return (
-    <div className="card-service">
+    <motion.div
+      className="card-service"
+      // motion
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={FramerMotion.viewportOne}
+      transition={FramerMotion.transitionEaseInOut(
+        0.5,
+      )}
+    >
       <div className="card-service-img-container">
         <Image
           src={`/img/services/${servicePath}/${img}.webp`}
@@ -71,7 +84,7 @@ const CardService: FC<ICardService> = ({
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
