@@ -1,72 +1,82 @@
-import React, { FC } from "react";
+import React, {
+  FC,
+  useRef,
+  useEffect,
+} from "react";
 import Page from "@/templates/layouts/Page";
+import DataMeta from "@/utils/data/meta.json";
 
 const MentionsLegales: FC = () => {
-  const companyData = [
-    {
-      id: 0,
-      title: "Responsable de publication",
-      text: "",
-    },
-    {
-      id: 1,
-      title: "Adresse email",
-      text: "pixelrenovate@gmail.com",
-    },
-    {
-      id: 2,
-      title: "Téléphone",
-      text: "À renseigner",
-    },
-    {
-      id: 3,
-      title: "SIRET",
-      text: "À renseigner",
-    },
-    {
-      id: 4,
-      title: "Adresse",
-      text: "À renseigner",
-    },
-  ];
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-  const hostData = [
-    {
-      id: 0,
-      title: "SIRET",
-      text: "",
-    },
-    {
-      id: 1,
-    },
-  ];
+  const handleFullHeight = () => {
+    if (!sectionRef.current) return;
+
+    const footer =
+      document.getElementById("footer");
+
+    if (!footer) return;
+
+    sectionRef.current.style.minHeight = `calc(100vh - ${footer.offsetHeight}px - 96px)`;
+  };
+
+  useEffect(() => {
+    handleFullHeight();
+    window.addEventListener(
+      "resize",
+      handleFullHeight,
+    );
+  }, []);
 
   return (
-    <Page title="Mentions légales" description="">
-      <>
-        <h1>Mentions légales</h1>
+    <Page
+      title="Mentions légales"
+      description={DataMeta.description}
+      padding
+    >
+      <section
+        ref={sectionRef}
+        className="legal-notice"
+      >
+        <article>
+          <h1>Mentions légales</h1>
 
-        <div>
           <h2>Pixel Renovate</h2>
-        </div>
 
-        <p>
-          HEROKU ADRESSE: Heroku - The Landmark at
-          One Market, Suite 300, San Francisco, CA
-          94105, United States.
-        </p>
+          <ul>
+            <li>
+              Type d&apos;entreprise : À
+              renseigner
+            </li>
+            <li>Siège social : À renseigner</li>
+            <li>SIRET : À renseigner</li>
+            <li>Responsable : Morgan SCHOLZ</li>
+            <li>
+              Contact :{" "}
+              <a href="mailto:pixelrenovate@gmail.com">
+                pixelrenovate@gmail.com
+              </a>
+            </li>
+          </ul>
 
-        <h2>Données personnelles et Cookies</h2>
-        <p>
-          Le site www.smooth-code.com ne fait
-          l’objet d’aucune déclaration à la CNIL
-          car aucune information personnelle n’est
-          collectée. Aucun cookie n’est généré en
-          plus de ceux utilisés par Google
-          Analytics à des fins d’analyse du
-          trafic.
-        </p>
-      </>
+          <h2>Hébergement</h2>
+
+          <ul>
+            <li>VERCEL</li>
+            <li>Vercel Inc.</li>
+            <li>340 S Lemon Ave #4133</li>
+            <li>Walnut, CA 91789</li>
+            <li>
+              <a
+                href="https://vercel.com"
+                target="_blank"
+              >
+                https://vercel.com
+              </a>
+            </li>
+          </ul>
+        </article>
+      </section>
     </Page>
   );
 };

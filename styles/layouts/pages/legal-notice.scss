@@ -1,0 +1,33 @@
+.legal-notice {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 12px 0;
+
+  @include responsive(s-xl) {
+    padding: 0 24px;
+  }
+
+  article {
+    padding-bottom: 32px;
+
+    @include responsive(t-xs) {
+      padding-bottom: 64px;
+    }
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  ul {
+    li {
+      margin-bottom: 6px;
+    }
+  }
+}

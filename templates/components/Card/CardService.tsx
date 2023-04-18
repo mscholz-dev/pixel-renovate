@@ -25,11 +25,11 @@ const CardService: FC<ICardService> = ({
     <motion.div
       className="card-service"
       // motion
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={FramerMotion.viewportOne}
       transition={FramerMotion.transitionEaseInOut(
-        0.5,
+        1,
       )}
     >
       <div className="card-service-img-container">

@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import IconInstagram from "@/public/icons/instagram.svg";
-import IconGithhub from "@/public/icons/github.svg";
+import IconGithub from "@/public/icons/github.svg";
 import IconYoutube from "@/public/icons/youtube.svg";
-import IconLinkedin from "@/public/icons/linkedin.svg";
+import IconFacebook from "@/public/icons/facebook.svg";
 import IconLogo from "@/public/icons/logo.svg";
 import IconCopyright from "@/public/icons/copyright.svg";
 import Link from "next/link";
@@ -24,21 +24,21 @@ const Footer: FC = () => {
     },
     {
       id: 1,
-      icon: <IconLinkedin />,
-      url: "https://www.linkedin.com/in/morgan-scholz",
-      title: "Linkedin de Morgan Scholz",
+      icon: <IconYoutube />,
+      url: "https://www.youtube.com/@PixelRenovate",
+      title: "Chaîne Youtube de Pixel Renovate",
     },
     {
       id: 2,
-      icon: <IconGithhub />,
-      url: "https://github.com/mscholz-dev",
-      title: "Github de Morgan Scholz",
+      icon: <IconFacebook />,
+      url: "https://www.facebook.com/people/Pixel-Renovate/pfbid0mW6hjwwHMNGEwdAWwyHrZqrDqRAAkJbkGmA9WTHdYnjHKGJz1CeUdxqFTKPdWKHql/",
+      title: "Facebook de Pixel Renovate",
     },
     {
       id: 3,
-      icon: <IconYoutube />,
-      url: "https://www.youtube.com/channel/UCt8pZeMk5xBHr0P_5r6FRBg",
-      title: "Chaîne Youtube de Morgan Scholz",
+      icon: <IconGithub />,
+      url: "https://github.com/mscholz-dev",
+      title: "Github de Morgan Scholz",
     },
   ];
 

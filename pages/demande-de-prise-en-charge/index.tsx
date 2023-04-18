@@ -14,9 +14,6 @@ import SupportValidatorClass from "@/utils/validators/SupportValidator";
 const SupportValidator =
   new SupportValidatorClass();
 
-// interfaces
-import { IDemandeDePriseEnCharge } from "@/utils/interfaces";
-
 // types
 import { TSupportForm } from "@/utils/types";
 
