@@ -96,6 +96,7 @@ export interface IServices {
 export interface IServicesUrl {
   servicePath: string;
   service: string;
+  meta: string;
   img: string;
   title: string;
   time: string;

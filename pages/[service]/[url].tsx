@@ -4,7 +4,6 @@ import React, {
   useEffect,
 } from "react";
 import Page from "@/templates/layouts/Page";
-import DataMeta from "@/utils/data/meta.json";
 import {
   GetStaticPaths,
   GetStaticPropsContext,
@@ -31,6 +30,7 @@ import {
 const ServicesUrl: FC<IServicesUrl> = ({
   servicePath,
   service,
+  meta,
   img,
   title,
   time,
@@ -59,10 +59,7 @@ const ServicesUrl: FC<IServicesUrl> = ({
   }, []);
 
   return (
-    <Page
-      title={title}
-      description={DataMeta.description}
-    >
+    <Page title={title} description={meta}>
       <section ref={sectionRef}>
         <SpecificService
           servicePath={servicePath}
@@ -171,6 +168,7 @@ export const getStaticProps = async ({
         props: {
           servicePath: computersData.servicePath,
           service: computersData.service,
+          meta: data.meta,
           img: data.img,
           title: data.title,
           time: data.time,
@@ -197,6 +195,7 @@ export const getStaticProps = async ({
         props: {
           servicePath: consolesData.servicePath,
           service: consolesData.service,
+          meta: data.meta,
           img: data.img,
           title: data.title,
           time: data.time,
@@ -223,6 +222,7 @@ export const getStaticProps = async ({
         props: {
           servicePath: mobilesData.servicePath,
           service: mobilesData.service,
+          meta: data.meta,
           img: data.img,
           title: data.title,
           time: data.time,
@@ -249,6 +249,7 @@ export const getStaticProps = async ({
         props: {
           servicePath: webData.servicePath,
           service: webData.service,
+          meta: data.meta,
           img: data.img,
           title: data.title,
           time: data.time,
@@ -275,6 +276,7 @@ export const getStaticProps = async ({
         props: {
           servicePath: keyboardsData.servicePath,
           service: keyboardsData.service,
+          meta: data.meta,
           img: data.img,
           title: data.title,
           time: data.time,
