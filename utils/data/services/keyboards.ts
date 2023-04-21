@@ -2,11 +2,14 @@
 import { TServiceObject } from "../../types";
 
 const keyboardsData: TServiceObject = {
+  defaultMeta:
+    "Confiez la réparation de votre clavier à Pixel Renovate, le spécialiste de la réparation d'ordinateurs. Remplissez notre formulaire de prise en charge pour une intervention rapide et efficace.",
   service: "claviers",
   servicePath: "keyboards",
   data: [
     {
       id: 0,
+      meta: "Obtenez un diagnostique complet de votre clavier pour identifier et réparer tous les problèmes. Notre service de réparation de claviers est là pour vous aider chez Pixel Renovate.",
       img: "keyboard-with-red-key",
       title: "Diagnostique complet du clavier",
       price: "24 €",
@@ -21,6 +24,7 @@ const keyboardsData: TServiceObject = {
     },
     {
       id: 1,
+      meta: "Pixel Renovate offre des services de réparation de claviers pour toutes les marques. Faites réparer votre clavier chez nous pour une expérience de frappe agréable et fluide.",
       img: "keyboard-with-icons",
       title: "Réparation de toutes marques",
       price: "44 €",
@@ -36,6 +40,7 @@ const keyboardsData: TServiceObject = {
     },
     {
       id: 2,
+      meta: "Pixel Renovate propose le remplacement de touches pour claviers de toutes marques. Récupérez votre clavier comme neuf et profitez d'une frappe sans faille.",
       img: "keyboard-without-keycaps",
       title: "Remplacement de touches",
       price: "24 €",
@@ -51,6 +56,7 @@ const keyboardsData: TServiceObject = {
     },
     {
       id: 3,
+      meta: "Pixel Renovate offre le service de réparation de circuits pour claviers de toutes marques. Faites confiance à notre expertise pour un clavier performant et durable.",
       img: "keyboard-open",
       title: "Réparation de circuits",
       price: "74 €",
@@ -66,6 +72,7 @@ const keyboardsData: TServiceObject = {
     },
     {
       id: 4,
+      meta: "Pixel Renovate propose un nettoyage professionnel pour votre clavier, toutes marques confondues. Retrouvez un clavier propre et hygiénique pour une meilleure utilisation.",
       img: "keyboard-mac-gradient",
       title: "Nettoyage professionnel",
       price: "24 €",

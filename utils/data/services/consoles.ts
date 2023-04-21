@@ -2,11 +2,14 @@
 import { TServiceObject } from "../../types";
 
 const consolesData: TServiceObject = {
+  defaultMeta:
+    "Confiez la réparation de votre console à Pixel Renovate, le spécialiste de la réparation. Remplissez notre formulaire de prise en charge pour une intervention rapide et professionnelle.",
   service: "consoles",
   servicePath: "consoles",
   data: [
     {
       id: 0,
+      meta: "Pixel Renovate offre un diagnostique complet de votre console pour détecter et résoudre tout problème. Faites confiance à notre équipe pour réparer votre console, PC, mobile ou clavier rapidement et efficacement.",
       img: "nintendo-switch-red",
       title: "Diagnostique complet de la console",
       price: "39 €",
@@ -23,6 +26,7 @@ const consolesData: TServiceObject = {
     },
     {
       id: 1,
+      meta: "Offrez une seconde vie à votre console grâce au service de nettoyage de Pixel Renovate. Dépoussiérage complet et remplacement de la pâte thermique pour une meilleure performance.",
       img: "ps5-gradient",
       title:
         "Nettoyage de la console (dépoussiérage complet + pâte thermique)",
@@ -38,6 +42,7 @@ const consolesData: TServiceObject = {
     },
     {
       id: 2,
+      meta: "Pixel Renovate propose un service de changement/installation de composants pour votre console. Réparez rapidement votre matériel avec notre équipe de professionnels.",
       img: "xbox-s",
       title:
         "Changement/installation de composant(s)",
@@ -53,6 +58,7 @@ const consolesData: TServiceObject = {
     },
     {
       id: 3,
+      meta: "Confiez la réparation de votre manette à Pixel Renovate. Nous réparons tout type de manette pour votre console. Faites confiance à notre expertise.",
       img: "nintendo-switch-controllers",
       title: "Réparation de tout type de manette",
       price: "39 €",

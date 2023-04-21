@@ -2,11 +2,14 @@
 import { TServiceObject } from "../../types";
 
 const computersData: TServiceObject = {
+  defaultMeta:
+    "Confiez votre ordinateur à Pixel Renovate pour une réparation rapide et efficace. Remplissez notre formulaire de prise en charge dès maintenant pour bénéficier de notre expertise.",
   service: "ordinateurs",
   servicePath: "computers",
   data: [
     {
       id: 0,
+      meta: "Optez pour le service de diagnostic complet de l'ordinateur chez Pixel Renovate pour une réparation efficace et rapide de votre PC. Faites confiance à notre expertise en matière de réparation.",
       img: "mac-gradient-semi-open",
       title:
         "Diagnostique complet de l’ordinateur",
@@ -42,6 +45,7 @@ const computersData: TServiceObject = {
     },
     {
       id: 1,
+      meta: "Protégez votre ordinateur contre les virus, publicités intempestives et tous programmes malveillants avec Pixel Renovate. Notre service d'analyse et suppression est rapide et efficace pour un ordinateur en santé.",
       img: "mac-malware",
       title:
         "Analyse et suppression des virus, publicités intempestives et tous programmes malveillants",
@@ -58,6 +62,7 @@ const computersData: TServiceObject = {
     },
     {
       id: 2,
+      meta: "Profitez du service de réinstallation de Windows pour votre PC chez Pixel Renovate ! Nous installons Windows 7, 8, 10, et même 11 (si possible) pour une utilisation optimale de votre ordinateur.",
       img: "mac-windows-11",
       title:
         "Installation/réinstallation de Windows (7,8,10 et 11 si possibilité)",
@@ -74,6 +79,7 @@ const computersData: TServiceObject = {
     },
     {
       id: 3,
+      meta: "Pixel Renovate offre des services d'installation de matériel pour les ordinateurs, tels que les disques durs, les cartes graphiques et tous les autres composants. Faites confiance à nos experts pour améliorer les performances de votre ordinateur.",
       img: "motherboard",
       title:
         "Installation matériel (disque dur, carte graphique, tout autres composants…)",
@@ -89,6 +95,7 @@ const computersData: TServiceObject = {
     },
     {
       id: 4,
+      meta: "Rafraîchissez votre PC fixe avec notre service de nettoyage interne : dépoussiérage complet et ajout de pâte thermique pour une meilleure performance. Pixel Renovate à votre service.",
       img: "desktop-pc-open",
       title:
         "Nettoyage interne PC fixe (dépoussiérage complet + ajout de pâte thermique)",
@@ -111,6 +118,7 @@ const computersData: TServiceObject = {
     },
     {
       id: 5,
+      meta: "Offrez un nettoyage complet à votre PC portable avec Pixel Renovate. Profitez de notre service de dépoussiérage et d'ajout de pâte thermique pour améliorer les performances de votre ordinateur.",
       img: "mac-open",
       title:
         "Nettoyage interne PC portable (dépoussiérage complet + ajout de pâte thermique)",
@@ -126,6 +134,7 @@ const computersData: TServiceObject = {
     },
     {
       id: 6,
+      meta: "Récupérez vos données perdues ou endommagées sur votre ordinateur grâce à notre service de récupération de données fiable et rapide chez Pixel Renovate.",
       img: "hard-disk-vertical",
       title: "Récupération des données",
       price: "79 €",
@@ -142,6 +151,7 @@ const computersData: TServiceObject = {
     },
     {
       id: 7,
+      meta: "Offrez-vous un service de clonage de disque dur ? Avec Pixel Renovate, bénéficiez d'un service rapide et efficace pour la sauvegarde de vos données importantes.",
       img: "hard-disk-diagonal",
       title: "Clonage de disque dur",
       price: "49 €",
@@ -158,6 +168,7 @@ const computersData: TServiceObject = {
     },
     {
       id: 8,
+      meta: "Protégez vos données sensibles grâce à notre service de destruction complète de données pour PC. Assurez-vous que vos informations personnelles restent confidentielles avec Pixel Renovate.",
       img: "hard-disk-open",
       title: "Destruction complète des données",
       price: "29 €",

@@ -2,11 +2,14 @@
 import { TServiceObject } from "../../types";
 
 const webData: TServiceObject = {
+  defaultMeta:
+    "Pixel Renovate, votre partenaire de confiance pour la création de site web. Remplissez notre formulaire de demande de prise en charge pour bénéficier de notre expertise en matière de conception de site web.",
   service: "web",
   servicePath: "web",
   data: [
     {
       id: 0,
+      meta: "Obtenez un site e-commerce de qualité avec Pixel Renovate. Nous offrons des services de création de site web personnalisés et professionnels pour votre entreprise.",
       img: "mac-charts-green",
       title: "Création de site web E-commerce",
       price: "1499 €",
@@ -22,6 +25,7 @@ const webData: TServiceObject = {
     },
     {
       id: 1,
+      meta: "Besoin de modifier ou de maintenir votre site web existant ? Faites confiance à Pixel Renovate, spécialiste en création et maintenance de sites web. Obtenez une assistance professionnelle dès maintenant.",
       img: "mac-typing-code",
       title:
         "Modification/Maintenance de votre site web existant",
@@ -38,6 +42,7 @@ const webData: TServiceObject = {
     },
     {
       id: 2,
+      meta: "Besoin d'un site web simple mais efficace ? Nous créons des sites vitrines pour votre entreprise avec un design moderne et une navigation fluide. Contactez-nous dès maintenant chez Pixel Renovate.",
       img: "mac-with-book",
       title: "Création d’un site Vitrine",
       price: "399 €",
@@ -53,6 +58,7 @@ const webData: TServiceObject = {
     },
     {
       id: 3,
+      meta: "Besoin d'un site web simple et efficace? Optez pour notre service de création de site One Page! Présentez votre entreprise en une page, facile à naviguer et à comprendre. Chez Pixel Renovate, nous nous occupons de tout.",
       img: "mac-with-bottle",
       title: "Création d’un site One Page",
       price: "399 €",
@@ -68,6 +74,7 @@ const webData: TServiceObject = {
     },
     {
       id: 4,
+      meta: "Besoin d'un blog pour votre entreprise ou votre passion ? Pixel Renovate est là pour vous ! Nous créons des blogs optimisés pour le référencement et personnalisés pour répondre à vos besoins. Contactez-nous dès maintenant pour en savoir plus.",
       img: "mac-with-screen",
       title: "Création d’un Blog",
       price: "299 €",

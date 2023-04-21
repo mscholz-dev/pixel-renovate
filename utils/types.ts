@@ -87,6 +87,7 @@ export type TSupportForm = {
 
 export type TServiceData = {
   id: number;
+  meta: string;
   img: string;
   title: string;
   price: string;
@@ -96,6 +97,7 @@ export type TServiceData = {
 };
 
 export type TServiceObject = {
+  defaultMeta: string;
   service: string;
   servicePath: string;
   data: TServiceData[];

@@ -2,11 +2,14 @@
 import { TServiceObject } from "../../types";
 
 const mobilesData: TServiceObject = {
+  defaultMeta:
+    "Donnez une seconde vie à votre mobile grâce à Pixel Renovate. Remplissez notre formulaire de prise en charge pour une réparation rapide et efficace de votre appareil.",
   service: "mobiles",
   servicePath: "mobiles",
   data: [
     {
       id: 0,
+      meta: "Réparez rapidement l'écran fissuré de votre mobile avec Pixel Renovate. Nous offrons un service de réparation rapide et fiable pour tous les types de mobiles.",
       img: "iphone-break",
       title: "Réparation d'écrans fissurés",
       price: "54 €",
@@ -28,6 +31,7 @@ const mobilesData: TServiceObject = {
     },
     {
       id: 1,
+      meta: "Rallongez la durée de vie de votre mobile avec Pixel Renovate. Nous offrons un service de remplacement de batterie rapide et fiable pour tous les types de mobiles.",
       img: "iphone-battery-low",
       title: "Remplacement de batterie",
       price: "39 €",
@@ -48,6 +52,7 @@ const mobilesData: TServiceObject = {
     },
     {
       id: 2,
+      meta: "Pixel Renovate offre un service de réparation de carte mère pour votre mobile. Notre équipe de professionnels peut résoudre tous les problèmes de carte mère rapidement et efficacement.",
       img: "phone-motherboard",
       title: "Réparation de carte mère",
       price: "99 €",
@@ -66,6 +71,7 @@ const mobilesData: TServiceObject = {
     },
     {
       id: 3,
+      meta: "Pixel Renovate propose un service de réparation de boutons pour votre mobile. Nous pouvons réparer rapidement tous les types de boutons pour retrouver une utilisation optimale de votre mobile.",
       img: "iphone-open",
       title: "Réparation de boutons",
       price: "44 €",
@@ -85,6 +91,7 @@ const mobilesData: TServiceObject = {
     },
     {
       id: 4,
+      meta: "Optimisez les performances de votre mobile avec Pixel Renovate. Nous offrons un service de nettoyage de système d'exploitation pour un fonctionnement fluide et efficace de votre mobile.",
       img: "iphone-update",
       title:
         "Nettoyage du système d'exploitation",
@@ -107,6 +114,7 @@ const mobilesData: TServiceObject = {
     },
     {
       id: 5,
+      meta: "Pixel Renovate propose un service de réparation de caméras pour votre mobile. Nous pouvons réparer rapidement tous les types de problèmes de caméra pour capturer à nouveau vos moments préférés.",
       img: "phone-camera",
       title: "Réparation de caméras",
       price: "39 €",
@@ -128,6 +136,7 @@ const mobilesData: TServiceObject = {
     },
     {
       id: 6,
+      meta: "Pixel Renovate offre un service de diagnostic de panne pour votre mobile. Notre équipe de professionnels peut identifier rapidement le problème et vous proposer la meilleure solution de réparation.",
       img: "iphone-wallpaper-components",
       title: "Diagnostic de panne",
       price: "19 €",
@@ -148,6 +157,7 @@ const mobilesData: TServiceObject = {
     },
     {
       id: 7,
+      meta: "Pixel Renovate offre un service d'installation de logiciels pour votre mobile. Nous pouvons installer les derniers logiciels pour améliorer les performances de votre mobile.",
       img: "iphone-apps",
       title: "Installation de logiciels",
       price: "24 €",
@@ -169,6 +179,7 @@ const mobilesData: TServiceObject = {
     },
     {
       id: 8,
+      meta: "Pixel Renovate offre un service de déverrouillage de téléphone pour débloquer votre mobile et accéder à toutes ses fonctionnalités. Nous pouvons le faire rapidement et en toute sécurité.",
       img: "iphone-reset",
       title: "Déverrouillage de téléphone",
       price: "49 €",
@@ -190,6 +201,7 @@ const mobilesData: TServiceObject = {
     },
     {
       id: 9,
+      meta: "Protégez votre téléphone avec les services de protection de téléphone de Pixel Renovate. Nous avons une variété d'options de protection pour votre téléphone, y compris des protecteurs d'écran et des étuis résistants.",
       img: "iphone-case",
       title: "Protection de téléphone",
       price: "19 €",
