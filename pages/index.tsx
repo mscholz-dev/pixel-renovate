@@ -18,7 +18,7 @@ const Index: FC = () => {
   return (
     <Page
       title="Page d'accueil"
-      description={DataMeta.description}
+      description={DataMeta.metaHome}
     >
       <>
         <Home />

@@ -99,7 +99,7 @@ const DemandeDePriseEnCharge: FC = () => {
   return (
     <Page
       title="Demande de prise en charge"
-      description={DataMeta.description}
+      description={DataMeta.metaSupport}
     >
       <FormSupport
         loading={loading}

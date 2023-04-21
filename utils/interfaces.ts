@@ -124,6 +124,7 @@ export interface IFormSupport {
 export interface IDemandeDePriseEnCharge {
   service: string;
   title: string;
+  meta: string;
 }
 
 export interface IFormInputMotion {

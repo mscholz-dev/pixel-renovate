@@ -4,7 +4,6 @@ import React, {
   SyntheticEvent,
 } from "react";
 import Page from "@/templates/layouts/Page";
-import DataMeta from "@/utils/data/meta.json";
 import FormSupport from "@/templates/components/Form/FormSupport";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -26,11 +25,14 @@ const SupportValidator =
 import { IDemandeDePriseEnCharge } from "@/utils/interfaces";
 
 // types
-import { TSupportForm } from "@/utils/types";
+import {
+  TServiceData,
+  TSupportForm,
+} from "@/utils/types";
 
 const DemandeDePriseEnCharge: FC<
   IDemandeDePriseEnCharge
-> = ({ service, title }) => {
+> = ({ service, title, meta }) => {
   const [loading, setLoading] =
     useState<boolean>(false);
 
@@ -113,7 +115,7 @@ const DemandeDePriseEnCharge: FC<
   return (
     <Page
       title="Demande de prise en charge"
-      description={DataMeta.description}
+      description={meta}
     >
       <FormSupport
         loading={loading}
@@ -136,47 +138,72 @@ export const getServerSideProps = (
 
   let newService = "";
   let newTitle = "";
+  let newMeta = "";
+  let finding: TServiceData | undefined =
+    undefined;
 
   // validate service name
   switch (service) {
     case computersData.service:
       newService = computersData.service;
-      newTitle =
-        computersData.data.find(
-          (item) => item.title === title,
-        )?.title || "";
+
+      // find specific service data
+      finding = computersData.data.find(
+        (item) => item.title === title,
+      );
+      newTitle = finding?.title || "";
+      newMeta =
+        finding?.meta ||
+        computersData.defaultMeta;
       break;
 
     case consolesData.service:
       newService = consolesData.service;
-      newTitle =
-        consolesData.data.find(
-          (item) => item.title === title,
-        )?.title || "";
+
+      // find specific service data
+      finding = consolesData.data.find(
+        (item) => item.title === title,
+      );
+      newTitle = finding?.title || "";
+      newMeta =
+        finding?.meta || consolesData.defaultMeta;
       break;
 
     case mobilesData.service:
       newService = mobilesData.service;
-      newTitle =
-        mobilesData.data.find(
-          (item) => item.title === title,
-        )?.title || "";
+
+      // find specific service data
+      finding = mobilesData.data.find(
+        (item) => item.title === title,
+      );
+      newTitle = finding?.title || "";
+      newMeta =
+        finding?.meta || mobilesData.defaultMeta;
       break;
 
     case webData.service:
       newService = webData.service;
-      newTitle =
-        webData.data.find(
-          (item) => item.title === title,
-        )?.title || "";
+
+      // find specific service data
+      finding = webData.data.find(
+        (item) => item.title === title,
+      );
+      newTitle = finding?.title || "";
+      newMeta =
+        finding?.meta || webData.defaultMeta;
       break;
 
     case keyboardsData.service:
       newService = keyboardsData.service;
-      newTitle =
-        keyboardsData.data.find(
-          (item) => item.title === title,
-        )?.title || "";
+
+      // find specific service data
+      finding = keyboardsData.data.find(
+        (item) => item.title === title,
+      );
+      newTitle = finding?.title || "";
+      newMeta =
+        finding?.meta ||
+        keyboardsData.defaultMeta;
       break;
 
     default:
@@ -189,6 +216,7 @@ export const getServerSideProps = (
     props: {
       service: newService,
       title: newTitle,
+      meta: newMeta,
     },
   };
 };

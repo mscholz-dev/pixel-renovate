@@ -116,8 +116,13 @@ const Footer: FC = () => {
         >
           <IconCopyright className="footer-copyright-icon" />
           <p className="footer-copyright-text">
-            2023 Pixel Renovate. Tous droits
-            réservés
+            2023 Pixel Renovate.{" "}
+            <Link
+              href="/mentions-legales"
+              className="footer-legal-notice"
+            >
+              Mentions légales
+            </Link>
           </p>
         </motion.div>
       </div>

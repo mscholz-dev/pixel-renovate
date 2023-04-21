@@ -40,7 +40,7 @@ const NotFound: FC = () => {
   return (
     <Page
       title="Page non trouvée"
-      description={DataMeta.description}
+      description={DataMeta.meta404}
       noBackgroundAnim
     >
       <section

@@ -31,7 +31,7 @@ const MentionsLegales: FC = () => {
   return (
     <Page
       title="Mentions légales"
-      description={DataMeta.description}
+      description={DataMeta.metaLegalNotice}
       padding
     >
       <section
