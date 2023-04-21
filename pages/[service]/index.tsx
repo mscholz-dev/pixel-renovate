@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import Page from "@/templates/layouts/Page";
-import DataMeta from "@/utils/data/meta.json";
 import {
   GetStaticPaths,
   GetStaticPropsResult,
@@ -26,6 +25,7 @@ import { TGetStaticPathServices } from "@/utils/types";
 import FramerMotion from "@/utils/FramerMotion";
 
 const Services: FC<IServices> = ({
+  defaultMeta,
   service,
   servicePath,
   data,
@@ -33,7 +33,7 @@ const Services: FC<IServices> = ({
   return (
     <Page
       title={service}
-      description={DataMeta.description}
+      description={defaultMeta}
       padding
     >
       <CardSectionService

@@ -88,6 +88,7 @@ export interface IFormPage {
 }
 
 export interface IServices {
+  defaultMeta: string;
   service: string;
   servicePath: string;
   data: TServiceData[];
