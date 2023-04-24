@@ -7,7 +7,7 @@ import IconContact from "@/public/icons/contact.svg";
 import { motion } from "framer-motion";
 
 // interfaces
-import { ICardService } from "../../../utils/interfaces";
+import { ICardService } from "@/utils/interfaces";
 
 // classes
 import FramerMotion from "@/utils/FramerMotion";

@@ -17,7 +17,6 @@ import IconEnvelopes from "@/public/icons/envelopes.svg";
 import IconCity from "@/public/icons/city.svg";
 import IconBellConcierge from "@/public/icons/bell-concierge.svg";
 import IconMagnifyingGlass from "@/public/icons/magnifying-glass.svg";
-import { motion } from "framer-motion";
 import FormInputMotion from "./FormInputMotion";
 
 // services data
@@ -28,7 +27,6 @@ import webData from "@/utils/data/services/web";
 import keyboardsData from "@/utils/data/services/keyboards";
 
 // classes
-import FramerMotion from "@/utils/FramerMotion";
 const Form = new FormClass();
 
 // interfaces

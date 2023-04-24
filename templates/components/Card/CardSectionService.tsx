@@ -3,10 +3,10 @@ import React, {
   useRef,
   useEffect,
 } from "react";
-import CardService from "./CardService";
+import CardService from "@/templates/components/Card/CardService";
 
 // interfaces
-import { ICardSectionService } from "../../../utils/interfaces";
+import { ICardSectionService } from "@/utils/interfaces";
 
 const CardSectionService: FC<
   ICardSectionService

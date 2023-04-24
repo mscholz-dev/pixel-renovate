@@ -19,6 +19,7 @@ export const getServerSideProps = ({
   // basic urls
   urls.push("");
   urls.push("/mentions-legales");
+  urls.push("/404");
 
   // computers urls
   const computersService = computersData.service;
@@ -87,8 +88,8 @@ export const getServerSideProps = ({
       `;
         })
         .join("")}
-   </urlset>
- `;
+    </urlset>
+  `;
 
   // we send the XML to the browser
   res.setHeader("Content-Type", "text/xml");

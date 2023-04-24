@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 import Head from "next/head";
-import Header from "./Header";
-import Footer from "./Footer";
-import BackgroundAnim from "./BackgroundAnim";
+import Header from "@/templates/layouts/Header";
+import Footer from "@/templates/layouts/Footer";
+import BackgroundAnim from "@/templates/layouts/BackgroundAnim";
 import { ToastContainer } from "react-toastify";
 
 // interfaces
-import { IPage } from "../../utils/interfaces";
+import { IPage } from "@/utils/interfaces";
 
 const Page: FC<IPage> = ({
   children,

@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import IconInstagram from "@/public/icons/instagram.svg";
-import IconGithub from "@/public/icons/github.svg";
 import IconDiscord from "@/public/icons/discord.svg";
 import IconYoutube from "@/public/icons/youtube.svg";
 import IconFacebook from "@/public/icons/facebook.svg";
