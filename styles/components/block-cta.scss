@@ -85,6 +85,27 @@
         }
       }
     }
+
+    &-tertiary {
+      background: $black;
+
+      .block-cta {
+        &-icon {
+          fill: $white;
+        }
+
+        &-link {
+          @include background200vw(
+            $black,
+            $white
+          );
+
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
   }
 
   &-img {

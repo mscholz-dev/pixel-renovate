@@ -8,6 +8,7 @@ import HomeReview from "@/templates/components/Home/HomeReview";
 import HomeSchedule from "@/templates/components/Home/HomeSchedule";
 import HomeFaq from "@/templates/components/Home/HomeFaq";
 import BlockCta from "@/templates/components/BlockCta";
+import IconDiscord from "@/public/icons/discord.svg";
 import IconComputer from "@/public/icons/computer.svg";
 import IconConsole from "@/public/icons/console.svg";
 import IconMobile from "@/public/icons/mobile.svg";
@@ -22,6 +23,23 @@ const Index: FC = () => {
     >
       <>
         <Home />
+        <BlockCta
+          imgSrc="discord"
+          imgAlt="Illustration contenant le logo discord"
+          linkUrl="https://discord.gg/KGABHSDG"
+          linkTitle="Rejoindre"
+          title={
+            <h2>
+              Rejoingnez notre serveur{" "}
+              <b>discord</b>
+            </h2>
+          }
+          color="tertiary"
+          icon={<IconDiscord />}
+          noMb
+          noMt
+          blank
+        />
         <HomeBenefits />
         <BlockCta
           imgSrc="services/computers/desktop-pc-open"
@@ -38,6 +56,7 @@ const Index: FC = () => {
           icon={<IconComputer />}
           noMb
           noMt
+          reverse
         />
         <HomeTroubleshooting />
         <BlockCta
@@ -51,7 +70,6 @@ const Index: FC = () => {
               <b>consoles</b>
             </h2>
           }
-          reverse
           color="secondary"
           icon={<IconConsole />}
           noMb
@@ -73,6 +91,7 @@ const Index: FC = () => {
           icon={<IconMobile />}
           noMb
           noMt
+          reverse
         />
         <HomeSchedule />
         <BlockCta
@@ -86,7 +105,6 @@ const Index: FC = () => {
               <b>sites web</b>
             </h2>
           }
-          reverse
           color="secondary"
           icon={<IconWeb />}
           noMb
@@ -108,6 +126,7 @@ const Index: FC = () => {
           icon={<IconKeyboard />}
           noMb
           noMt
+          reverse
         />
       </>
     </Page>

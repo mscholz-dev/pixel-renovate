@@ -19,6 +19,7 @@ const BlockCta: FC<IBlockCta> = ({
   icon,
   noMb,
   noMt,
+  blank,
 }) => {
   return (
     <section
@@ -27,7 +28,9 @@ const BlockCta: FC<IBlockCta> = ({
       }${
         color === "primary"
           ? " block-cta-color-primary"
-          : " block-cta-color-secondary"
+          : color === "secondary"
+          ? " block-cta-color-secondary"
+          : " block-cta-color-tertiary"
       }${noMb ? " block-cta-no-mb" : ""}${
         noMt ? " block-cta-no-mt" : ""
       }`}
@@ -109,6 +112,7 @@ const BlockCta: FC<IBlockCta> = ({
             <Link
               href={linkUrl}
               className="block-cta-link"
+              target={blank ? "_blank" : "_self"}
             >
               {linkTitle}
             </Link>

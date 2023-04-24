@@ -50,10 +50,11 @@ export interface IBlockCta {
   linkTitle: string;
   title: JSX.Element;
   reverse?: boolean;
-  color: "primary" | "secondary";
+  color: "primary" | "secondary" | "tertiary";
   icon: JSX.Element;
   noMb?: boolean;
   noMt?: boolean;
+  blank?: boolean;
 }
 
 export interface IFormInput extends TFormInput {}

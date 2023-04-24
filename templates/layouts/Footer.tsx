@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import IconInstagram from "@/public/icons/instagram.svg";
 import IconGithub from "@/public/icons/github.svg";
+import IconDiscord from "@/public/icons/discord.svg";
 import IconYoutube from "@/public/icons/youtube.svg";
 import IconFacebook from "@/public/icons/facebook.svg";
 import IconLogo from "@/public/icons/logo.svg";
@@ -36,9 +37,9 @@ const Footer: FC = () => {
     },
     {
       id: 3,
-      icon: <IconGithub />,
-      url: "https://github.com/mscholz-dev",
-      title: "Github de Morgan Scholz",
+      icon: <IconDiscord />,
+      url: "https://discord.gg/KGABHSDG",
+      title: "Discord de Pixel Renovate",
     },
   ];
 
