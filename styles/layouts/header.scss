@@ -1,6 +1,7 @@
 .header {
   background: $black;
   background: $primary-secondary-gradient;
+  backdrop-filter: blur(4px);
   box-shadow: $header-shadow;
   height: 56px;
   left: 0;

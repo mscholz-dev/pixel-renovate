@@ -1,16 +1,16 @@
 import React, { FC, useState } from "react";
 import Link from "next/link";
-import IconLogo from "../../public/icons/logo.svg";
-import IconBurgerMenu from "../../public/icons/burger-menu.svg";
-import IconComputer from "../../public/icons/computer.svg";
-import IconConsole from "../../public/icons/console.svg";
-import IconMobile from "../../public/icons/mobile.svg";
+import IconLogo from "@/public/icons/logo.svg";
+import IconBurgerMenu from "@/public/icons/burger-menu.svg";
+import IconComputer from "@/public/icons/computer.svg";
+import IconConsole from "@/public/icons/console.svg";
+import IconMobile from "@/public/icons/mobile.svg";
 import IconWeb from "@/public/icons/web.svg";
 import IconKeyboard from "@/public/icons/keyboard.svg";
 import IconContact from "@/public/icons/contact.svg";
 
 // types
-import { THeaderLinks } from "../../utils/types";
+import { THeaderLinks } from "@/utils/types";
 
 const Header: FC = () => {
   const [open, setOpen] =
@@ -95,6 +95,7 @@ const Header: FC = () => {
           )}
         </div>
 
+        {/* TODO: ajouter un bouton ici!!! */}
         <IconBurgerMenu
           className="header-burger"
           onClick={handleOpen}
