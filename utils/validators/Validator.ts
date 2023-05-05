@@ -2,7 +2,7 @@
 import {
   TInspectDataErrors,
   TInspectData,
-} from "../types";
+} from "@/utils/types";
 
 export default class Validator {
   inspectData(

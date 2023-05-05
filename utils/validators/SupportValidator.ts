@@ -1,5 +1,5 @@
-import Validator from "./Validator";
-import RegexClass from "../Regex";
+import Validator from "@/utils/validators/Validator";
+import RegexClass from "@/utils/Regex";
 
 // services data
 import computersData from "@/utils/data/services/computers";
