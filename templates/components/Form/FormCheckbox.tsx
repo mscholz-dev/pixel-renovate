@@ -9,7 +9,6 @@ const FormCheckbox: FC<IFormCheckbox> = ({
   handleChange,
   label,
   checked,
-  ariaDescribedby,
 }) => {
   const [focus, setFocus] =
     useState<boolean>(false);
@@ -42,7 +41,6 @@ const FormCheckbox: FC<IFormCheckbox> = ({
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        aria-describedby={ariaDescribedby}
       />
     </label>
   );

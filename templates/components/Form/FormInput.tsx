@@ -12,7 +12,6 @@ const FormInput: FC<IFormInput> = ({
   value,
   min,
   max,
-  ariaDescribedby,
 }) => {
   const [focus, setFocus] =
     useState<boolean>(false);
@@ -56,7 +55,6 @@ const FormInput: FC<IFormInput> = ({
         onFocus={handleFocus}
         onBlur={handleBlur}
         placeholder=""
-        aria-describedby={ariaDescribedby}
       />
     </label>
   );

@@ -134,7 +134,6 @@ const FormSupport: FC<IFormSupport> = ({
             value={form.fullName}
             min={0}
             max={60}
-            ariaDescribedby=""
           />
         </FormInputMotion>
 
@@ -157,7 +156,6 @@ const FormSupport: FC<IFormSupport> = ({
             value={form.email}
             min={0}
             max={255}
-            ariaDescribedby=""
           />
         </FormInputMotion>
 
@@ -180,7 +178,6 @@ const FormSupport: FC<IFormSupport> = ({
             value={form.phone}
             min={0}
             max={10}
-            ariaDescribedby=""
           />
         </FormInputMotion>
 
@@ -203,7 +200,6 @@ const FormSupport: FC<IFormSupport> = ({
             value={form.postalCode}
             min={0}
             max={5}
-            ariaDescribedby=""
           />
         </FormInputMotion>
 
@@ -224,7 +220,6 @@ const FormSupport: FC<IFormSupport> = ({
             value={form.city}
             min={0}
             max={60}
-            ariaDescribedby=""
           />
         </FormInputMotion>
 
@@ -249,7 +244,6 @@ const FormSupport: FC<IFormSupport> = ({
                 value={form.brand}
                 min={0}
                 max={60}
-                ariaDescribedby=""
               />
             </FormInputMotion>
 
@@ -272,7 +266,6 @@ const FormSupport: FC<IFormSupport> = ({
                 value={form.model}
                 min={0}
                 max={60}
-                ariaDescribedby=""
               />
             </FormInputMotion>
           </>
@@ -299,7 +292,6 @@ const FormSupport: FC<IFormSupport> = ({
             value={form.title}
             min={0}
             max={255}
-            ariaDescribedby=""
           />
         </FormInputMotion>
 
@@ -320,7 +312,6 @@ const FormSupport: FC<IFormSupport> = ({
             value={form.description}
             min={0}
             max={5_000}
-            ariaDescribedby=""
             rows={4}
           />
         </FormInputMotion>
@@ -340,7 +331,6 @@ const FormSupport: FC<IFormSupport> = ({
             }
             label="J'accepte que mes données soient traitées dans le cadre de ma demande"
             checked={form.consent}
-            ariaDescribedby=""
           />
         </FormInputMotion>
 

@@ -62,7 +62,6 @@ export type TFormInput = {
   value: string;
   min: number;
   max: number;
-  ariaDescribedby: string;
 };
 
 export type TInspectData = Record<string, any>;
