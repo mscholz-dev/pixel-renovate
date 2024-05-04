@@ -13,7 +13,7 @@ import webData from "@/utils/data/services/web";
 import keyboardsData from "@/utils/data/services/keyboards";
 
 // classes
-import MongoDB from "@/utils/MongoDB";
+// import MongoDB from "@/utils/MongoDB";
 import { TSupportForm } from "@/utils/types";
 const SupportValidator =
   new SupportValidatorClass();
@@ -120,29 +120,29 @@ ${description}
       );
 
       // store request in database
-      const client =
-        await MongoDB.clientPromise();
-      const db = client.db(
-        `pixel_renovate${
-          process.env.NODEENV === "dev"
-            ? "_dev"
-            : ""
-        }`,
-      );
+      // const client =
+      //   await MongoDB.clientPromise();
+      // const db = client.db(
+      //   `pixel_renovate${
+      //     process.env.NODEENV === "dev"
+      //       ? "_dev"
+      //       : ""
+      //   }`,
+      // );
 
-      await db.collection("support").insertOne({
-        serviceName,
-        fullName,
-        email,
-        phone,
-        postalCode,
-        city,
-        brand,
-        model,
-        title,
-        description,
-        consent,
-      });
+      // await db.collection("support").insertOne({
+      //   serviceName,
+      //   fullName,
+      //   email,
+      //   phone,
+      //   postalCode,
+      //   city,
+      //   brand,
+      //   model,
+      //   title,
+      //   description,
+      //   consent,
+      // });
 
       return res.status(200).end();
     }
