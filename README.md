@@ -1,5 +1,7 @@
   <h1>🚀 Pixel Renovate</h1>
 
+  <p>Article : <a href="https://mscholz.dev/projet/06-pixel-renovate" target="_blank">mscholz.dev ▸ Pixel Renovate</a></p>
+
   <h2>💻 Technologies Utilisées</h2>
   <ul>
     <li>Next.js ⚛️</li>
